@@ -24,21 +24,28 @@ Environment: Chrome browser with Source Hunter side panel open; local Node serve
 
 ---
 
-### [0:25 – 0:45] Scene 2: Saved Deep Trace Results & Press Release Disclosure
+### [0:25 – 0:45] Scene 2: Quick Trace Press Release Disclosure & Deep Trace Investigation
 - **Trace ID**: `plastic`
 - **Mode**: `REPLAY`
 - **URL to open**: `https://environmental-action.org/articles/8-million-tons-of-plastic-pollution-each-year/`
 - **Exact text to highlight**: `"Each year, approximately 8 million metric tons of plastic waste make their way into our world’s oceans."`
-- **On-screen action**: Inspect the trace results. Do NOT click "Run deep trace" live (costs ~$2.00 in live API credits). View the saved TinyResearch findings box.
-- **On-screen panel values**:
-  - Saved TinyResearch summary: `12 proposed, 5 confirmed, 7 discarded by Fetch`
+- **On-screen action**:
+  1. Highlight sentence and trigger quick trace.
+  2. Inspect side panel: quick trace follows 21 opened pages and halts at an institutional press release (`news.ucsb.edu`), pointing out it is a press release rather than the journal paper. Note the disabled **Run deep trace** button (credit-gated; `ALLOW_RESEARCH` off by default).
+  3. Cut to gallery research section (`demo/index.html` → `#researchBox`) to review the saved deep-trace findings from an earlier run.
+- **On-screen panel values (Side Panel Quick Trace)**:
   - Verdict badge: **`MATCH`** (amber), subtitle badge: `institutional press release about the study`
   - Headline: `"Earliest page found is a press release"`
   - Drift meter: **`Match (1/5)`**
   - Origin host & date: `news.ucsb.edu`, `2015-02-12`
   - Origin quote: `“Using the average density of uncompacted plastic waste, 8 million metric tons — the midpoint of our estimate — would cover an area 34 times the size of Manhattan ankle-deep in plastic waste,” said co-author Roland Geyer, an associate professor at the Bren School of Environmental Science & Management.`
   - Checked line: `Checked: 21 pages opened · 1 search`, `8 cited pages rejected`
-- **Spoken**: "When starting links end at a secondary summary, opt-in TinyResearch can explore deeper leads. Here we display a saved run where TinyResearch evaluated 12 proposed sources, confirming 5 and discarding 7 via Fetch. Because the earliest confirmed page is the university press release rather than the journal paper, Source Hunter discloses that it is a press release, not primary research."
+  - Deep trace action box: Displays disabled button **Run deep trace** with subtitle `"Disabled: set ALLOW_RESEARCH=1 in server/.env to protect credits."`
+- **On-screen gallery values (Cut to `demo/index.html` Research Box)**:
+  - Header: `TinyResearch Deep Trace (Fetch-Verified · Recorded 2026-11-11)`
+  - Summary: `Proposed 12 URLs checked via Fetch; 5 confirmed verbatim, 7 discarded.`
+  - Findings: Expandable lists of 5 confirmed URLs and 7 discarded URLs with verbatim discard reasons.
+- **Spoken**: "On this environmental claim, quick trace in the side panel traces through 21 opened pages to the earliest page found: a university press release on news.ucsb.edu, disclosing that it is a press release, not primary research. Deep tracing with TinyResearch is credit-gated and disabled in the panel by default. Cutting to the gallery's research section, we review the saved results from one earlier deep run: TinyResearch proposed 12 candidate citation leads, and Fetch re-verified every one verbatim—confirming 5 and discarding 7 unverified links."
 
 ---
 

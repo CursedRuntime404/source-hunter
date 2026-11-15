@@ -91,6 +91,8 @@ let g2Research = null;
 if (fs.existsSync(manifestFile)) {
   const m = JSON.parse(fs.readFileSync(manifestFile, 'utf8'));
   cases = (m.cases || []).map((entry) => {
+    if (entry.final) return entry;
+    if (!entry.file) return null;
     const abs = path.isAbsolute(entry.file) ? entry.file : path.join(here, entry.file);
     if (!fs.existsSync(abs)) return null;
     return serializeTrace(entry.id, entry.topic, entry.recordedAt, JSON.parse(fs.readFileSync(abs, 'utf8')));
