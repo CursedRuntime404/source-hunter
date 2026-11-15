@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Source Hunter</title>
+<link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+<header>
+  <div class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <span>Source Hunter</span>
+    <span id="modeBadge" class="mode-pill" title="Server trace mode">Checking</span>
+  </div>
+  <div class="hdr-actions">
+    <button id="themeBtn" type="button" class="ghost" title="Toggle light or dark theme" aria-label="Toggle theme">Theme</button>
+    <button id="gear" type="button" class="ghost" title="Server settings" aria-expanded="false" aria-controls="settings">Settings</button>
+  </div>
+</header>
+
+<section id="settings" hidden>
+  <label>Server URL <input id="serverUrl" type="url" placeholder="http://localhost:8787"></label>
+  <label>App token (optional) <input id="appToken" type="password" placeholder="only if your server sets APP_TOKEN"></label>
+  <div class="settings-row">
+    <button id="save" type="button">Save &amp; check</button>
+    <span id="health" role="status" aria-live="polite"></span>
+  </div>
+</section>
+
+<main>
+  <section id="offlineBanner" class="state-box warn" hidden>
+    <div class="state-head">
+      <span class="badge t">Offline</span>
+      <span class="meta">Local server unavailable</span>
+    </div>
+    <h2 class="state-title">Trace server unreachable</h2>
+    <p class="state-msg">Start the server in <code>server/</code> (<code>npm start</code> on localhost:8787) or update Server URL in Settings.</p>
+    <div class="state-action">
+      <button id="retryConnBtn" type="button" class="btn-secondary">Retry connection</button>
+    </div>
+  </section>
+
+  <div id="empty" class="empty">
+    <p class="big">Trace any claim back to its source.</p>
+    <ol class="empty-steps">
+      <li>Highlight a number, quote or claim on any page.</li>
+      <li>Click <b>Trace source</b>, right-click, or press <kbd>Alt+Shift+T</kbd>.</li>
+      <li>Inspect verified hops verbatim and see where wording drifted.</li>
+    </ol>
+    <p class="hint" style="margin-top:12px;">Next action: Highlight a sentence on any tab and press <kbd>Alt+Shift+T</kbd>.</p>
+  </div>
+
+  <div id="view" hidden>
+    <blockquote id="claim"></blockquote>
+    <div id="progress" class="progress" role="status" aria-live="polite">
+      <span class="spin" aria-hidden="true"></span>
+      <span id="status">Starting</span>
+      <span id="elapsed" class="elapsed"></span>
+      <button id="cancelTraceBtn" type="button" class="mini-btn" style="margin-left:6px;">Stop</button>
+    </div>
+    <section id="verdict" aria-live="polite" hidden></section>
+    <ol id="chain" class="chain" aria-label="Source chain of custody"></ol>
+    <details id="rejectedBox" hidden>
+      <summary id="rejectedSum"></summary>
+      <p id="rejectedHint" class="hint" hidden></p>
+      <ul id="rejected"></ul>
+    </details>
+    <details id="alsoBox" hidden>
+      <summary id="alsoSum"></summary>
+      <ol id="also" class="chain"></ol>
+    </details>
+    <section id="deep" aria-label="TinyResearch deep trace" hidden></section>
+    <footer id="panelFooter" class="panel-footer">
+      <div id="stats"></div>
+      <div class="footer-debug">
+        <button id="copyDebugBtn" type="button" class="btn-subtle" title="Copy debug report JSON to clipboard" aria-label="Copy debug report JSON to clipboard">Copy debug report</button>
+        <span id="copyDebugConfirm" class="copy-confirm" role="status" aria-live="polite" hidden>Copied</span>
+      </div>
+    </footer>
+  </div>
+</main>
+<script src="receipt.js"></script>
+<script src="sidepanel.js"></script>
+</body>
+</html>

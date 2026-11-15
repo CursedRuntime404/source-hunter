@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Source Hunter",
+  "version": "0.2.0",
+  "description": "Highlight a number, claim or quote. Trace it back to its original source and see where it changed.",
+  "permissions": ["sidePanel", "contextMenus", "storage", "activeTab"],
+  "host_permissions": ["http://localhost:8787/*"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [{ "matches": ["http://*/*", "https://*/*"], "js": ["content.js"], "run_at": "document_idle" }],
+  "side_panel": { "default_path": "sidepanel.html" },
+  "action": { "default_title": "Source Hunter: highlight a claim, then click Trace" },
+  "commands": {
+    "trace-selection": {
+      "suggested_key": { "default": "Alt+Shift+T" },
+      "description": "Trace highlighted claim with Source Hunter"
+    }
+  }
+}

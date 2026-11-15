@@ -1,0 +1,570 @@
+{
+  "generatedAt": "2026-11-12T17:01:31.378Z",
+  "cases": [
+    {
+      "id": "cpi91",
+      "topic": "Economics",
+      "recordedAt": "2026-11-11",
+      "file": "../server/.cache/66813d63d631c239347048eb.json"
+    },
+    {
+      "id": "plastic",
+      "topic": "Environment · Deep Trace",
+      "recordedAt": "2026-11-11",
+      "file": "../server/.cache/a8887c763995515960a10764.json"
+    },
+    {
+      "id": "apple",
+      "topic": "Earnings",
+      "recordedAt": "2026-11-12",
+      "file": "../server/.cache/e30cb99574153b549c4531ed.json"
+    },
+    {
+      "id": "clean38",
+      "topic": "Energy",
+      "recordedAt": "2026-11-11",
+      "file": "../server/.cache/5c3ea748bb61b43dab33ce10.json"
+    },
+    {
+      "id": "moore",
+      "topic": "Computing",
+      "recordedAt": "2026-11-11",
+      "file": "../server/.cache/b7dfe4038ab18cbc5c8dca56.json"
+    },
+    {
+      "id": "brain10",
+      "topic": "Neuroscience",
+      "recordedAt": "2026-11-11",
+      "file": "../server/.cache/9acdc9a33d6d6da91d3441fb.json"
+    },
+    {
+      "id": "marie",
+      "topic": "History",
+      "recordedAt": "2026-11-11",
+      "file": "../server/.cache/672462c8ddefd96d3d445998.json"
+    },
+    {
+      "id": "coyotiv",
+      "topic": "Software · Uncited Blog",
+      "recordedAt": "2026-11-11",
+      "file": "../server/.cache/a6d70da0bc96aba430adbb6c.json"
+    },
+    {
+      "id": "who",
+      "topic": "Global Health · Primary Publisher",
+      "recordedAt": "2026-11-14",
+      "file": "../server/.cache/8264409a4d3250caf91a9946.json"
+    }
+  ],
+  "research": {
+    "claim": "Each year, approximately 8 million metric tons of plastic waste make their way into our world’s oceans.",
+    "runId": "01a1cbfe-a061-7f77-8ba7-2c215837a708",
+    "recordedAt": "2026-11-11",
+    "report": "# Tracing the \"8 Million Metric Tons of Plastic Enter the Ocean Each Year\" Claim\n\n## Executive Summary\n\nThe claim originates from **Jambeck et al. (2015)**, a peer-reviewed paper published in *Science* on February 13, 2015. Critically, the paper itself **never states \"8 million metric tons\" as its headline figure**. The study's actual finding is a range of **4.8 to 12.7 million metric tons** entering the ocean **in 2010** (a specific base year, not a timeless annual rate). The figure \"8 million\" is the arithmetic midpoint of that range, introduced as a communications device in the official press releases and in quotes from the lead author. From there, the number traveled through media with two important distortions: (1) the specific year \"2010\" was dropped, making the figure sound like a current, ongoing annual rate; and (2) \"metric tons\" was sometimes shortened to \"tons.\" By the time the claim appeared in evergreen explainer articles—including at National Geographic—it had been fully simplified to a timeless, unqualified assertion. More recent science suggests the figure is likely an overestimate.\n\n---\n\n## 1. The National Geographic Article in Question\n\nThe specific National Geographic article at the URL provided in the query (`/environment/article/ocean-plastic-pollution-science-study`) is their major evergreen explainer, **\"The world's plastic pollution crisis, explained.\"** That article states [8]:\n\n> *\"Every year, about eight million tons of plastic waste escapes into the oceans from coastal nations. That's the equivalent of setting five garbage bags full of trash on every foot of coastline around the world.\"*\n\nSeveral features of this wording are significant:\n\n- It uses **\"tons\"** rather than **\"metric tons\"** — a unit change that makes the figure slightly smaller in real terms but is easy to miss.\n- It says **\"every year\"** as a timeless present-tense statement — the year \"2010\" (the actual base year of the underlying study) has been dropped entirely.\n- It says **\"about eight million\"** — the range (4.8 to 12.7 million) is not mentioned.\n- **No source is cited** in the fetched text of that article for this specific figure [8].\n\nThe article does not give a single visible publication date in the evidence retrieved, but it is an evergreen piece that has been continuously updated.\n\n---\n\n## 2. The Original Source: Jambeck et al. (2015)\n\n**Full citation:** J. R. Jambeck, R. Geyer, C. Wilcox, T. R. Siegler, M. Perryman, A. Andrady, R. Narayan, K. L. Law. \"Plastic waste inputs from land into the ocean.\" *Science*, 347(6223): 768–771, February 13, 2015. DOI: 10.1126/science.1260352.\n\n**What the paper actually says:**\n\nThe paper's abstract and body state [12] [13]:\n\n> *\"We calculate that 275 million metric tons (MT) of plastic waste was generated in 192 coastal countries in 2010, with 4.8 to 12.7 million MT entering the ocean.\"*\n\nThe paper explicitly describes its methodology as designed to produce **\"an order-of-magnitude estimate\"** [12] [13], not a precise measurement. The phrase \"8 million metric tons\" does **not appear** in the paper's abstract or main findings as a headline number. The closest the paper comes to that figure is in Table 1, where China's coastal mismanaged plastic waste is listed at approximately 8.8 million MT per year [13] — a country-level figure, not the global total.\n\nThe paper also acknowledges substantial uncertainty: data are limited outside urban centers, methodologies are inconsistent across countries, and activities such as illegal dumping and informal recycling are unaccounted for [12] [13]. Importantly, the 4.8–12.7 million MT estimate applies specifically to **the year 2010**, based on that year's population, waste generation, and waste management data [12].\n\nThe paper is also candid about a critical knowledge gap: **\"To our knowledge no direct estimates of this conversion rate exist\"** — referring to the rate at which mismanaged plastic waste actually reaches the ocean [16]. The 8 million midpoint therefore rests on an assumed conversion factor with no empirical grounding.\n\n---\n\n## 3. The Press Releases: Where \"8 Million\" Was Born as a Round Number\n\nThe figure \"8 million\" as a standalone, communicable number was introduced to the public not by the paper itself but by **two coordinated official press releases** published on February 12, 2015 — the day before the paper appeared in *Science*, timed to accompany a press briefing at the AAAS Annual Meeting.\n\n### Press Release A: University of Georgia (UGA Today) / EurekAlert (UGA version)\n**URL:** `https://news.uga.edu/new-science-paper-magnitude-plastic-waste-going-into-ocean-0215/` and mirrored at EurekAlert [11]  \n**Date:** February 12, 2015  \n**Exact wording:**\n\n> *\"[The study] found between 4.8 and 12.7 million metric tons of plastic entered the ocean in 2010 from people living within 50 kilometers of the coastline.\"*\n\nThe press release then introduces the \"8 million\" number as a communication tool, quoting lead author Jambeck directly [11]:\n\n> *\"explains the amount of plastic moving from land to ocean each year using 8 million metric tons as the midpoint.\"*\n\nAnd Jambeck's quoted analogy: *\"Eight million metric tons is the equivalent to finding five grocery bags full of plastic on every foot of coastline in the 192 countries we examined.\"* [1] [11]\n\nCrucially, this press release **retains the year \"2010\"** and frames 8 million explicitly as \"the midpoint\" — not the finding itself.\n\n### Press Release B: UC Santa Barbara (UCSB News) — \"An Ocean of Plastic\"\n**URL:** `https://news.ucsb.edu/2015/014985/ocean-plastic`  \n**Date:** February 12, 2015  \n**Exact wording** [7]:\n\n> *\"The study found that more than 4.8 million metric tons of plastic waste enter the oceans from land each year, and that figure may be as high as 12.7 million metric tons.\"*\n\nCo-author Roland Geyer is quoted providing the \"8 million\" midpoint as a visual comparison [7]:\n\n> *\"8 million metric tons — the midpoint of our estimate — would cover",
+    "final": {
+      "claim": {
+        "raw": "Each year, approximately 8 million metric tons of plastic waste make their way into our world’s oceans.",
+        "kind": "stat"
+      },
+      "stats": {
+        "fetches": 21,
+        "searches": 1,
+        "agentCalls": 0,
+        "linksChecked": 0
+      },
+      "timings": {
+        "totalMs": 88,
+        "softLimitHit": false,
+        "hardLimitHit": false,
+        "stages": [
+          {
+            "stage": "start-page-citations",
+            "ms": 4,
+            "linksFound": 0
+          },
+          {
+            "stage": "search",
+            "ms": 82,
+            "hits": 7
+          }
+        ]
+      },
+      "rejected": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/25678662/",
+          "reason": "page had almost no readable text",
+          "host": "pubmed.ncbi.nlm.nih.gov",
+          "citedBy": "search"
+        },
+        {
+          "url": "https://www.washingtonpost.com/news/energy-environment/wp/2015/02/12/humans-are-putting-8-million-metric-tons-of-plastic-in-the-oceans-annually/",
+          "reason": "page does not state this claim",
+          "host": "washingtonpost.com",
+          "citedBy": "TinyResearch"
+        },
+        {
+          "url": "https://www.nationalgeographic.com/science/article/150212-ocean-debris-plastic-garbage-patches-science",
+          "reason": "page does not state this claim",
+          "host": "nationalgeographic.com",
+          "citedBy": "TinyResearch"
+        },
+        {
+          "url": "https://time.com/3707112/plastic-in-the-ocean/",
+          "reason": "page does not state this claim",
+          "host": "time.com",
+          "citedBy": "TinyResearch"
+        },
+        {
+          "url": "https://www.nationalgeographic.com/environment/article/plastic-pollution",
+          "reason": "page does not state this claim",
+          "host": "nationalgeographic.com",
+          "citedBy": "TinyResearch"
+        },
+        {
+          "url": "https://beachapedia.org/Plastic_Pollution_Facts_and_Figures",
+          "reason": "page does not state this claim",
+          "host": "beachapedia.org",
+          "citedBy": "TinyResearch"
+        },
+        {
+          "url": "https://www.eurekalert.org/news-releases/685658",
+          "reason": "not_in_recorded_cache",
+          "host": "eurekalert.org",
+          "citedBy": "TinyResearch"
+        },
+        {
+          "url": "https://www.eurekalert.org/news-releases/779670",
+          "reason": "not_in_recorded_cache",
+          "host": "eurekalert.org",
+          "citedBy": "TinyResearch"
+        },
+        {
+          "url": "https://www.scienceintheclassroom.org/research-papers/plastic-waste-inputs-land-ocean",
+          "reason": "not_in_recorded_cache",
+          "host": "scienceintheclassroom.org",
+          "citedBy": "TinyResearch"
+        },
+        {
+          "url": "https://slacc.org.uk/wp-content/uploads/2017/12/10.-Jambeck2015.pdf",
+          "reason": "not_in_recorded_cache",
+          "host": "slacc.org.uk",
+          "citedBy": "TinyResearch"
+        },
+        {
+          "url": "https://nap.nationalacademies.org/resource/other/dels/plastics-in-the-ocean/",
+          "reason": "not_in_recorded_cache",
+          "host": "nap.nationalacademies.org",
+          "citedBy": "TinyResearch"
+        },
+        {
+          "url": "https://tos.org/oceanography/article/the-story-of-plastic-pollution-from-the-distant-ocean-gyres-to-the-global-policy-stage",
+          "reason": "not_in_recorded_cache",
+          "host": "tos.org",
+          "citedBy": "TinyResearch"
+        }
+      ],
+      "status": "traced_secondary",
+      "tone": "warn",
+      "code": "MATCH",
+      "severity": 0,
+      "headline": "Earliest page found is a press release",
+      "reasons": [
+        "Original says \"8 million\", this version says \"approximately 8 million\"",
+        "The earliest page found (news.ucsb.edu) is an institutional press release about the study (secondary), not the peer-reviewed study itself.",
+        "TinyResearch did not reach the peer-reviewed Science paper."
+      ],
+      "chain": [
+        {
+          "id": "h0",
+          "role": "start",
+          "via": "selection",
+          "verifiedBy": "selection",
+          "url": "https://environmental-action.org/articles/8-million-tons-of-plastic-pollution-each-year/",
+          "host": "environmental-action.org",
+          "title": "8 million tons of plastic pollution each year",
+          "date": "2021-06-17",
+          "dateSource": "page-metadata",
+          "quote": "Each year, approximately 8 million metric tons of plastic waste make their way into our world’s oceans.",
+          "sourceKind": "secondary",
+          "sourceKindLabel": "secondary source",
+          "relation": "The claim as you highlighted it",
+          "dateUncertain": false,
+          "dateReason": null,
+          "hasPassageCitations": false,
+          "vsOrigin": {
+            "code": "MATCH",
+            "flags": [
+              {
+                "code": "QUALIFIER",
+                "text": "Original says \"8 million\", this version says \"approximately 8 million\""
+              }
+            ]
+          },
+          "quoteDiff": [
+            {
+              "w": "Each",
+              "changed": true
+            },
+            {
+              "w": "year,",
+              "changed": true
+            },
+            {
+              "w": "approximately",
+              "changed": true
+            },
+            {
+              "w": "8",
+              "changed": false
+            },
+            {
+              "w": "million",
+              "changed": false
+            },
+            {
+              "w": "metric",
+              "changed": false
+            },
+            {
+              "w": "tons",
+              "changed": false
+            },
+            {
+              "w": "of",
+              "changed": false
+            },
+            {
+              "w": "plastic",
+              "changed": false
+            },
+            {
+              "w": "waste",
+              "changed": false
+            },
+            {
+              "w": "make",
+              "changed": true
+            },
+            {
+              "w": "their",
+              "changed": true
+            },
+            {
+              "w": "way",
+              "changed": true
+            },
+            {
+              "w": "into",
+              "changed": true
+            },
+            {
+              "w": "our",
+              "changed": true
+            },
+            {
+              "w": "world’s",
+              "changed": true
+            },
+            {
+              "w": "oceans.",
+              "changed": true
+            }
+          ],
+          "vsCited": {
+            "code": "MATCH",
+            "flags": [
+              {
+                "code": "QUALIFIER",
+                "text": "Original says \"8 million\", this version says \"approximately 8 million\""
+              }
+            ]
+          },
+          "changedHere": false
+        },
+        {
+          "id": "x1",
+          "role": "origin",
+          "via": "search",
+          "verifiedBy": "fetch",
+          "url": "https://news.ucsb.edu/2015/014985/ocean-plastic",
+          "host": "news.ucsb.edu",
+          "title": "An Ocean of Plastic",
+          "date": "2015-02-12",
+          "dateSource": "page-metadata",
+          "hasPassageCitations": false,
+          "quote": "“Using the average density of uncompacted plastic waste, 8 million metric tons — the midpoint of our estimate — would cover an area 34 times the size of Manhattan ankle-deep in plastic waste,” said co-author Roland Geyer, an associate professor at the Bren School of Environmental Science & Management.",
+          "dispute": null,
+          "sourceKind": "press-release",
+          "sourceKindLabel": "institutional press release about the study",
+          "relation": "Found by search; not cited by the pages above",
+          "vsOrigin": {
+            "code": "MATCH",
+            "flags": [],
+            "diff": null
+          }
+        }
+      ],
+      "alsoFound": [
+        {
+          "id": "x5",
+          "role": "source",
+          "via": "search",
+          "verifiedBy": "fetch",
+          "url": "https://theconversation.com/eight-million-tonnes-of-plastic-are-going-into-the-ocean-each-year-37521",
+          "host": "theconversation.com",
+          "title": "Eight million tonnes of plastic are going into the ocean each year",
+          "date": "2015-02-12",
+          "dateSource": "page-metadata",
+          "hasPassageCitations": false,
+          "quote": "You might have heard the oceans are full of plastic, but how full exactly? Around 8 million metric tonnes go into the oceans each year, according to the first rigorous global estimate published in Science today.",
+          "dispute": null,
+          "sourceKind": "secondary",
+          "sourceKindLabel": "secondary source",
+          "relation": "Found by search; not cited by the pages above",
+          "vsClaim": {
+            "code": "MATCH",
+            "flags": [
+              {
+                "code": "QUALIFIER",
+                "text": "Original says \"Around 8 million\", this version says \"approximately 8 million\""
+              }
+            ]
+          }
+        },
+        {
+          "id": "x6",
+          "role": "source",
+          "via": "search",
+          "verifiedBy": "fetch",
+          "url": "https://www.sciencedaily.com/releases/2015/02/150212154422.htm",
+          "host": "sciencedaily.com",
+          "title": "Magnitude of plastic waste going into the ocean calculated: 8 million metric tons of plastic enter the oceans per year",
+          "date": "2015-02-12",
+          "dateSource": "page-text",
+          "hasPassageCitations": false,
+          "quote": "Magnitude of plastic waste going into the ocean calculated: 8 million metric tons of plastic enter the oceans per year",
+          "dispute": null,
+          "sourceKind": "secondary",
+          "sourceKindLabel": "secondary source",
+          "relation": "Found by search; not cited by the pages above",
+          "vsClaim": {
+            "code": "MATCH",
+            "flags": [
+              {
+                "code": "QUALIFIER",
+                "text": "Original says \"8 million\", this version says \"approximately 8 million\""
+              }
+            ]
+          }
+        },
+        {
+          "id": "r7",
+          "role": "source",
+          "via": "research",
+          "verifiedBy": "fetch",
+          "url": "https://www.npr.org/2015/02/12/385752248/8-million-tons-of-plastic-clutter-our-seas",
+          "host": "npr.org",
+          "title": "8 Million Tons Of Plastic Clutter Our Seas",
+          "date": "2015-02-12",
+          "dateSource": "page-metadata",
+          "hasPassageCitations": false,
+          "quote": "\"In 2010 there were 8 million metric tons of plastic entering the ocean globally,\" she says.",
+          "dispute": null,
+          "sourceKind": "secondary",
+          "sourceKindLabel": "secondary source",
+          "relation": "Proposed by TinyResearch, confirmed by fetching the page",
+          "vsClaim": {
+            "code": "MATCH",
+            "flags": [
+              {
+                "code": "QUALIFIER",
+                "text": "Original says \"8 million\", this version says \"approximately 8 million\""
+              }
+            ]
+          }
+        },
+        {
+          "id": "x0",
+          "role": "source",
+          "via": "search",
+          "verifiedBy": "fetch",
+          "url": "https://news.uga.edu/new-science-paper-magnitude-plastic-waste-going-into-ocean-0215/",
+          "host": "news.uga.edu",
+          "title": "New Science paper calculates magnitude of plastic waste going into the ocean - UGA Today",
+          "date": "2015-02-13",
+          "dateSource": "page-metadata",
+          "hasPassageCitations": false,
+          "quote": "8 million metric tons of plastic enter the oceans per year",
+          "dispute": null,
+          "sourceKind": "press-release",
+          "sourceKindLabel": "institutional press release about the study",
+          "relation": "Found by search; not cited by the pages above",
+          "vsClaim": {
+            "code": "MATCH",
+            "flags": [
+              {
+                "code": "QUALIFIER",
+                "text": "Original says \"8 million\", this version says \"approximately 8 million\""
+              }
+            ]
+          }
+        },
+        {
+          "id": "x4",
+          "role": "source",
+          "via": "search",
+          "verifiedBy": "fetch",
+          "url": "https://www.fondriest.com/news/estimated-8-million-metric-tons-of-plastic-enter-oceans-annually.htm",
+          "host": "fondriest.com",
+          "title": "Estimated 8 million metric tons of plastic enter oceans annually",
+          "date": "2015-03-02",
+          "dateSource": "page-metadata",
+          "hasPassageCitations": false,
+          "quote": "A study by scientists at the University of California, Santa Barbara estimates that 8 million metric tons of plastic enters the oceans each year from land, according to a release.",
+          "dispute": null,
+          "sourceKind": "secondary",
+          "sourceKindLabel": "secondary source",
+          "relation": "Found by search; not cited by the pages above",
+          "vsClaim": {
+            "code": "MATCH",
+            "flags": [
+              {
+                "code": "QUALIFIER",
+                "text": "Original says \"8 million\", this version says \"approximately 8 million\""
+              }
+            ]
+          }
+        },
+        {
+          "id": "x2",
+          "role": "source",
+          "via": "search",
+          "verifiedBy": "fetch",
+          "url": "https://ocean.si.edu/conservation/pollution/marine-plastics",
+          "host": "ocean.si.edu",
+          "title": "Marine Plastics",
+          "date": "2018-04-18",
+          "dateSource": "page-metadata",
+          "hasPassageCitations": false,
+          "quote": "A 2015 study assessing plastic waste management, from 2010 data, found that there is on average 8 million metric tons of plastic that enters the ocean from land every year, but that the actual amount could vary between 4.8 and 12.7 million metric tons. This is enough plastic to fill every foot of coastline in the world with five plastic grocery bags filled with plastic, and this occurs every year.",
+          "dispute": null,
+          "sourceKind": "secondary",
+          "sourceKindLabel": "secondary source",
+          "relation": "Found by search; not cited by the pages above",
+          "vsClaim": {
+            "code": "MATCH",
+            "flags": [
+              {
+                "code": "QUALIFIER",
+                "text": "Original says \"8 million\", this version says \"approximately 8 million\""
+              }
+            ]
+          }
+        },
+        {
+          "id": "x3",
+          "role": "source",
+          "via": "search",
+          "verifiedBy": "fetch",
+          "url": "https://www.akbizmag.com/industry/environmental/study-8-million-metric-tons-of-plastic-waste-enter-oceans-each-year/",
+          "host": "akbizmag.com",
+          "title": "Study: 8 Million Metric Tons of Plastic Waste Enter Oceans Each Year - Alaska Business Magazine",
+          "date": "2021-12-01",
+          "dateSource": "page-metadata",
+          "hasPassageCitations": false,
+          "quote": "Study: 8 Million Metric Tons of Plastic Waste Enter Oceans Each Year",
+          "dispute": null,
+          "sourceKind": "secondary",
+          "sourceKindLabel": "secondary source",
+          "relation": "Found by search; not cited by the pages above",
+          "vsClaim": {
+            "code": "MATCH",
+            "flags": [
+              {
+                "code": "QUALIFIER",
+                "text": "Original says \"8 Million\", this version says \"approximately 8 million\""
+              }
+            ]
+          }
+        }
+      ],
+      "origin": {
+        "url": "https://news.ucsb.edu/2015/014985/ocean-plastic",
+        "date": "2015-02-12",
+        "host": "news.ucsb.edu",
+        "sourceKind": "press-release",
+        "sourceKindLabel": "institutional press release about the study"
+      },
+      "deepTraceAvailable": true,
+      "research": {
+        "totalCitationsFound": 20,
+        "citationsProposed": 12,
+        "confirmed": 1,
+        "proposedUrls": [
+          "https://www.washingtonpost.com/news/energy-environment/wp/2015/02/12/humans-are-putting-8-million-metric-tons-of-plastic-in-the-oceans-annually/",
+          "https://www.nationalgeographic.com/science/article/150212-ocean-debris-plastic-garbage-patches-science",
+          "https://www.npr.org/2015/02/12/385752248/8-million-tons-of-plastic-clutter-our-seas",
+          "https://time.com/3707112/plastic-in-the-ocean/",
+          "https://www.nationalgeographic.com/environment/article/plastic-pollution",
+          "https://beachapedia.org/Plastic_Pollution_Facts_and_Figures",
+          "https://www.eurekalert.org/news-releases/685658",
+          "https://www.eurekalert.org/news-releases/779670",
+          "https://www.scienceintheclassroom.org/research-papers/plastic-waste-inputs-land-ocean",
+          "https://slacc.org.uk/wp-content/uploads/2017/12/10.-Jambeck2015.pdf",
+          "https://nap.nationalacademies.org/resource/other/dels/plastics-in-the-ocean/",
+          "https://tos.org/oceanography/article/the-story-of-plastic-pollution-from-the-distant-ocean-gyres-to-the-global-policy-stage"
+        ],
+        "confirmedUrls": [
+          "https://www.npr.org/2015/02/12/385752248/8-million-tons-of-plastic-clutter-our-seas"
+        ],
+        "discardedUrls": [
+          {
+            "url": "https://www.washingtonpost.com/news/energy-environment/wp/2015/02/12/humans-are-putting-8-million-metric-tons-of-plastic-in-the-oceans-annually/",
+            "reason": "page does not state this claim"
+          },
+          {
+            "url": "https://www.nationalgeographic.com/science/article/150212-ocean-debris-plastic-garbage-patches-science",
+            "reason": "page does not state this claim"
+          },
+          {
+            "url": "https://time.com/3707112/plastic-in-the-ocean/",
+            "reason": "page does not state this claim"
+          },
+          {
+            "url": "https://www.nationalgeographic.com/environment/article/plastic-pollution",
+            "reason": "page does not state this claim"
+          },
+          {
+            "url": "https://beachapedia.org/Plastic_Pollution_Facts_and_Figures",
+            "reason": "page does not state this claim"
+          },
+          {
+            "url": "https://www.eurekalert.org/news-releases/685658",
+            "reason": "not_in_recorded_cache"
+          },
+          {
+            "url": "https://www.eurekalert.org/news-releases/779670",
+            "reason": "not_in_recorded_cache"
+          },
+          {
+            "url": "https://www.scienceintheclassroom.org/research-papers/plastic-waste-inputs-land-ocean",
+            "reason": "not_in_recorded_cache"
+          },
+          {
+            "url": "https://slacc.org.uk/wp-content/uploads/2017/12/10.-Jambeck2015.pdf",
+            "reason": "not_in_recorded_cache"
+          },
+          {
+            "url": "https://nap.nationalacademies.org/resource/other/dels/plastics-in-the-ocean/",
+            "reason": "not_in_recorded_cache"
+          },
+          {
+            "url": "https://tos.org/oceanography/article/the-story-of-plastic-pollution-from-the-distant-ocean-gyres-to-the-global-policy-stage",
+            "reason": "not_in_recorded_cache"
+          }
+        ],
+        "terminationReason": "planner_done"
+      }
+    }
+  }
+}

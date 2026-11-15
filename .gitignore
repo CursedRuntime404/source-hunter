@@ -1,0 +1,8 @@
+.env
+.cache/
+.tfcache/
+usage.json
+node_modules/
+*.zip
+.DS_Store
+
