@@ -1,5 +1,7 @@
 # Source Hunter — Filming Sheet
 
+> **Filming Environment Note:** This video was recorded on the author's machine using their own local cache and TinyFish API key, so on-screen playback matches the recorded gallery.
+
 Quick reference sheet for recording the 2:00 demo video. Keep local server running in `TF_MODE=replay` for Scenes 1–5, and switch to `TF_MODE=record` for Scene 6.
 
 | Scene & Time | Mode | Target URL | Highlight Text (Verbatim) | Expected Panel Values | Action Notes |

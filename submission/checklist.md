@@ -67,13 +67,13 @@
 
 ## 5. Automated Checks & Manual Browser Checklist
 
-### Automated Checks Executed (`TF_MODE=replay`, 0 API calls)
-- **Offline Unit Tests**: `npm test --prefix server` -> 42/42 passing.
+### Automated Checks Executed (Author's Machine Verification)
+- **Offline Unit Tests**: `npm test --prefix server` -> 43/43 passing (zero network calls).
 - **Real-Browser & Server E2E**: [`demo/e2e-chrome.mjs`](../demo/e2e-chrome.mjs) verifies `/health`, real SSE `/api/trace` streams (`cpi91`, `moore`, `coyotiv`), fail-closed guards (`/api/research` `400`, `/api/agent-retry` `403`), and headless Chrome rendering all gallery cards in [`demo/index.html`](../demo/index.html).
 - **Honest Chrome CLI Limitation**: Branded Google Chrome and Microsoft Edge (`Chromium 137+`) block automated CLI `--load-extension` sideloading for security reasons, so loading the unpacked MV3 extension into an interactive Chrome window requires the manual Developer Mode steps below.
 
 ### Manual `chrome://extensions` Developer Mode Checklist (2 Minutes)
-1. Start the local server (`TF_MODE` defaults to `record` when `TINYFISH_API_KEY` is in `server/.env`, or `replay` when omitted / explicitly set for offline verification):
+1. Start the local server with your TinyFish API key in `server/.env` (`TF_MODE` defaults automatically to `record`; in a fresh clone with an empty cache, `TF_MODE=replay` returns `"not recorded"`):
    ```powershell
    npm start --prefix server
    ```

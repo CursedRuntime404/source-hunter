@@ -1,5 +1,7 @@
 # Source Hunter — 2-Minute Demo Script
 
+> **Filming Environment Note:** This video was recorded on the author's machine using their own local cache and TinyFish API key, so on-screen playback matches the recorded gallery.
+
 Target runtime: **2:00** (calm pace, zero dead air).  
 Environment: Chrome browser with Source Hunter side panel open; local Node server running (`TF_MODE=replay` for instant, reliable recorded gallery playback; `TF_MODE=record` for live demonstration).
 
