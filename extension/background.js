@@ -1,7 +1,11 @@
 // Opens the side panel and hands it the highlighted claim. The panel itself talks to the server
 // (a service worker can be killed mid-trace, a panel page cannot).
 chrome.runtime.onInstalled.addListener(() => {
-  chrome.contextMenus.create({ id: 'trace', title: 'Trace this claim with Source Hunter', contexts: ['selection'] });
+  chrome.contextMenus.removeAll(() => {
+    chrome.contextMenus.create({ id: 'trace', title: 'Trace this claim with Source Hunter', contexts: ['selection'] }, () => {
+      void chrome.runtime.lastError;
+    });
+  });
   chrome.sidePanel.setPanelBehavior({ openPanelOnActionClick: true }).catch(() => {});
 });
 

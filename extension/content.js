@@ -107,7 +107,7 @@
 
   function collect() {
     const sel = window.getSelection();
-    if (!sel || sel.isCollapsed) return null;
+    if (!sel || !sel.rangeCount || sel.isCollapsed) return null;
     const rawSel = sel.toString().replace(/\s+/g, ' ').trim();
     if (rawSel.length < 2) return null;
 
@@ -120,7 +120,9 @@
       : cleaned;
 
     const claim = targetSentence.replace(/\s+/g, ' ').trim();
-    const range = sel.getRangeAt(0);
+    let range = null;
+    try { range = sel.getRangeAt(0); } catch { return null; }
+    if (!range) return null;
     lastClaim = claim;
     try { lastRange = range.cloneRange(); } catch { lastRange = null; }
     let node = range.commonAncestorContainer;
@@ -205,6 +207,7 @@
   }
 
   function findTextAndMark(claim, tone, title) {
+    if (!document.body) return false;
     const needle = String(claim || '').replace(/\s+/g, ' ').trim();
     if (needle.length < 4) return false;
     const short = needle.slice(0, 80);
@@ -264,13 +267,15 @@
   btn.addEventListener('click', () => {
     const payload = collect();
     host.style.display = 'none';
-    if (payload) chrome.runtime.sendMessage({ type: 'TRACE', payload });
+    if (payload) chrome.runtime.sendMessage({ type: 'TRACE', payload }).catch(() => {});
   });
   const hide = () => (host.style.display = 'none');
   document.addEventListener('mouseup', () => setTimeout(() => {
     const s = window.getSelection();
-    if (!s || s.isCollapsed || s.toString().trim().length < 2) return hide();
-    const range = s.getRangeAt(0);
+    if (!s || !s.rangeCount || s.isCollapsed || s.toString().trim().length < 2) return hide();
+    let range = null;
+    try { range = s.getRangeAt(0); } catch { return hide(); }
+    if (!range) return hide();
     const rects = range.getClientRects();
     const lastRect = rects.length ? rects[rects.length - 1] : range.getBoundingClientRect();
     const btnW = 112;
@@ -306,7 +311,7 @@
       const payload = collect();
       if (payload) {
         hide();
-        chrome.runtime.sendMessage({ type: 'TRACE', payload });
+        chrome.runtime.sendMessage({ type: 'TRACE', payload }).catch(() => {});
       }
     }
   });
