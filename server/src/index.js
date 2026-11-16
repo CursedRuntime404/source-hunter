@@ -7,7 +7,7 @@ import { createTinyFish } from './tinyfish.js';
 import { runTrace, assemble } from './trace.js';
 import { startResearch, mergeResearch, reportText } from './research.js';
 import { runAgentRetry } from './agent-retry.js';
-import { normalize, cleanUrl } from './text.js';
+import { normalize, cleanUrl, normalizeClaimText } from './text.js';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(here, '..');
@@ -27,7 +27,7 @@ const CACHE_DIR = path.join(root, '.cache');
 fs.mkdirSync(CACHE_DIR, { recursive: true });
 const tf = (hasKey || TF_MODE === 'replay') ? createTinyFish(process.env.TINYFISH_API_KEY, { mode: TF_MODE }) : null;
 
-const key = (claim, url) => crypto.createHash('sha1').update(normalize(claim) + '|' + (cleanUrl(url) || url)).digest('hex').slice(0, 24);
+const key = (claim, url) => crypto.createHash('sha1').update(normalize(normalizeClaimText(claim)) + '|' + (cleanUrl(url) || url)).digest('hex').slice(0, 24);
 const file = (k) => path.join(CACHE_DIR, `${k}.json`);
 const readCache = (k, ttlMs = 7 * 86400e3) => {
   try {

@@ -160,6 +160,20 @@ export function cleanClaimText(text = '') {
   return s.replace(/\s+/g, ' ').trim();
 }
 
+export function normalizeClaimText(text = '') {
+  let s = String(text || '');
+  s = s
+    .normalize('NFKC')
+    .replace(/[\u2018\u2019\u201B]/g, "'")
+    .replace(/[\u201C\u201D]/g, '"')
+    .replace(/[\u2013\u2014]/g, '-')
+    .replace(/\u00a0/g, ' ');
+  s = cleanClaimText(s);
+  s = s.replace(/\s+/g, ' ').trim();
+  s = s.replace(/^[.,;:!?\s"'—–-]+/, '').replace(/[.,;:!?\s"'—–-]+$/, '');
+  return s.replace(/\s+/g, ' ').trim();
+}
+
 export function extractTargetSentence(text = '') {
   const cleaned = cleanClaimText(text);
   const sents = splitSentences(cleaned);
@@ -171,12 +185,12 @@ export function extractTargetSentence(text = '') {
 }
 
 export function parseClaim(text, hints = {}) {
-  const cleaned = cleanClaimText(text);
-  const sents = splitSentences(cleaned);
+  const normalized = normalizeClaimText(text);
+  const sents = splitSentences(normalized);
   const isMulti = sents.length > 1;
   const target = isMulti
     ? (sents.find((s) => /\b(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten|percent|billion|million)\b/i.test(s)) || sents[0])
-    : cleaned;
+    : normalized;
   const raw = target.replace(/\s+/g, ' ').trim();
   const quoted = /^["\u201C\u2018'].+["\u201D\u2019']$/.test(raw);
   const all = extractNumbers(raw);
@@ -195,7 +209,7 @@ export function parseClaim(text, hints = {}) {
     tokens: contentTokens(basis),
     entities: extractEntities(basis),
     norm: normalize(quoteText),
-    ...(isMulti ? { multiSentence: true, fullRaw: cleaned, multiSentenceTip: 'Tip: For best results, highlight one claim at a time.' } : {}),
+    ...(isMulti ? { multiSentence: true, fullRaw: normalized, multiSentenceTip: 'Tip: For best results, highlight one claim at a time.' } : {}),
   };
 }
 
@@ -372,6 +386,22 @@ export function findPassage(markdown = '', claim, title = '') {
   });
   // real verification: the quote must be present in the page text we were given
   if (best && !normMd.includes(normalize(best.quote))) return null;
+  if (best) {
+    const bi = best.blockIndex;
+    const adj = [];
+    const minI = Math.max(0, bi - 3);
+    const maxI = Math.min(blocks.length - 1, bi + 5);
+    for (let i = minI; i <= maxI; i++) {
+      if (i === bi) continue;
+      const b = blocks[i];
+      if (!b) continue;
+      const p = stripMd(b);
+      if (p.length >= 15 && !/^[-*_~=\s]+$/.test(p)) {
+        adj.push(b);
+      }
+    }
+    best.adjacentBlocks = adj;
+  }
   return best;
 }
 
@@ -599,7 +629,9 @@ function disputeSentenceRefersToClaim(sentence, claimObj) {
   const sTok = new Set(contentTokens(sentence));
   const claimToks = claimObj.tokens || [];
   const claimEnts = claimObj.entities || [];
-  const sharesTopic = claimToks.some((t) => sTok.has(t)) || claimEnts.some((e) => sTok.has(e));
+  const claimNums = (claimObj.numbers || []).map((n) => String(n.shown));
+  const sharesNum = claimNums.some((num) => new RegExp(`\\b${escRe(num)}(?:\\s*%|\\s*percent)?\\b`, 'i').test(sentence));
+  const sharesTopic = claimToks.some((t) => sTok.has(t)) || claimEnts.some((e) => sTok.has(e)) || sharesNum;
   return sharesTopic || ANAPHOR_RE.test(sentence);
 }
 
@@ -623,8 +655,10 @@ export function detectDispute(markdown = '', passage = null, title = '', claim =
 
   const normMd = normalize(markdown);
   const normQuote = passage?.quote ? normalize(passage.quote) : '';
+  const adjacentPlainSents = (passage?.adjacentBlocks || []).flatMap((b) => splitSentences(stripMd(b)));
   const proseSents = [
     ...splitSentences(blockPlain),
+    ...adjacentPlainSents,
     ...splitSentences(nextPlain),
     ...splitSentences(prevPlain),
     ...introSents,

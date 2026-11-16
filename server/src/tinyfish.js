@@ -138,6 +138,16 @@ export function createTinyFish(apiKey, opts = {}) {
     try {
       return JSON.parse(fs.readFileSync(p, 'utf8'));
     } catch {
+      if (payload?.purpose) {
+        for (const altPurpose of [payload.purpose + '.', payload.purpose.replace(/[.,;:!?]+$/, '')]) {
+          if (altPurpose === payload.purpose) continue;
+          const altKey = cacheKey(endpoint, { ...payload, purpose: altPurpose });
+          const altPath = path.join(cacheDir, `${endpoint}-${altKey}.json`);
+          try {
+            return JSON.parse(fs.readFileSync(altPath, 'utf8'));
+          } catch {}
+        }
+      }
       return null;
     }
   }

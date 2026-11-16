@@ -318,7 +318,7 @@ export async function* runTrace(input, tf, opts = {}) {
   const isStartWiki = /(?:^|\.)wikipedia\.org$/i.test(startHost) || /\/wiki\//i.test(input.url) || /(?:^|\.)wik[a-z0-9-]*\./i.test(startHost);
   const start = {
     id: 'h0', role: 'start', via: 'selection', verifiedBy: 'selection', url: input.url, host: startHost, title: input.title || null,
-    date: normalizeDate(input.date), dateSource: input.date ? 'page-metadata' : null, quote: claim.raw, sourceKind: sourceKind(input.url),
+    date: normalizeDate(input.date), dateSource: input.date ? 'page-metadata' : null, quote: input.claim || claim.raw, sourceKind: sourceKind(input.url),
     sourceKindLabel: SOURCE_KIND_LABELS[sourceKind(input.url)] || 'source',
     relation: 'The claim as you highlighted it',
     dateUncertain: isStartWiki ? true : false,
@@ -536,7 +536,7 @@ export function assemble(state) {
   const cands = [...chain.slice(1), ...extras];
   const stats = state.stats;
   const timings = state.timings || null;
-  const base = { claim: { raw: claim.raw, kind: claim.kind }, stats, timings, rejected: state.rejected || [] };
+  const base = { claim: { raw: state.input?.claim || claim.raw, kind: claim.kind }, stats, timings, rejected: state.rejected || [] };
 
   const originable = cands.filter((h) => {
     if (chain.length === 1 && isLikelyPrimaryPublisher(chain[0].host) && isSameOrg(h.host, chain[0].host)) {
@@ -607,7 +607,7 @@ export function assemble(state) {
     if (startDispute?.disputeQuote || startDispute?.cues?.length) {
       return {
         ...base, status: 'disputed_on_page', tone: 'bad', code: 'DISPUTED', severity: SEV.DISPUTED,
-        headline: 'The source page disputes this claim',
+        headline: 'The page you are on disputes this claim',
         disputeQuote: startDispute.disputeQuote,
         disputeCues: startDispute.cues,
         disputeHost: chain[0].host,
@@ -615,6 +615,8 @@ export function assemble(state) {
         disputeDateUncertain: !!chain[0].dateUncertain,
         reasons: [
           `The page at ${chain[0].host} disputes this claim (cues: ${startDispute.cues.join(', ')}).`,
+          'No original source found for the claim.',
+          ...(stats?.searches ? [`${stats.searches} search${stats.searches > 1 ? 'es' : ''} for the wording found no earlier page stating it.`] : []),
           ...(timings?.hardLimitHit ? ['Search reached the 40s time limit before external sources could be verified.'] : []),
         ],
         chain, alsoFound, deepTraceAvailable: true,
@@ -788,8 +790,9 @@ export function assemble(state) {
   const pressRelease = o.sourceKind === 'press-release';
   const tertiary = o.sourceKind === 'tertiary';
   const journalCommentary = o.sourceKind === 'journal-commentary';
-  const disputeHop = o.dispute ? o : display.find((h) => h.dispute) || null;
-  const uncitedSecondary = !primary && !pressRelease && !govRelease && !tertiary && !disputeHop && v.code !== 'CONTRADICTED' && !o.hasPassageCitations && (stats?.searches > 0 || (chain.length <= 2 && extras.length === 0));
+  const disputeHop = o.dispute ? o : display.find((h) => h.dispute && h !== start) || null;
+  const startDispute = start.dispute?.disputeQuote ? start.dispute : null;
+  const uncitedSecondary = !primary && !pressRelease && !govRelease && !tertiary && !disputeHop && !startDispute && v.code !== 'CONTRADICTED' && !o.hasPassageCitations && (stats?.searches > 0 || (chain.length <= 2 && extras.length === 0));
   const tracedPrimary = primary ? 'traced_primary' : tertiary ? 'traced_tertiary' : uncitedSecondary ? 'earliest_uncited' : 'traced_secondary';
   const where = display.find((h) => h.changedHere);
 
@@ -809,6 +812,10 @@ export function assemble(state) {
         v.code = 'DISPUTED';
       }
     }
+  } else if (startDispute) {
+    finalCode = 'DISPUTED';
+    finalTone = 'bad';
+    headline = 'The page you are on disputes this claim';
   } else if (v.code === 'CONTRADICTED') {
     headline = 'Source wording contradicts this claim';
   } else if (govRelease) {
@@ -844,6 +851,11 @@ export function assemble(state) {
   }
   if (disputeHop) {
     reasons.unshift(`The source at ${disputeHop.host} disputes this claim (cues: ${disputeHop.dispute.cues.join(', ')}).`);
+    if (startDispute && disputeHop !== start) {
+      reasons.push(`The starting page at ${start.host} also disputes this claim: "${startDispute.disputeQuote}"`);
+    }
+  } else if (startDispute) {
+    reasons.unshift(`The page at ${start.host} disputes this claim (cues: ${startDispute.cues.join(', ')}).`);
   }
   if (where && where !== start && !disputeHop) reasons.push(`The wording first changes at ${where.host}.`);
   if (tertiary) {
@@ -898,6 +910,12 @@ export function assemble(state) {
       disputeHost: disputeHop.host,
       disputeDate: disputeHop.date,
       disputeDateUncertain: !!disputeHop.dateUncertain,
+    } : startDispute ? {
+      disputeQuote: startDispute.disputeQuote,
+      disputeCues: startDispute.cues,
+      disputeHost: start.host,
+      disputeDate: start.date,
+      disputeDateUncertain: !!start.dateUncertain,
     } : {}),
     reasons,
     chain: display,

@@ -2,7 +2,7 @@
 // Fake data is never used by the running server or in the demo.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { parseClaim, findPassage, findClosestPassage, isBotInterstitial, extractNumbers, normalize, cleanClaimText, findDateInText, findDateInfo } from '../src/text.js';
+import { parseClaim, findPassage, findClosestPassage, isBotInterstitial, extractNumbers, normalize, cleanClaimText, normalizeClaimText, findDateInText, findDateInfo } from '../src/text.js';
 import { compare } from '../src/compare.js';
 import { runTrace, assemble, isLikelyPrimaryPublisher } from '../src/trace.js';
 
@@ -123,7 +123,7 @@ test('cleanClaimText strips citation markers from Wikipedia sleep sentence and f
   );
 
   const parsed = parseClaim(rawSleep);
-  assert.equal(parsed.raw, cleaned);
+  assert.equal(parsed.raw, normalizeClaimText(rawSleep));
   assert.ok(!parsed.raw.includes('[76]'));
 
   // Also verify [citation needed], [a], and word-end footnote digits

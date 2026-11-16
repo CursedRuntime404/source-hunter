@@ -2,12 +2,14 @@
 import fs from 'node:fs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
 import {
   parseClaim, findPassage, sourceKind, isTertiary,
   resolvePassageCitations, rankLinks, findDateInText, findDateInfo,
+  normalize, cleanUrl, normalizeClaimText,
 } from '../src/text.js';
 import { compare } from '../src/compare.js';
-import { runTrace, buildQueries } from '../src/trace.js';
+import { runTrace, buildQueries, assemble } from '../src/trace.js';
 
 const REAL_PAGES = JSON.parse(fs.readFileSync(new URL('./fixtures-real.json', import.meta.url), 'utf8'));
 
@@ -773,4 +775,55 @@ test('assemble() filters out forum posts, UGC discussion and quotes starting wit
   const marieFin = assemble(marieState);
   assert.equal(marieFin.alsoFound.some((a) => a.host === 'forum.thefreedictionary.com'), false, 'FreeDictionary forum post must be dropped');
   assert.equal(marieFin.alsoFound.some((a) => a.host === 'thefoodgeek.com'), true, 'TheFoodGeek quote must be kept');
+});
+
+test('BUG 1: highlight normalization - trailing punctuation, straight vs curly quotes produce identical cache key and verdict', async () => {
+  const url = 'https://www.scientificamerican.com/article/do-people-only-use-10-percent-of-their-brains/';
+  const key = (c, u) => crypto.createHash('sha1').update(normalize(normalizeClaimText(c)) + '|' + (cleanUrl(u) || u)).digest('hex').slice(0, 24);
+
+  const v1 = 'humans "only" employ 10 percent of their brain.';
+  const v2 = 'humans "only" employ 10 percent of their brain';
+  const v3 = 'humans “only” employ 10 percent of their brain.';
+
+  const k1 = key(v1, url);
+  const k2 = key(v2, url);
+  const k3 = key(v3, url);
+  assert.equal(k1, k2);
+  assert.equal(k2, k3);
+
+  const pages = {
+    [url]: REAL_PAGES[url],
+  };
+
+  const { final: final1 } = await runEvents({ claim: v1, url }, fake(pages));
+  const { final: final2 } = await runEvents({ claim: v2, url }, fake(pages));
+
+  assert.equal(final1.code, final2.code);
+  assert.equal(final1.headline, final2.headline);
+  assert.equal(final1.status, final2.status);
+  assert.equal(final1.disputeQuote, final2.disputeQuote);
+  // Displayed claim preserves the user's exact highlight
+  assert.equal(final1.claim.raw, v1);
+  assert.equal(final2.claim.raw, v2);
+});
+
+test('BUG 2: start page dispute detection on trimmed SciAm fixture - returns DISPUTED with headline and verbatim quote', async () => {
+  const url = 'https://www.scientificamerican.com/article/do-people-only-use-10-percent-of-their-brains/';
+  const claim = 'humans "only" employ 10 percent of their brain.';
+  const pages = {
+    [url]: REAL_PAGES[url],
+  };
+
+  const { final } = await runEvents({ claim, url }, fake(pages));
+  assert.equal(final.code, 'DISPUTED');
+  assert.equal(final.status, 'disputed_on_page');
+  assert.equal(final.tone, 'bad');
+  assert.equal(final.headline, 'The page you are on disputes this claim');
+  assert.equal(final.disputeHost, 'scientificamerican.com');
+  assert.equal(final.disputeDate, '2008-02-07');
+  assert.match(final.disputeQuote, /10 percent myth/i);
+  assert.match(final.disputeQuote, /so wrong it is almost laughable/i);
+  // "No original source found" appears as a secondary reason line, never as the headline
+  assert.ok(final.reasons.some((r) => /no original source found/i.test(r)));
+  assert.notEqual(final.headline, 'No original source found');
 });
