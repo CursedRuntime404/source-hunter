@@ -130,6 +130,9 @@ const TOKEN_ALIASES = {
   doubled: ['double', 'doubling'],
   clean: ['renewable', 'renewables'],
   renewable: ['clean'],
+  created: ['generated', 'produced'],
+  generated: ['created', 'produced'],
+  produced: ['created', 'generated'],
 };
 
 function extractEntities(text = '') {
@@ -529,12 +532,16 @@ export function sourceKind(url, text = '') {
   }
   const h = u.hostname.replace(/^www\./, '');
   if (TERTIARY.test(h)) return 'tertiary';
+  if (/(?:^|\.)sintef\.no$/i.test(h) || /\/latest-news\b/i.test(u.pathname)) return 'press-release';
   const isGovMilInt = /\.(gov|int|mil)(\.[a-z]{2})?$/.test(h);
   const isEdu = /\.edu(\.[a-z]{2})?$/.test(h) && !/(^|\.)academia\.edu$/.test(h);
   if (isGovMilInt || isEdu) {
     if (EDU_PRESS_HOST.test(h) || EDU_PRESS_PATH.test(u.pathname)) return isGovMilInt ? 'gov-release' : 'press-release';
-    if (EDU_SECONDARY_PATH.test(u.pathname)) return 'secondary';
-    if (/\.pdf($|\?)/i.test(u.pathname)) return 'primary-likely';
+    if (EDU_SECONDARY_PATH.test(u.pathname) || /\b(?:review of|commonly quoted)\b/i.test(u.pathname) || /\b(?:review of commonly quoted statistics)\b/i.test(text.slice(0, 1000))) return isGovMilInt ? 'gov-release' : 'secondary';
+    if (/\.pdf($|\?)/i.test(u.pathname)) {
+      if (/\b(?:review of|commonly quoted)\b/i.test(u.pathname) || /\b(?:review of commonly quoted statistics)\b/i.test(text.slice(0, 1000))) return isGovMilInt ? 'gov-release' : 'secondary';
+      return 'primary-likely';
+    }
     if (isGovMilInt) return 'primary-likely';
     // .edu HTML pages must show research cues (avoid treating outreach/course pages as primary studies)
     const sample = String(text).slice(0, 30000);
@@ -631,7 +638,10 @@ function disputeSentenceRefersToClaim(sentence, claimObj) {
   const claimEnts = claimObj.entities || [];
   const claimNums = (claimObj.numbers || []).map((n) => String(n.shown));
   const sharesNum = claimNums.some((num) => new RegExp(`\\b${escRe(num)}(?:\\s*%|\\s*percent)?\\b`, 'i').test(sentence));
-  const sharesTopic = claimToks.some((t) => sTok.has(t)) || claimEnts.some((e) => sTok.has(e)) || sharesNum;
+  const NON_TOPIC_WORDS = new Set(['last', 'past', 'today', 'now', 'year', 'years', 'day', 'days', 'month', 'months', 'two', 'three', 'one', 'time', 'times', 'full', 'all', 'new']);
+  const topicalClaimToks = claimToks.filter((t) => !NON_TOPIC_WORDS.has(t));
+  const sharesTopic = (topicalClaimToks.length ? topicalClaimToks : claimToks).some((t) => sTok.has(t)) || claimEnts.some((e) => sTok.has(e)) || sharesNum;
+  if (denyMatch && !sharesTopic) return false;
   return sharesTopic || ANAPHOR_RE.test(sentence);
 }
 

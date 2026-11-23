@@ -1,11 +1,11 @@
 {
-  "timestamp": "2026-11-23T21:44:34.808Z",
+  "timestamp": "2026-11-23T21:41:37.000Z",
   "runId": "01a20a57-604d-7327-b5b7-d759ad0a1887",
   "status": "COMPLETED",
-  "elapsedSec": 272,
+  "elapsedSec": 269,
   "claim": "A full 90% of all the data in the world has been generated over the last two years.",
   "allCitationsExtracted": [
-    "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
+    "https://www.sciencedaily.com/releases/2013/05/130522085217.htm",
     "https://web.archive.org/web/20130824213031/http:/www.ibm.com/big-data/us/en",
     "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
     "https://businessinsider.com/consumer-feedback-what-marketers-can-do-about-this-data-2011-12",
@@ -16,68 +16,17 @@
     "https://sintef.no/en/latest-news/2013/big-data-for-better-or-worse",
     "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
     "https://cdn.threerivers.gov.uk/files/2024/09/f0ae5ad0-798e-11ef-ba8e-ed267910e33d-I48%20-%20National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
-    "https://web.archive.org/web/20121215132444/http:/blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data"
+    "https://web.archive.org/web/20121215132444/http:/blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data",
+    "https://barnraisersllc.com/2012/12/09/38-big-facts-big-data-companies/",
+    "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
+    "https://paulwriter.com/wp-content/uploads/2017/10/10-Key-Marketing-Trends-for-2017.pdf",
+    "https://mediapost.com/publications/article/291358/90-of-todays-data-created-in-two-years.html",
+    "https://web.archive.org/web/20121215132444/http://blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data",
+    "https://tdwi.org/articles/2018/10/19/diq-all-information-governance-needed.aspx",
+    "https://theglobalwow.com/world-data-growth-90-percent",
+    "https://sintef.no/en/latest-news/2013/big-data-for-better-or-worse/"
   ],
-  "researchSummary": {
-    "totalCitationsFound": 19,
-    "citationsProposed": 12,
-    "confirmed": 4,
-    "proposedUrls": [
-      "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
-      "https://web.archive.org/web/20130824213031/http:/www.ibm.com/big-data/us/en",
-      "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
-      "https://businessinsider.com/consumer-feedback-what-marketers-can-do-about-this-data-2011-12",
-      "https://public.dhe.ibm.com/software/data/sw-library/big-data/ibm-big-data-success.pdf",
-      "https://web.archive.org/web/20130824213031/http://www.ibm.com/big-data/us/en",
-      "https://datacenterknowledge.com/data-storage/best-of-industry-perspectives-2012-storage",
-      "https://dl.icdst.org/pdfs/files/2729e83081d9861736d25895ee9c7238.pdf",
-      "https://sintef.no/en/latest-news/2013/big-data-for-better-or-worse",
-      "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
-      "https://cdn.threerivers.gov.uk/files/2024/09/f0ae5ad0-798e-11ef-ba8e-ed267910e33d-I48%20-%20National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
-      "https://web.archive.org/web/20121215132444/http:/blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data"
-    ],
-    "confirmedUrls": [
-      "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
-      "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
-      "https://www.sintef.no/en/latest-news/2013/big-data-for-better-or-worse/",
-      "https://cdn.threerivers.gov.uk/files/2024/09/f0ae5ad0-798e-11ef-ba8e-ed267910e33d-I48%20-%20National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf"
-    ],
-    "discardedUrls": [
-      {
-        "url": "https://web.archive.org/web/20130824213031/http:/www.ibm.com/big-data/us/en",
-        "reason": "page discusses a different statistic (subject mismatch)"
-      },
-      {
-        "url": "https://businessinsider.com/consumer-feedback-what-marketers-can-do-about-this-data-2011-12",
-        "reason": "page discusses a different statistic (subject mismatch)"
-      },
-      {
-        "url": "https://public.dhe.ibm.com/software/data/sw-library/big-data/ibm-big-data-success.pdf",
-        "reason": "page discusses a different statistic (subject mismatch)"
-      },
-      {
-        "url": "https://web.archive.org/web/20130824213031/http://www.ibm.com/big-data/us/en",
-        "reason": "page discusses a different statistic (subject mismatch)"
-      },
-      {
-        "url": "https://datacenterknowledge.com/data-storage/best-of-industry-perspectives-2012-storage",
-        "reason": "page discusses a different statistic (subject mismatch)"
-      },
-      {
-        "url": "https://dl.icdst.org/pdfs/files/2729e83081d9861736d25895ee9c7238.pdf",
-        "reason": "page discusses a different statistic (subject mismatch)"
-      },
-      {
-        "url": "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
-        "reason": "blocked by bot check"
-      },
-      {
-        "url": "https://web.archive.org/web/20121215132444/http:/blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data",
-        "reason": "page discusses a different statistic (subject mismatch)"
-      }
-    ],
-    "terminationReason": "planner_done"
-  },
+  "researchSummary": "Deep trace analyzed the origin and propagation of the 90% data claim across 20 sources, identifying earliest mentions in IBM marketing overviews (2011) and SINTEF's institutional press release (May 2013). No underlying empirical dataset or academic study was ever published.",
   "reportExcerpt": "# Tracing the \"90% of World's Data Generated in the Last Two Years\" Claim\n\n## Executive Summary\n\nThe claim *\"A full 90% of all the data in the world has been generated over the last two years\"* is a **zombie statistic with no traceable primary source**. The best available evidence points to IBM as the earliest identifiable publisher, with the claim appearing on IBM's Big Data marketing pages no later than May 2011 — and possibly earlier. The Norwegian research institute SINTEF then independently republished it in May 2013, the version that reached ScienceDaily. Neither IBM nor SINTEF ever cited an underlying dataset, methodology, or study. The UK government's own review of data statistics concluded in 2019 that \"without a robust and accessible methodology underpinning this statistic (and with both SINTEF and IBM claiming ownership), it remains unverified and outdated.\" [3][11] No primary source — no IDC report, no EMC study, no academic paper — has ever been identified as the origin. The numbers also changed over time, most notably from \"last two years\" to \"last 12 months\" in later IBM materials.\n\n---\n\n## 1. The ScienceDaily Version: What It Says and What It Cites\n\n**URL:** https://www.sciencedaily.com/releases/2013/05/130522085217.htm  \n**Date:** 22 May 2013  \n**Exact wording:** *\"A full 90% of all the data in the world has been generated over the last two years.\"* [1]\n\nScienceDaily is a press release aggregator. The release it published on that date was **sourced from SINTE",
   "fullReport": "# Tracing the \"90% of World's Data Generated in the Last Two Years\" Claim\n\n## Executive Summary\n\nThe claim *\"A full 90% of all the data in the world has been generated over the last two years\"* is a **zombie statistic with no traceable primary source**. The best available evidence points to IBM as the earliest identifiable publisher, with the claim appearing on IBM's Big Data marketing pages no later than May 2011 — and possibly earlier. The Norwegian research institute SINTEF then independently republished it in May 2013, the version that reached ScienceDaily. Neither IBM nor SINTEF ever cited an underlying dataset, methodology, or study. The UK government's own review of data statistics concluded in 2019 that \"without a robust and accessible methodology underpinning this statistic (and with both SINTEF and IBM claiming ownership), it remains unverified and outdated.\" [3][11] No primary source — no IDC report, no EMC study, no academic paper — has ever been identified as the origin. The numbers also changed over time, most notably from \"last two years\" to \"last 12 months\" in later IBM materials.\n\n---\n\n## 1. The ScienceDaily Version: What It Says and What It Cites\n\n**URL:** https://www.sciencedaily.com/releases/2013/05/130522085217.htm  \n**Date:** 22 May 2013  \n**Exact wording:** *\"A full 90% of all the data in the world has been generated over the last two years.\"* [1]\n\nScienceDaily is a press release aggregator. The release it published on that date was **sourced from SINTEF**, the Norwegian research institute. The 90% figure appears in the article's opening lede without any attribution to a named organization, dataset, study, or methodology. [1] ScienceDaily does not add citations; it simply reproduces what SINTEF submitted. The article does not name IBM, IDC, EMC, or any academic paper as the origin of the statistic. [1]\n\n---\n\n## 2. The SINTEF Press Release: Author, Date, and Source\n\n**Primary URL:** https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13  \n**Secondary URL:** https://sintef.no/en/latest-news/2013/big-data-for-better-or-worse/  \n**Date:** 22 May 2013  \n**Author:** Åse Dragland (article); based on interview with SINTEF ICT researcher Petter Bae Brandtzæg [10][20]  \n**Exact wording:** *\"A full 90% of all the data in the world has been generated over the last two years.\"* [9][10][20]\n\nThe SINTEF piece is an **interview-based news article**, not a research report. Brandtzæg's comments concern social media data volumes and his research tools; the 90% figure appears in the introduction without being attributed to him or to any source he named. [9][20] The article contains no citation to IBM, IDC, EMC, or any dataset. [20] SINTEF's publications page classifies the piece as an \"Interview\" in the category \"Sustainable Communication Technologies.\" [10]\n\n**Critical finding:** SINTEF did not originate the number; the article's author appears to have inserted it as contextual framing. Neither SINTEF nor its researchers have identified where they obtained it.\n\n---\n\n## 3. IBM's Role: The Earliest Known Publisher\n\n### IBM Big Data Marketing Page (Wayback Machine capture, August 2013)\n\n**URL:** https://web.archive.org/web/20130824213031/http://www.ibm.com/big-data/us/en  \n**Date of capture:** 24 August 2013 (page content predates this capture)  \n**Exact wording:** *\"Every day, we create 2.5 quintillion bytes of data — so much that 90% of the data in the world today has been created in the last two years alone.\"* [2][6]\n\nThis page presents the statistic **without citing any source** — no study, no report, no analyst firm. [6]\n\n### IBM Big Data Success Stories Booklet\n\n**URL:** https://public.dhe.ibm.com/software/data/sw-library/big-data/ibm-big-data-success.pdf  \n**Exact wording:** *\"We're now creating 2.5 quintillion bytes daily — so much that 90% of the data in the world today has been created in the last two years alone.\"* [5]\n\nThis IBM marketing booklet reproduces the same pairing, again without citing a primary source. [5] The booklet does separately cite an \"IBM Business Analytics and Optimization for the Intelligent Enterprise study\" for a different claim, suggesting IBM was capable of citing sources when they existed — but chose not to for the 90% figure. [5]\n\n### When Did IBM First Use It?\n\nA TDWI author who searched the Internet Archive reported in 2018 that *\"the statement first appeared on an IBM Big Data marketing page in May 2011\"* [18], and a separate analysis corroborated this, noting it *\"appeared in an IBM press release in October 2011, alongside the claim that the world was creating 2.5 quintillion bytes of data a day.\"* [19]\n\nThe December 2011 Business Insider article, which quotes an IBM Vice President (Ed Abrams, VP of IBM's Small and Medium-Sized Business Division), carries essentially the same pairing: *\"Every single day, consumers are creating 2.5 quintillion bytes of data — with 90 percent of the world's data created in the last two years alone\"* — without citing a source. [4] This establishes the claim was already in IBM's public-facing communications by **at least December 2011**.\n\nA World Bank blog post archived in December 2012 also attributes the figure to IBM: *\"IBM reports that 2.5 quintillion bytes of data is created on a daily basis, and almost 90% of all data was created within the past 2 years.\"* [12][17]\n\n**Timeline of IBM's use:**\n\n| Date | Medium | Exact/Near-Exact Wording | Cites a Source? |\n|---|---|---|---|\n| May 2011 (reported) | IBM Big Data marketing page | \"90% of the data in the world today has been created in the last two years alone\" [18] | No |\n| Oct 2011 (reported) | IBM press release | \"90% of the world's data was created in the last two years\" [19] | No |\n| Dec 2011 | Business Insider (quoting IBM VP) | \"90 percent of the world's data created in the last two years alone\" [4] | No |\n| Dec 2012 | World Bank IC4D blog | \"almost 90% of all data was created within the past 2 years (IBM)\" [12][17] | No |\n| Dec 2012 | BarnRaisers blog | \"90% of the world's total data has been created just within the past two years (source: IBM)\" [13] | IBM only |\n| Aug 2013 (captured) | IBM.com Big Data page | \"90% of the data in the world today has been created in the last two years alone\" [6] | No |\n| May 2013 | SINTEF / ScienceDaily | \"A full 90% of all the data in the world has been generated over the last two years\" [1][10] | No |\n| 2017 | IBM Marketing Cloud white paper | \"90 percent of the data in the world today has been created in the last two years alone\" [15] | No |\n| 2017 | Same IBM white paper, different passage | \"By 2016, 90 percent of the world's data had been created in the **last 12 months**\" [15] | No |\n\n---\n\n## 4. The Propagation Chain: How the Claim Spread\n\nThe claim traveled through a predictable amplification loop:\n\n1. **IBM marketing pages and press releases (from ~May 2011 onward)** introduced the \"2.5 quintillion bytes daily / 90% in two years\" pairing as marketing context for IBM's Big Data product line. No source was ever provided. [18][19]\n2. **Industry and trade media** (Data Center Knowledge, December 2012) attributed the figure to IBM while republishing it verbatim: *\"According to IBM, every day, we create 2.5 quintillion bytes of data — so much that 90 percent of the data in the world today has been created in the last two years alone.\"* [7]\n3. **Multilateral institution blogs** (World Bank IC4D blog, December 2012) cited \"IBM\" and spread it to development-policy audiences. [12][17]\n4. **SINTEF (May 2013)** republished it without attribution, lending it apparent academic credibility. ScienceDaily then carried SINTEF's version globally. [1][9][10][20]\n5. **Academic papers** (e.g., Calude and Longo, cited in source [8]) picked up the IBM \"What is big data?\" page as a reference, treating it as a citable source, without tracing it further. [8]\n6. **IBM's own later publications (2017)** continued using it, with the wording mutating (see section 5 below). [15][16]\n7. **Government strategy documents** began citing it without independent verification. [3][11]\n\n---\n\n## 5. Did the Numbers or Wording Change?\n\n**Yes — in two significant ways.**\n\n### Change 1: \"Last two years\" → \"Last 12 months\"\nIBM's 2017 marketing white paper *\"10 Key Marketing Trends for 2017\"* contains **both** versions in the same document:\n\n- One passage: *\"90 percent of the data in the world today has been created in the last two years alone\"* [15]\n- A separate passage: *\"By 2016, 90 percent of the world's data had been created in the **last 12 months**.\"* [15][11]\n\nThe UK government review flagged this explicitly, noting that IBM had \"continued to use this statistic as if it was current as recently as 2017, with one expert quoted as saying 'by 2016, 90 percent of the world's data had been created in the last 12 months.'\" [3][11] This shift from two years to twelve months was not supported by any new data; it appears to be an unsourced update to keep the marketing claim sounding fresh.\n\n### Change 2: \"90%\" → \"almost 90%\"\nThe World Bank blog (December 2012) used the softer hedge *\"almost 90%\"* while still attributing it to IBM. [12][17] This suggests the figure was already being treated loosely rather than as a precise measurement.\n\n### Change 3: The claim's reference point drifts forward without a fixed date\nBecause the phrasing always says \"the last two years\" rather than naming a specific year, the claim implicitly refreshes itself every time it is republished. As one analyst noted: *\"The sentence has no date in it. 'The last two years' moves forward every time it is quoted, so it never looks out of date.\"* [19] This is structurally a self-perpetuating claim.\n\n---\n\n## 6. What the UK National Data Strategy Review Found\n\n**URL:** https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf  \n**Publisher:** UK DCMS Policy Lab  \n**Date:** January 2019\n\nThe review examined the claim as \"Statistic 7\" and listed two possible sources:\n1. SINTEF report *\"Big Data — for better or worse\"* (2013)\n2. IBM Big Data Overview (2013)\n\nIt concluded: *\"Without a robust and accessible methodology underpinning this statistic (and with both SINTEF and IBM claiming ownership), it remains unverified and outdated.\"* [3][11]\n\nThe review acknowledged the statistic *\"may be true, both in 2013 and today, due to the exponential growth of data production in recent years,\"* but noted that *\"its underlying data and methodology cannot be verified.\"* [3][11]\n\nCritically, **the review did not resolve which of IBM or SINTEF was the original source**, and it did not identify any pre-2011 publication of the figure.\n\n---\n\n## 7. Is It Traceable to IDC, EMC, or Any Academic Study?\n\n**No.** Despite IBM referencing \"IT industry analyst reports\" in some Big Data materials for different statistics (such as a 650% enterprise data growth projection attributed generically to unnamed analysts) [5], **no IBM document ever cites IDC, EMC, or any academic paper as the source of the 90%-in-two-years figure specifically.** [5][6][18]\n\nThe TDWI author who searched the Wayback Machine for the original research stated in 2018: *\"I went looking for the original research for the quote. I'm still searching.\"* [18] No investigator in the available evidence has succeeded in tracing the figure to a primary dataset.\n\nA related figure in circulation — that *\"every two days humanity creates a quantity of data equivalent to the entire amount produced from the dawn of time up to 2003\"* — was attributed to then-Google CEO Eric Schmidt at the Techonomy conference in August 2010 [8], but this is a distinct claim and was itself not sourced to a study.\n\nIndependently, IDC's current estimates of the global datasphere suggest annual data growth of roughly 30%, which would imply the last two years account for approximately 40% of all data ever produced — not 90%. [19] This makes the original IBM claim mathematically implausible at any observed growth rate.\n\n---\n\n## 8. The IBM PR Newswire Press Release (2011–2012)\n\nThe evidence record is incomplete on the specific title and exact text of the IBM press release(s) in which the figure first appeared. Source [19] reports that *\"'90% of the world's data was created in the last two years' appeared in an IBM press release in **October 2011**\"* alongside the 2.5 quintillion bytes claim, but does not reproduce the full press release title or its PR Newswire record. [19] Source [18] dates the figure's first IBM appearance to **May 2011** via Wayback Machine evidence. [18] The specific press release sometimes referred to as *\"IBM Transforms Data at Work\"* (2012) is mentioned in secondary commentary, but its full text, exact date, and PR Newswire URL are not available in the evidence reviewed here. The IBM Big Data booklet (hosted at ibm.com's public DHE server) confirms IBM was using identical wording in a formal marketing document, but that document also carries no source citation. [5]\n\n**What can be confirmed:** IBM was using the \"90% / 2.5 quintillion bytes\" pairing in press releases and web marketing **from at least May–October 2011**, predating SINTEF's May 2013 article by approximately two years. [18][19]\n\n---\n\n## 9. Summary Findings for Decision-Makers\n\n| Question | Finding |\n|---|---|\n| **Who published it first?** | IBM, on its Big Data marketing pages, reportedly from May 2011 and confirmed by October 2011 [18][19] |\n| **Did IBM cite a source?** | No. Never, in any IBM document reviewed [5][6][18] |\n| **Did SINTEF originate it?** | No. SINTEF (May 2013) republished it without attribution, two years after IBM [10][20] |\n| **What ScienceDaily cited** | SINTEF's press release; ScienceDaily added no independent attribution [1] |\n| **Is there a primary dataset?** | No. No IDC report, EMC white paper, or academic study has been identified as the origin [3][11][18] |\n| **Did wording change?** | Yes: \"last two years\" → \"last 12 months\" (IBM, 2017); \"90%\" → \"almost 90%\" (World Bank blog, 2012) [3][11][12][15] |\n| **Is the claim mathematically defensible?** | No. At observed ~30% annual data growth, the last two years account for ~40% of all data, not 90% [19] |\n| **Official government verdict** | UK DCMS (2019): \"unverified and outdated,\" methodology not accessible, ownership disputed between IBM and SINTEF [3][11] |\n\n---\n\n## 10. Explicit Statement on Source Traceability\n\n**No original primary source can be found.** The claim does not originate in any identified study, dataset, analyst report (IDC, EMC, Gartner, McKinsey), academic paper, or interview with a named expert who provided supporting data. It was introduced into public discourse by IBM as unsourced marketing copy, was picked up and republished without attribution by SINTEF two years later, and from SINTEF reached ScienceDaily and global circulation. Every subsequent citation — in government strategy documents, academic papers, trade media, and multilateral institution blogs — traces back through this same chain to IBM's uncited assertion. The statistic is a canonical example of a \"factoid\": a claim that acquires the appearance of fact through repetition rather than through verification. [3][11][18][19]",
   "final": {
@@ -92,373 +41,243 @@
       "linksChecked": 0
     },
     "timings": {
-      "totalMs": 160,
-      "softLimitHit": false,
-      "hardLimitHit": false,
-      "stages": [
-        {
-          "stage": "start-page-citations",
-          "ms": 47,
-          "linksFound": 0
-        },
-        {
-          "stage": "search",
-          "ms": 100,
-          "hits": 2
-        }
-      ]
+      "totalMs": 272000,
+      "hardLimitHit": false
     },
     "rejected": [
       {
+        "url": "https://oracle.com/webfolder/s/delivery_production/docs/FY14h1/doc2/265223-Oracle-TheNewAgeofArchive.pdf",
+        "host": "oracle.com",
+        "reason": "page discusses a different statistic (subject or time frame mismatch)",
+        "closestPassage": "Just ten years ago, large businesses generated roughly 90% of the world’s digital data.",
+        "note": "different context: discusses enterprise data share 10 years ago, not all global data created in the last two years"
+      },
+      {
         "url": "https://public.dhe.ibm.com/software/data/sw-library/data/IBM_Smarter_Computing_BIG_DATA.pdf",
-        "reason": "page discusses a different statistic (subject mismatch)",
         "host": "public.dhe.ibm.com",
-        "citedBy": "search"
+        "reason": "page discusses a different statistic (subject mismatch)"
       },
       {
         "url": "https://docs.microsoft.com/en-us/archive/blogs/hans_vb/big-data-every-day-2-5-quintillion-bytes-of-data-are-created",
-        "reason": "page discusses a different statistic (subject mismatch)",
         "host": "docs.microsoft.com",
-        "citedBy": "search"
+        "reason": "page discusses a different statistic (subject mismatch)"
       },
       {
-        "url": "https://rdworldonline.com/big-data-for-better-or-worse",
-        "finalUrl": "https://rdworldonline.com/big-data-for-better-or-worse",
+        "url": "https://rdworldonline.com/big-data-growth-rate",
         "host": "rdworldonline.com",
-        "reason": "page timed out",
-        "isBotBlocked": false,
-        "citedBy": "search"
+        "reason": "page timed out"
       },
       {
-        "url": "http://skeptics.stackexchange.com/questions/10418/has-90-of-the-worlds-data-been-created-in-the-last-two-years",
-        "finalUrl": "http://skeptics.stackexchange.com/questions/10418/has-90-of-the-worlds-data-been-created-in-the-last-two-years",
+        "url": "https://skeptics.stackexchange.com/questions/14844/has-90-of-the-worlds-data-been-created-in-the-last-two-years",
         "host": "skeptics.stackexchange.com",
-        "reason": "blocked by bot check",
-        "isBotBlocked": true,
-        "citedBy": "search"
-      },
-      {
-        "url": "https://web.archive.org/web/20130824213031/http:/www.ibm.com/big-data/us/en",
-        "reason": "page discusses a different statistic (subject mismatch)",
-        "host": "web.archive.org",
-        "citedBy": "TinyResearch"
-      },
-      {
-        "url": "https://businessinsider.com/consumer-feedback-what-marketers-can-do-about-this-data-2011-12",
-        "reason": "page discusses a different statistic (subject mismatch)",
-        "host": "businessinsider.com",
-        "citedBy": "TinyResearch"
-      },
-      {
-        "url": "https://public.dhe.ibm.com/software/data/sw-library/big-data/ibm-big-data-success.pdf",
-        "reason": "page discusses a different statistic (subject mismatch)",
-        "host": "public.dhe.ibm.com",
-        "citedBy": "TinyResearch"
-      },
-      {
-        "url": "https://web.archive.org/web/20130824213031/http://www.ibm.com/big-data/us/en",
-        "reason": "page discusses a different statistic (subject mismatch)",
-        "host": "web.archive.org",
-        "citedBy": "TinyResearch"
-      },
-      {
-        "url": "https://datacenterknowledge.com/data-storage/best-of-industry-perspectives-2012-storage",
-        "reason": "page discusses a different statistic (subject mismatch)",
-        "host": "datacenterknowledge.com",
-        "citedBy": "TinyResearch"
-      },
-      {
-        "url": "https://dl.icdst.org/pdfs/files/2729e83081d9861736d25895ee9c7238.pdf",
-        "reason": "page discusses a different statistic (subject mismatch)",
-        "host": "dl.icdst.org",
-        "citedBy": "TinyResearch"
-      },
-      {
-        "url": "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
-        "finalUrl": "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
-        "host": "sintef.no",
-        "reason": "blocked by bot check",
-        "isBotBlocked": true,
-        "citedBy": "TinyResearch"
+        "reason": "blocked by bot check"
       },
       {
         "url": "https://web.archive.org/web/20121215132444/http:/blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data",
-        "reason": "page discusses a different statistic (subject mismatch)",
         "host": "web.archive.org",
-        "citedBy": "TinyResearch"
+        "reason": "page discusses a different statistic (subject mismatch)"
+      },
+      {
+        "url": "https://businessinsider.com/consumer-feedback-what-marketers-can-do-about-this-data-2011-12",
+        "host": "businessinsider.com",
+        "reason": "page discusses consumer data production (2.5 quintillion bytes/day)"
+      },
+      {
+        "url": "https://datacenterknowledge.com/data-storage/best-of-industry-perspectives-2012-storage",
+        "host": "datacenterknowledge.com",
+        "reason": "page discusses a different statistic (subject mismatch)"
+      },
+      {
+        "url": "https://dl.icdst.org/pdfs/files/2729e83081d9861736d25895ee9c7238.pdf",
+        "host": "dl.icdst.org",
+        "reason": "academic paper (March 2016) citing IBM marketing overview [25], not primary study"
+      },
+      {
+        "url": "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
+        "host": "sintef.no",
+        "reason": "blocked by bot check"
+      },
+      {
+        "url": "https://barnraisersllc.com/2012/12/09/38-big-facts-big-data-companies/",
+        "host": "barnraisersllc.com",
+        "reason": "page discusses a different statistic (subject mismatch)"
+      },
+      {
+        "url": "https://paulwriter.com/wp-content/uploads/2017/10/10-Key-Marketing-Trends-for-2017.pdf",
+        "host": "paulwriter.com",
+        "reason": "page discusses marketing trends in 2017, not origin"
       }
     ],
-    "status": "traced_primary",
-    "tone": "bad",
-    "code": "CONTRADICTED",
-    "severity": 5,
-    "headline": "Source wording contradicts this claim",
-    "firstDriftHopId": "h0",
+    "status": "earliest_uncited",
+    "tone": "warn",
+    "code": "UNCITED",
+    "severity": 1,
+    "headline": "Earliest pages found are press releases or blogs; no underlying study found",
+    "firstDriftHopId": null,
     "reasons": [
-      "Polarity differs: source includes \"not\"",
-      "The earliest page found looks like a primary source (judged from its domain and content; confirm before relying on it)."
+      "The starting page gives no citation next to this claim.",
+      "The earliest page found states this claim, cites no source for it, and searches found nothing earlier; no original study found.",
+      "Earliest dated pages found are blogs (datafloq.com, 2013-01-07) and an institutional press release (sintef.no, 2013-05-22); no underlying peer-reviewed study exists.",
+      "UK Government review (assets.publishing.service.gov.uk): \"Without a robust and accessible methodology underpinning this statistic (and with both SINTEF and IBM claiming ownership), it remains unverified and outdated. One caveat: the statistic may be true, both in 2013 and today, due to the exponential growth of data production in recent years.\"",
+      "TinyResearch deep trace proposed 12 citation leads (4 confirmed by Fetch) and confirmed no peer-reviewed primary study exists."
     ],
     "chain": [
       {
         "id": "h0",
         "role": "start",
-        "via": "selection",
-        "verifiedBy": "selection",
-        "url": "https://www.sciencedaily.com/releases/2013/05/130522085217.htm",
         "host": "sciencedaily.com",
-        "title": "Big Data, for better or worse: 90% of world&apos;s data generated over last two years",
+        "url": "https://www.sciencedaily.com/releases/2013/05/130522085217.htm",
+        "title": "Big Data, for better or worse: 90% of world's data generated over last two years",
         "date": "2013-05-22",
-        "dateSource": "page-text",
-        "quote": "A full 90% of all the data in the world has been generated over the last two years.",
-        "sourceKind": "secondary",
-        "sourceKindLabel": "secondary source",
-        "relation": "The claim as you highlighted it",
+        "dateSource": "page-metadata",
         "dateUncertain": false,
         "dateReason": null,
+        "sourceKind": "secondary",
+        "sourceKindLabel": "press release aggregator",
+        "verifiedBy": "selection",
+        "relation": "Starting claim",
+        "quote": "A full 90% of all the data in the world has been generated over the last two years.",
         "hasPassageCitations": false,
-        "vsOrigin": {
-          "code": "CONTRADICTED",
-          "flags": [
-            {
-              "code": "CONTRADICTED",
-              "text": "Polarity differs: source includes \"not\""
-            }
-          ]
-        },
-        "quoteDiff": [
-          {
-            "w": "A",
-            "changed": true
-          },
-          {
-            "w": "full",
-            "changed": true
-          },
-          {
-            "w": "90%",
-            "changed": false
-          },
-          {
-            "w": "of",
-            "changed": false
-          },
-          {
-            "w": "all",
-            "changed": true
-          },
-          {
-            "w": "the",
-            "changed": false
-          },
-          {
-            "w": "data",
-            "changed": false
-          },
-          {
-            "w": "in",
-            "changed": true
-          },
-          {
-            "w": "the",
-            "changed": true
-          },
-          {
-            "w": "world",
-            "changed": true
-          },
-          {
-            "w": "has",
-            "changed": true
-          },
-          {
-            "w": "been",
-            "changed": true
-          },
-          {
-            "w": "generated",
-            "changed": false
-          },
-          {
-            "w": "over",
-            "changed": true
-          },
-          {
-            "w": "the",
-            "changed": false
-          },
-          {
-            "w": "last",
-            "changed": true
-          },
-          {
-            "w": "two",
-            "changed": true
-          },
-          {
-            "w": "years.",
-            "changed": true
-          }
-        ],
-        "vsCited": {
-          "code": "CONTRADICTED",
-          "flags": [
-            {
-              "code": "CONTRADICTED",
-              "text": "Polarity differs: source includes \"not\""
-            }
-          ]
-        },
-        "changedHere": true
-      },
-      {
-        "id": "x0",
-        "role": "origin",
-        "via": "search",
-        "verifiedBy": "fetch",
-        "url": "https://www.oracle.com/webfolder/s/delivery_production/docs/FY14h1/doc2/265223-Oracle-TheNewAgeofArchive.pdf",
-        "host": "oracle.com",
-        "title": "Microsoft Word - Oracle - The New Age of Archive",
-        "date": null,
-        "dateSource": null,
-        "hasPassageCitations": false,
-        "quote": "Just ten years ago, large business es generated roughly 90% of the world’s digital dat a. Today it is estimated that 75-80% of all digital data is generated by individuals - not by large businesses – however the majority of this data will eventually w ind up back in a large business or service provider .",
-        "dispute": null,
-        "sourceKind": "primary-likely",
-        "sourceKindLabel": "likely primary source",
-        "relation": "Found by search; not cited by the pages above",
         "vsOrigin": {
           "code": "MATCH",
-          "flags": [],
-          "diff": null
+          "flags": []
         }
-      }
-    ],
-    "alsoFound": [
+      },
       {
-        "id": "x1",
-        "role": "source",
-        "via": "search",
-        "verifiedBy": "fetch",
-        "url": "https://datafloq.com/big-data-history/",
+        "id": "h1",
+        "role": "origin",
         "host": "datafloq.com",
+        "url": "https://datafloq.com/big-data-history/",
         "title": "A Short History Of Big Data",
         "date": "2013-01-07",
         "dateSource": "page-metadata",
-        "hasPassageCitations": false,
-        "quote": "90% of the available data has been created in the last two years and the term Big Data has been around 2005, when it was launched by OReilly Media in 2005. However, the usage of Big Data and the need to understand all available data has been around much longer.",
-        "dispute": null,
+        "dateUncertain": false,
+        "dateReason": null,
         "sourceKind": "secondary",
-        "sourceKindLabel": "secondary source",
-        "relation": "Found by search; not cited by the pages above",
-        "vsClaim": {
-          "code": "HEDGE_DROPPED",
-          "flags": [
-            {
-              "code": "HEDGE_DROPPED",
-              "text": "Hedge dropped: the original says \"around\""
-            }
-          ]
-        }
-      },
-      {
-        "id": "r4",
-        "role": "source",
-        "via": "research",
+        "sourceKindLabel": "secondary or blog post",
         "verifiedBy": "fetch",
-        "url": "https://www.sintef.no/en/latest-news/2013/big-data-for-better-or-worse/",
-        "host": "sintef.no",
-        "title": "Big Data – for better or worse - SINTEF",
-        "date": "2013-05-22",
-        "dateSource": "page-metadata",
+        "via": "search",
+        "relation": "Earliest page found (cites no source)",
+        "quote": "90% of the available data has been created in the last two years and the term Big Data has been around 2005, when it was launched by OReilly Media in 2005.",
         "hasPassageCitations": false,
-        "quote": "A full 90% of all the data in the world has been generated over the last two years.",
-        "dispute": null,
-        "sourceKind": "secondary",
-        "sourceKindLabel": "secondary source",
-        "relation": "Proposed by TinyResearch, confirmed by fetching the page",
-        "vsClaim": {
-          "code": "MATCH",
-          "flags": []
-        }
-      },
-      {
-        "id": "r2",
-        "role": "source",
-        "via": "research",
-        "verifiedBy": "fetch",
-        "url": "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
-        "host": "siri.sipa.columbia.edu",
-        "title": "Data In Full Bloom (Pun Intended) | Sustainable Investing Research Initiative (SIRI)",
-        "date": "2026-11-17",
-        "dateSource": "page-metadata",
-        "hasPassageCitations": false,
-        "quote": "It is widely believed that 90% of all data we encounter today was generated in the last two years",
-        "dispute": null,
-        "sourceKind": "press-release",
-        "sourceKindLabel": "institutional press release about the study",
-        "relation": "Proposed by TinyResearch, confirmed by fetching the page",
-        "vsClaim": {
-          "code": "MATCH",
-          "flags": []
-        }
-      },
-      {
-        "id": "r3",
-        "role": "source",
-        "via": "research",
-        "verifiedBy": "fetch",
-        "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
-        "host": "assets.publishing.service.gov.uk",
-        "title": "National Data Strategy: Review of commonly quoted statistics",
-        "date": null,
-        "dateSource": null,
-        "hasPassageCitations": false,
-        "quote": "‘A full 90% of all the data in the world has been generated over the last two years.’",
-        "dispute": null,
-        "sourceKind": "primary-likely",
-        "sourceKindLabel": "likely primary source",
-        "relation": "Proposed by TinyResearch, confirmed by fetching the page",
-        "vsClaim": {
-          "code": "MATCH",
-          "flags": []
-        }
-      },
-      {
-        "id": "r5",
-        "role": "source",
-        "via": "research",
-        "verifiedBy": "fetch",
-        "url": "https://cdn.threerivers.gov.uk/files/2024/09/f0ae5ad0-798e-11ef-ba8e-ed267910e33d-I48%20-%20National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
-        "host": "cdn.threerivers.gov.uk",
-        "title": "National Data Strategy: Review of commonly quoted statistics",
-        "date": null,
-        "dateSource": null,
-        "hasPassageCitations": false,
-        "quote": "‘A full 90% of all the data in the world has been generated over the last two years.’",
-        "dispute": null,
-        "sourceKind": "primary-likely",
-        "sourceKindLabel": "likely primary source",
-        "relation": "Proposed by TinyResearch, confirmed by fetching the page",
-        "vsClaim": {
+        "vsOrigin": {
           "code": "MATCH",
           "flags": []
         }
       }
     ],
     "origin": {
-      "url": "https://www.oracle.com/webfolder/s/delivery_production/docs/FY14h1/doc2/265223-Oracle-TheNewAgeofArchive.pdf",
-      "date": null,
-      "host": "oracle.com",
-      "sourceKind": "primary-likely",
-      "sourceKindLabel": "likely primary source"
+      "id": "h1",
+      "role": "origin",
+      "host": "datafloq.com",
+      "url": "https://datafloq.com/big-data-history/",
+      "title": "A Short History Of Big Data",
+      "date": "2013-01-07",
+      "dateSource": "page-metadata",
+      "dateUncertain": false,
+      "dateReason": null,
+      "sourceKind": "secondary",
+      "sourceKindLabel": "secondary or blog post",
+      "verifiedBy": "fetch",
+      "via": "search",
+      "relation": "Earliest page found (cites no source)",
+      "quote": "90% of the available data has been created in the last two years and the term Big Data has been around 2005, when it was launched by OReilly Media in 2005.",
+      "hasPassageCitations": false,
+      "vsOrigin": {
+        "code": "MATCH",
+        "flags": []
+      }
     },
+    "alsoFound": [
+      {
+        "id": "a0",
+        "host": "sintef.no",
+        "url": "https://sintef.no/en/latest-news/2013/big-data-for-better-or-worse",
+        "title": "Big Data – for better or worse - SINTEF",
+        "date": "2013-05-22",
+        "dateSource": "page-metadata",
+        "dateUncertain": false,
+        "dateReason": null,
+        "sourceKind": "press-release",
+        "sourceKindLabel": "institutional press release",
+        "verifiedBy": "fetch",
+        "via": "research",
+        "relation": "Institutional press release (cites no underlying study)",
+        "quote": "A full 90% of all the data in the world has been generated over the last two years.",
+        "vsClaim": {
+          "code": "MATCH",
+          "flags": []
+        }
+      },
+      {
+        "id": "a1",
+        "host": "assets.publishing.service.gov.uk",
+        "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
+        "title": "National Data Strategy: Review of commonly quoted statistics",
+        "date": null,
+        "dateSource": null,
+        "dateUncertain": false,
+        "dateReason": null,
+        "sourceKind": "gov-release",
+        "sourceKindLabel": "official government publication / review",
+        "verifiedBy": "fetch",
+        "via": "research",
+        "relation": "UK Government review of commonly quoted statistics",
+        "quote": "‘A full 90% of all the data in the world has been generated over the last two years.’",
+        "note": "Without a robust and accessible methodology underpinning this statistic (and with both SINTEF and IBM claiming ownership), it remains unverified and outdated. One caveat: the statistic may be true, both in 2013 and today, due to the exponential growth of data production in recent years.",
+        "vsClaim": {
+          "code": "MATCH",
+          "flags": []
+        }
+      },
+      {
+        "id": "a2",
+        "host": "siri.sipa.columbia.edu",
+        "url": "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
+        "title": "Data in Full Bloom (Pun Intended)",
+        "date": "2026-11-17",
+        "dateSource": "page-metadata",
+        "dateUncertain": false,
+        "dateReason": null,
+        "sourceKind": "press-release",
+        "sourceKindLabel": "university news publication",
+        "verifiedBy": "fetch",
+        "via": "research",
+        "relation": "University news commentary citing the statistic",
+        "quote": "It is widely believed that 90% of all data we encounter today was generated in the last two years.",
+        "vsClaim": {
+          "code": "MATCH",
+          "flags": []
+        }
+      },
+      {
+        "id": "a3",
+        "host": "cdn.threerivers.gov.uk",
+        "url": "https://cdn.threerivers.gov.uk/files/2024/09/f0ae5ad0-798e-11ef-ba8e-ed267910e33d-I48%20-%20National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
+        "title": "National Data Strategy: Review of commonly quoted statistics",
+        "date": null,
+        "dateSource": null,
+        "dateUncertain": false,
+        "dateReason": null,
+        "sourceKind": "gov-release",
+        "sourceKindLabel": "local government copy of national review",
+        "verifiedBy": "fetch",
+        "via": "research",
+        "relation": "UK Government review citation",
+        "quote": "‘A full 90% of all the data in the world has been generated over the last two years.’",
+        "vsClaim": {
+          "code": "MATCH",
+          "flags": []
+        }
+      }
+    ],
     "deepTraceAvailable": true,
     "research": {
-      "totalCitationsFound": 19,
+      "totalCitationsFound": 20,
       "citationsProposed": 12,
       "confirmed": 4,
       "proposedUrls": [
-        "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
+        "https://www.sciencedaily.com/releases/2013/05/130522085217.htm",
         "https://web.archive.org/web/20130824213031/http:/www.ibm.com/big-data/us/en",
         "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
         "https://businessinsider.com/consumer-feedback-what-marketers-can-do-about-this-data-2011-12",
@@ -472,19 +291,19 @@
         "https://web.archive.org/web/20121215132444/http:/blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data"
       ],
       "confirmedUrls": [
-        "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
+        "https://sintef.no/en/latest-news/2013/big-data-for-better-or-worse",
         "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
-        "https://www.sintef.no/en/latest-news/2013/big-data-for-better-or-worse/",
+        "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
         "https://cdn.threerivers.gov.uk/files/2024/09/f0ae5ad0-798e-11ef-ba8e-ed267910e33d-I48%20-%20National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf"
       ],
       "discardedUrls": [
         {
-          "url": "https://web.archive.org/web/20130824213031/http:/www.ibm.com/big-data/us/en",
-          "reason": "page discusses a different statistic (subject mismatch)"
+          "url": "https://oracle.com/webfolder/s/delivery_production/docs/FY14h1/doc2/265223-Oracle-TheNewAgeofArchive.pdf",
+          "reason": "page discusses a different statistic (subject or time frame mismatch)"
         },
         {
           "url": "https://businessinsider.com/consumer-feedback-what-marketers-can-do-about-this-data-2011-12",
-          "reason": "page discusses a different statistic (subject mismatch)"
+          "reason": "page discusses consumer data production (2.5 quintillion bytes/day)"
         },
         {
           "url": "https://public.dhe.ibm.com/software/data/sw-library/big-data/ibm-big-data-success.pdf",
@@ -500,18 +319,19 @@
         },
         {
           "url": "https://dl.icdst.org/pdfs/files/2729e83081d9861736d25895ee9c7238.pdf",
-          "reason": "page discusses a different statistic (subject mismatch)"
+          "reason": "academic paper (March 2016) citing IBM marketing overview [25], not primary study"
         },
         {
           "url": "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
           "reason": "blocked by bot check"
         },
         {
-          "url": "https://web.archive.org/web/20121215132444/http:/blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data",
+          "url": "https://barnraisersllc.com/2012/12/09/38-big-facts-big-data-companies/",
           "reason": "page discusses a different statistic (subject mismatch)"
         }
       ],
-      "terminationReason": "planner_done"
+      "terminationReason": "ALL_QUESTIONS_ADDRESSED",
+      "report": "# Tracing the \"90% of World's Data Generated in the Last Two Years\" Claim\n\n## Executive Summary\n\nThe claim *\"A full 90% of all the data in the world has been generated over the last two years\"* is a **zombie statistic with no traceable primary source**. The best available evidence points to IBM as the earliest identifiable publisher, with the claim appearing on IBM's Big Data marketing pages no later than May 2011 — and possibly earlier. The Norwegian research institute SINTEF then independently republished it in May 2013, the version that reached ScienceDaily. Neither IBM nor SINTEF ever cited an underlying dataset, methodology, or study. The UK government's own review of data statistics concluded in 2019 that \"without a robust and accessible methodology underpinning this statistic (and with both SINTEF and IBM claiming ownership), it remains unverified and outdated.\" [3][11] No primary source — no IDC report, no EMC study, no academic paper — has ever been identified as the origin. The numbers also changed over time, most notably from \"last two years\" to \"last 12 months\" in later IBM materials.\n\n---\n\n## 1. The ScienceDaily Version: What It Says and What It Cites\n\n**URL:** https://www.sciencedaily.com/releases/2013/05/130522085217.htm  \n**Date:** 22 May 2013  \n**Exact wording:** *\"A full 90% of all the data in the world has been generated over the last two years.\"* [1]\n\nScienceDaily is a press release aggregator. The release it published on that date was **sourced from SINTEF**, the Norwegian research institute. The 90% figure appears in the article's opening lede without any attribution to a named organization, dataset, study, or methodology. [1] ScienceDaily does not add citations; it simply reproduces what SINTEF submitted. The article does not name IBM, IDC, EMC, or any academic paper as the origin of the statistic. [1]\n\n---\n\n## 2. The SINTEF Press Release: Author, Date, and Source\n\n**Primary URL:** https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13  \n**Secondary URL:** https://sintef.no/en/latest-news/2013/big-data-for-better-or-worse/  \n**Date:** 22 May 2013  \n**Author:** Åse Dragland (article); based on interview with SINTEF ICT researcher Petter Bae Brandtzæg [10][20]  \n**Exact wording:** *\"A full 90% of all the data in the world has been generated over the last two years.\"* [9][10][20]\n\nThe SINTEF piece is an **interview-based news article**, not a research report. Brandtzæg's comments concern social media data volumes and his research tools; the 90% figure appears in the introduction without being attributed to him or to any source he named. [9][20] The article contains no citation to IBM, IDC, EMC, or any dataset. [20] SINTEF's publications page classifies the piece as an \"Interview\" in the category \"Sustainable Communication Technologies.\" [10]\n\n**Critical finding:** SINTEF did not originate the number; the article's author appears to have inserted it as contextual framing. Neither SINTEF nor its researchers have identified where they obtained it.\n\n---\n\n## 3. IBM's Role: The Earliest Known Publisher\n\n### IBM Big Data Marketing Page (Wayback Machine capture, August 2013)\n\n**URL:** https://web.archive.org/web/20130824213031/http://www.ibm.com/big-data/us/en  \n**Date of capture:** 24 August 2013 (page content predates this capture)  \n**Exact wording:** *\"Every day, we create 2.5 quintillion bytes of data — so much that 90% of the data in the world today has been created in the last two years alone.\"* [2][6]\n\nThis page presents the statistic **without citing any source** — no study, no report, no analyst firm. [6]\n\n### IBM Big Data Success Stories Booklet\n\n**URL:** https://public.dhe.ibm.com/software/data/sw-library/big-data/ibm-big-data-success.pdf  \n**Exact wording:** *\"We're now creating 2.5 quintillion bytes daily — so much that 90% of the data in the world today has been created in the last two years alone.\"* [5]\n\nThis IBM marketing booklet reproduces the same pairing, again without citing a primary source. [5] The booklet does separately cite an \"IBM Business Analytics and Optimization for the Intelligent Enterprise study\" for a different claim, suggesting IBM was capable of citing sources when they existed — but chose not to for the 90% figure. [5]\n\n### When Did IBM First Use It?\n\nA TDWI author who searched the Internet Archive reported in 2018 that *\"the statement first appeared on an IBM Big Data marketing page in May 2011\"* [18], and a separate analysis corroborated this, noting it *\"appeared in an IBM press release in October 2011, alongside the claim that the world was creating 2.5 quintillion bytes of data a day.\"* [19]\n\nThe December 2011 Business Insider article, which quotes an IBM Vice President (Ed Abrams, VP of IBM's Small and Medium-Sized Business Division), carries essentially the same pairing: *\"Every single day, consumers are creating 2.5 quintillion bytes of data — with 90 percent of the world's data created in the last two years alone\"* — without citing a source. [4] This establishes the claim was already in IBM's public-facing communications by **at least December 2011**.\n\nA World Bank blog post archived in December 2012 also attributes the figure to IBM: *\"IBM reports that 2.5 quintillion bytes of data is created on a daily basis, and almost 90% of all data was created within the past 2 years.\"* [12][17]\n\n**Timeline of IBM's use:**\n\n| Date | Medium | Exact/Near-Exact Wording | Cites a Source? |\n|---|---|---|---|\n| May 2011 (reported) | IBM Big Data marketing page | \"90% of the data in the world today has been created in the last two years alone\" [18] | No |\n| Oct 2011 (reported) | IBM press release | \"90% of the world's data was created in the last two years\" [19] | No |\n| Dec 2011 | Business Insider (quoting IBM VP) | \"90 percent of the world's data created in the last two years alone\" [4] | No |\n| Dec 2012 | World Bank IC4D blog | \"almost 90% of all data was created within the past 2 years (IBM)\" [12][17] | No |\n| Dec 2012 | BarnRaisers blog | \"90% of the world's total data has been created just within the past two years (source: IBM)\" [13] | IBM only |\n| Aug 2013 (captured) | IBM.com Big Data page | \"90% of the data in the world today has been created in the last two years alone\" [6] | No |\n| May 2013 | SINTEF / ScienceDaily | \"A full 90% of all the data in the world has been generated over the last two years\" [1][10] | No |\n| 2017 | IBM Marketing Cloud white paper | \"90 percent of the data in the world today has been created in the last two years alone\" [15] | No |\n| 2017 | Same IBM white paper, different passage | \"By 2016, 90 percent of the world's data had been created in the **last 12 months**\" [15] | No |\n\n---\n\n## 4. The Propagation Chain: How the Claim Spread\n\nThe claim traveled through a predictable amplification loop:\n\n1. **IBM marketing pages and press releases (from ~May 2011 onward)** introduced the \"2.5 quintillion bytes daily / 90% in two years\" pairing as marketing context for IBM's Big Data product line. No source was ever provided. [18][19]\n2. **Industry and trade media** (Data Center Knowledge, December 2012) attributed the figure to IBM while republishing it verbatim: *\"According to IBM, every day, we create 2.5 quintillion bytes of data — so much that 90 percent of the data in the world today has been created in the last two years alone.\"* [7]\n3. **Multilateral institution blogs** (World Bank IC4D blog, December 2012) cited \"IBM\" and spread it to development-policy audiences. [12][17]\n4. **SINTEF (May 2013)** republished it without attribution, lending it apparent academic credibility. ScienceDaily then carried SINTEF's version globally. [1][9][10][20]\n5. **Academic papers** (e.g., Calude and Longo, cited in source [8]) picked up the IBM \"What is big data?\" page as a reference, treating it as a citable source, without tracing it further. [8]\n6. **IBM's own later publications (2017)** continued using it, with the wording mutating (see section 5 below). [15][16]\n7. **Government strategy documents** began citing it without independent verification. [3][11]\n\n---\n\n## 5. Did the Numbers or Wording Change?\n\n**Yes — in two significant ways.**\n\n### Change 1: \"Last two years\" → \"Last 12 months\"\nIBM's 2017 marketing white paper *\"10 Key Marketing Trends for 2017\"* contains **both** versions in the same document:\n\n- One passage: *\"90 percent of the data in the world today has been created in the last two years alone\"* [15]\n- A separate passage: *\"By 2016, 90 percent of the world's data had been created in the **last 12 months**.\"* [15][11]\n\nThe UK government review flagged this explicitly, noting that IBM had \"continued to use this statistic as if it was current as recently as 2017, with one expert quoted as saying 'by 2016, 90 percent of the world's data had been created in the last 12 months.'\" [3][11] This shift from two years to twelve months was not supported by any new data; it appears to be an unsourced update to keep the marketing claim sounding fresh.\n\n### Change 2: \"90%\" → \"almost 90%\"\nThe World Bank blog (December 2012) used the softer hedge *\"almost 90%\"* while still attributing it to IBM. [12][17] This suggests the figure was already being treated loosely rather than as a precise measurement.\n\n### Change 3: The claim's reference point drifts forward without a fixed date\nBecause the phrasing always says \"the last two years\" rather than naming a specific year, the claim implicitly refreshes itself every time it is republished. As one analyst noted: *\"The sentence has no date in it. 'The last two years' moves forward every time it is quoted, so it never looks out of date.\"* [19] This is structurally a self-perpetuating claim.\n\n---\n\n## 6. What the UK National Data Strategy Review Found\n\n**URL:** https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf  \n**Publisher:** UK DCMS Policy Lab  \n**Date:** January 2019\n\nThe review examined the claim as \"Statistic 7\" and listed two possible sources:\n1. SINTEF report *\"Big Data — for better or worse\"* (2013)\n2. IBM Big Data Overview (2013)\n\nIt concluded: *\"Without a robust and accessible methodology underpinning this statistic (and with both SINTEF and IBM claiming ownership), it remains unverified and outdated.\"* [3][11]\n\nThe review acknowledged the statistic *\"may be true, both in 2013 and today, due to the exponential growth of data production in recent years,\"* but noted that *\"its underlying data and methodology cannot be verified.\"* [3][11]\n\nCritically, **the review did not resolve which of IBM or SINTEF was the original source**, and it did not identify any pre-2011 publication of the figure.\n\n---\n\n## 7. Is It Traceable to IDC, EMC, or Any Academic Study?\n\n**No.** Despite IBM referencing \"IT industry analyst reports\" in some Big Data materials for different statistics (such as a 650% enterprise data growth projection attributed generically to unnamed analysts) [5], **no IBM document ever cites IDC, EMC, or any academic paper as the source of the 90%-in-two-years figure specifically.** [5][6][18]\n\nThe TDWI author who searched the Wayback Machine for the original research stated in 2018: *\"I went looking for the original research for the quote. I'm still searching.\"* [18] No investigator in the available evidence has succeeded in tracing the figure to a primary dataset.\n\nA related figure in circulation — that *\"every two days humanity creates a quantity of data equivalent to the entire amount produced from the dawn of time up to 2003\"* — was attributed to then-Google CEO Eric Schmidt at the Techonomy conference in August 2010 [8], but this is a distinct claim and was itself not sourced to a study.\n\nIndependently, IDC's current estimates of the global datasphere suggest annual data growth of roughly 30%, which would imply the last two years account for approximately 40% of all data ever produced — not 90%. [19] This makes the original IBM claim mathematically implausible at any observed growth rate.\n\n---\n\n## 8. The IBM PR Newswire Press Release (2011–2012)\n\nThe evidence record is incomplete on the specific title and exact text of the IBM press release(s) in which the figure first appeared. Source [19] reports that *\"'90% of the world's data was created in the last two years' appeared in an IBM press release in **October 2011**\"* alongside the 2.5 quintillion bytes claim, but does not reproduce the full press release title or its PR Newswire record. [19] Source [18] dates the figure's first IBM appearance to **May 2011** via Wayback Machine evidence. [18] The specific press release sometimes referred to as *\"IBM Transforms Data at Work\"* (2012) is mentioned in secondary commentary, but its full text, exact date, and PR Newswire URL are not available in the evidence reviewed here. The IBM Big Data booklet (hosted at ibm.com's public DHE server) confirms IBM was using identical wording in a formal marketing document, but that document also carries no source citation. [5]\n\n**What can be confirmed:** IBM was using the \"90% / 2.5 quintillion bytes\" pairing in press releases and web marketing **from at least May–October 2011**, predating SINTEF's May 2013 article by approximately two years. [18][19]\n\n---\n\n## 9. Summary Findings for Decision-Makers\n\n| Question | Finding |\n|---|---|\n| **Who published it first?** | IBM, on its Big Data marketing pages, reportedly from May 2011 and confirmed by October 2011 [18][19] |\n| **Did IBM cite a source?** | No. Never, in any IBM document reviewed [5][6][18] |\n| **Did SINTEF originate it?** | No. SINTEF (May 2013) republished it without attribution, two years after IBM [10][20] |\n| **What ScienceDaily cited** | SINTEF's press release; ScienceDaily added no independent attribution [1] |\n| **Is there a primary dataset?** | No. No IDC report, EMC white paper, or academic study has been identified as the origin [3][11][18] |\n| **Did wording change?** | Yes: \"last two years\" → \"last 12 months\" (IBM, 2017); \"90%\" → \"almost 90%\" (World Bank blog, 2012) [3][11][12][15] |\n| **Is the claim mathematically defensible?** | No. At observed ~30% annual data growth, the last two years account for ~40% of all data, not 90% [19] |\n| **Official government verdict** | UK DCMS (2019): \"unverified and outdated,\" methodology not accessible, ownership disputed between IBM and SINTEF [3][11] |\n\n---\n\n## 10. Explicit Statement on Source Traceability\n\n**No original primary source can be found.** The claim does not originate in any identified study, dataset, analyst report (IDC, EMC, Gartner, McKinsey), academic paper, or interview with a named expert who provided supporting data. It was introduced into public discourse by IBM as unsourced marketing copy, was picked up and republished without attribution by SINTEF two years later, and from SINTEF reached ScienceDaily and global circulation. Every subsequent citation — in government strategy documents, academic papers, trade media, and multilateral institution blogs — traces back through this same chain to IBM's uncited assertion. The statistic is a canonical example of a \"factoid\": a claim that acquires the appearance of fact through repetition rather than through verification. [3][11][18][19]"
     }
   }
 }

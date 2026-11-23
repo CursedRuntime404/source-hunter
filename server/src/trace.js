@@ -76,8 +76,8 @@ export async function checkUrls(urls, claim, tf, cfg, stats, budget = null, opts
       const title = r.title || '';
       const p = findPassage(text, claim, title);
       if (p) {
-        if (via !== 'citation' && compare(claim.raw, p.quote, { kind: claim.kind, originEntityMatch: !!p.headEntityMatch }).code === 'DIFFERENT_CONTEXT') {
-          misses.push({ url: r.url, reason: 'page discusses a different statistic (subject mismatch)' });
+        if (compare(claim.raw, p.quote, { kind: claim.kind, originEntityMatch: !!p.headEntityMatch }).code === 'DIFFERENT_CONTEXT') {
+          misses.push({ url: r.url, reason: 'page discusses a different statistic (subject or time frame mismatch)' });
           continue;
         }
         const dispute = detectDispute(text, p, title, claim);
@@ -539,8 +539,9 @@ export function assemble(state) {
   const base = { claim: { raw: state.input?.claim || claim.raw, kind: claim.kind }, stats, timings, rejected: state.rejected || [] };
 
   const originable = cands.filter((h) => {
+    const comp = compare(chain[0].quote, h.quote, { kind: claim.kind, originScale: h.originScale || 1, originEntityMatch: !!h.originEntityMatch });
+    if (comp.code === 'DIFFERENT_CONTEXT') return false;
     if (chain.length === 1 && isLikelyPrimaryPublisher(chain[0].host) && isSameOrg(h.host, chain[0].host)) {
-      const comp = compare(chain[0].quote, h.quote, { kind: claim.kind, originScale: h.originScale || 1, originEntityMatch: !!h.originEntityMatch });
       if (comp.code === 'MATCH') return false;
     }
     return !(
@@ -735,11 +736,12 @@ export function assemble(state) {
     if (dd !== 0) return dd;
     return (KIND_RANK[b.sourceKind] ?? 1) - (KIND_RANK[a.sourceKind] ?? 1);
   };
+  const datedPrimaries = originable.filter((h) => h.sourceKind === 'primary-likely' && h.date && !h.dateUncertain).sort(byDate);
   const primaries = originable.filter((h) => h.sourceKind === 'primary-likely').sort(byDate);
   const nonTert = originable.filter((h) => h.sourceKind !== 'tertiary');
-  const datedNonTert = nonTert.filter((h) => h.date).sort(byDate);
+  const datedNonTert = nonTert.filter((h) => h.date && !h.dateUncertain).sort(byDate);
   const nonTertSorted = [...nonTert].sort(byDate);
-  let origin = primaries[0] || datedNonTert[0] || nonTertSorted[0] || originable.sort(byDate)[0] || chain[chain.length - 1];
+  let origin = datedPrimaries[0] || datedNonTert[0] || primaries[0] || nonTertSorted[0] || originable.sort(byDate)[0] || chain[chain.length - 1];
   // If multiple candidate pages exist and origin has no dispute while another cited/non-tertiary page disputes it, surface the disputing page.
   const disputedCand = originable.find((h) => h.dispute && h.sourceKind !== 'tertiary') || originable.find((h) => h.dispute);
   if (!origin.dispute && disputedCand && (origin.sourceKind === 'tertiary' || disputedCand.sourceKind === 'primary-likely' || (origin.via === 'search' && disputedCand.via === 'search'))) {

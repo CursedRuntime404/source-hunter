@@ -1,6 +1,6 @@
 // Deterministic drift detection between a hop's wording and the origin's wording.
 // Numbers are compared in code. No LLM is involved, so every flag has a reproducible reason.
-import { extractNumbers, rel, normalize, contentTokens, tokenMatchCount, wordDiff } from './text.js';
+import { extractNumbers, rel, normalize, contentTokens, tokenMatchCount, wordDiff, splitSentences } from './text.js';
 
 const WIDEN = ['all', 'every', 'always', 'never', 'everyone', 'nobody', 'entire', 'completely', 'guaranteed', 'proves', 'proven'];
 const HEDGE = ['may', 'might', 'up to', 'as many as', 'estimated', 'approximately', 'about', 'around', 'some', 'often', 'suggests', 'suggest', 'appears', 'likely', 'roughly'];
@@ -100,6 +100,37 @@ function extractInterval(norm = '') {
   return { raw: m[0], months: count * (INTERVAL_UNIT_MONTHS[unit] || 12) };
 }
 
+const escRe = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+function getSentenceForNumber(text = '', targetNums = []) {
+  if (!text) return '';
+  const sents = splitSentences(text);
+  if (sents.length <= 1) return text;
+  const numPatterns = (targetNums && targetNums.length)
+    ? targetNums.map((n) => new RegExp(`\\b${escRe(String(n.shown || n.raw || n.value))}\\b`, 'i'))
+    : [/\d[\d.,]*\s*(?:%|percent|billion|million|thousand|trillion)?/i];
+  for (const s of sents) {
+    if (numPatterns.some((p) => p.test(s))) {
+      return s;
+    }
+  }
+  return sents[0] || text;
+}
+
+function extractRelativeTimeFrame(norm = '') {
+  const ago = norm.match(/\b(\d+|one|two|three|four|five|six|seven|eight|nine|ten|couple)\s+(years?|months?|decades?)\s+ago\b/i);
+  if (ago) {
+    const count = /^\d/.test(ago[1]) ? Number(ago[1]) : (INTERVAL_NUMS[ago[1].toLowerCase()] ?? 1);
+    return { type: 'ago', count, unit: ago[2].toLowerCase(), raw: ago[0] };
+  }
+  const last = norm.match(/\b(?:over\s+|in\s+|within\s+)?(?:the\s+)?(last|past)\s+(\d+|one|two|three|four|five|six|seven|eight|nine|ten|couple)\s+(years?|months?|decades?)\b/i);
+  if (last) {
+    const count = /^\d/.test(last[2]) ? Number(last[2]) : (INTERVAL_NUMS[last[2].toLowerCase()] ?? 1);
+    return { type: 'last', count, unit: last[3].toLowerCase(), raw: last[0] };
+  }
+  return null;
+}
+
 function negationSignature(text = '') {
   const n = normalize(text);
   const hits = n.match(CONTRADICT_RE) || [];
@@ -123,6 +154,14 @@ export function compare(hopText, originText, { kind = 'stat', originScale = 1, o
     if (sev[c] > sev[code]) code = c;
   };
 
+  const hNums = extractNumbers(hopText).filter((n) => !n.year);
+  const oNums = extractNumbers(originText).filter((n) => !n.year).map((n) => (
+    originScale > 1 && n.value < 1e7 ? { ...n, value: n.value * originScale, raw: `${n.raw} million` } : n
+  ));
+
+  const hSent = getSentenceForNumber(hopText, hNums);
+  const oSent = getSentenceForNumber(originText, oNums);
+
   const htList = [...new Set(contentTokens(hopText))];
   const otList = [...new Set(contentTokens(originText))];
   const hasFactorTwo = (a, b) =>
@@ -143,10 +182,27 @@ export function compare(hopText, originText, { kind = 'stat', originScale = 1, o
   const subjShared = subjH.length >= 2 && subjO.length >= 2
     ? Math.min(1, subjHits / Math.min(subjH.length, subjO.length))
     : shared;
-  const isDifferentContext = shared < 0.4 || subjShared < 0.5;
-  const hPol = negationSignature(hopText);
-  const oPol = negationSignature(originText);
-  if ((hPol.count > 0) !== (oPol.count > 0) && (!isDifferentContext || hn.includes(on) || on.includes(hn))) {
+
+  const hTf = extractRelativeTimeFrame(normalize(hSent));
+  const oTf = extractRelativeTimeFrame(normalize(oSent));
+  const timeFrameMismatch = Boolean(
+    hTf && oTf && (hTf.type !== oTf.type || hTf.count !== oTf.count || hTf.unit !== oTf.unit)
+  );
+
+  const isDifferentContext = shared < 0.4 || subjShared < 0.5 || timeFrameMismatch;
+
+  if (isDifferentContext && !hn.includes(on) && !on.includes(hn)) {
+    return {
+      code: 'DIFFERENT_CONTEXT',
+      flags: [{ code: 'DIFFERENT_CONTEXT', text: timeFrameMismatch ? 'Time frame or subject differs; numeric comparison suppressed' : 'The two passages do not share the subject of the number; numeric comparison suppressed' }],
+      diff: ops,
+      similarity: ratio,
+    };
+  }
+
+  const hPol = negationSignature(hSent);
+  const oPol = negationSignature(oSent);
+  if ((hPol.count > 0) !== (oPol.count > 0) && (hn.includes(on) || on.includes(hn) || !isDifferentContext)) {
     raise('CONTRADICTED');
     const detail = oPol.count > hPol.count
       ? `Polarity differs: source includes "${oPol.markers.join('", "') || 'contradicting phrasing'}"`
@@ -171,10 +227,6 @@ export function compare(hopText, originText, { kind = 'stat', originScale = 1, o
     };
   }
 
-  const hNums = extractNumbers(hopText).filter((n) => !n.year);
-  const oNums = extractNumbers(originText).filter((n) => !n.year).map((n) => (
-    originScale > 1 && n.value < 1e7 ? { ...n, value: n.value * originScale, raw: `${n.raw} million` } : n
-  ));
   const nc = compareNumbers(hNums, oNums);
   if (nc.worst !== 'MATCH') raise(nc.worst);
   flags.push(...nc.flags);
