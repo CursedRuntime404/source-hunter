@@ -60,11 +60,11 @@ export function createTinyFish(apiKey, opts = {}) {
     fetchUrls: numEnv(opts.caps?.fetchUrls ?? process.env.MAX_FETCH_URLS_PER_DAY, 150),
     searches: numEnv(opts.caps?.searches ?? process.env.MAX_SEARCHES_PER_DAY, 40),
     agentCalls: numEnv(opts.caps?.agentCalls ?? process.env.MAX_AGENT_CALLS_PER_DAY, 3),
-    researchRuns: numEnv(opts.caps?.researchRuns ?? process.env.MAX_RESEARCH_RUNS_PER_DAY, 0),
+    researchRuns: numEnv(opts.caps?.researchRuns ?? process.env.MAX_RESEARCH_RUNS_PER_DAY, 3),
   };
 
   const allowAgent = opts.allowAgent ?? (process.env.ALLOW_AGENT === '1');
-  const allowResearch = opts.allowResearch ?? (process.env.ALLOW_RESEARCH === '1');
+  const allowResearch = opts.allowResearch ?? (process.env.ALLOW_RESEARCH !== undefined ? process.env.ALLOW_RESEARCH === '1' : true);
 
   const sessionStats = {
     mode,
@@ -246,6 +246,8 @@ export function createTinyFish(apiKey, opts = {}) {
   return {
     mode,
     caps,
+    allowAgent,
+    allowResearch,
     getUsage: () => getDayUsage(),
     getSessionStats: () => ({ ...sessionStats }),
     resetSessionStats: () => {

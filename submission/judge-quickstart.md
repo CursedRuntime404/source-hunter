@@ -10,10 +10,10 @@ If you have 30 seconds and want to evaluate the project immediately without inst
 
 1. Open the live gallery at [https://cursedruntime404.github.io/source-hunter/demo/](https://cursedruntime404.github.io/source-hunter/demo/) in any web browser, or open [`demo/index.html`](../demo/index.html) locally if you cloned the repository.
 2. **What to inspect:**
-   - **9 Real-World Traces:** Matches (`cpi91`, `plastic`), drift and rounding (`apple` Form 10-K, `moore` 1965 paper), disputed myths (`brain10`, `marie`), uncited claims (`clean38`), an uncited engineering blog with no source (`coyotiv`), and a recognized primary publisher (`who.int`).
+   - **10 Real-World Traces:** Matches (`cpi91`, `plastic`), drift and rounding (`apple` Form 10-K, `moore` 1965 paper), disputed myths (`brain10`, `marie`), uncited claims (`clean38`), an uncited engineering blog with no source (`coyotiv`), a recognized primary publisher (`who.int`), and deep trace contradiction on global data creation (`data90`).
    - **Visual Language:** Stamp verdict badges, verbatim quote diffs with `<mark>` tags, animated vertical trails with dashed red break indicators, and 1-5 Drift Meters.
    - **Interactive Controls:** Filter by verdict category, toggle Dark/Light themes (in-memory), and inspect the 4-column architecture footer with honest capability limits.
-   - **Embedded Trace Data:** All 9 traces load instantly with zero installation or network calls from self-contained recorded trace data embedded directly in the page.
+   - **Embedded Trace Data:** All 10 traces load instantly with zero installation or network calls from self-contained recorded trace data embedded directly in the page.
 
 ---
 
@@ -38,7 +38,7 @@ PORT=8787
 ```
 Run tests and start the server:
 ```bash
-npm test     # 43 offline unit & regression tests pass (zero network calls)
+npm test     # 49 offline unit & regression tests pass (zero network calls)
 npm start    # Starts http://localhost:8787 in TF_MODE=record
 ```
 *Note:* When `TINYFISH_API_KEY` is set, `TF_MODE` defaults automatically to `record`. Cache hits on your own machine cost **$0.000**, while new pages call live TinyFish APIs (enforcing daily hard caps in `server/.tfcache/usage.json`) and record responses for future replay.
@@ -59,8 +59,8 @@ npm start    # Starts http://localhost:8787 in TF_MODE=record
 - **Standard Trace (1 search + 2–6 page fetches):** **~$0.007 to $0.015 USD** (TinyFish rate: ~$0.005 per search, ~$0.001 per fetch URL).
 - **Local Cache Replay (Pages previously fetched on your machine):** **$0.000 USD** (0 credits).
 - **Opt-In Browser Agent Retry:** ~$0.016 per step (disabled by default; capped at 3 calls/day in `usage.json`).
-- **Opt-In TinyResearch Deep Run:** $2.000 flat (disabled by default; requires `ALLOW_RESEARCH=1` and `confirm: true`).
-- **Credit Safety:** Daily hard caps in `server/.tfcache/usage.json` (`MAX_FETCH_URLS_PER_DAY=150`, `MAX_SEARCHES_PER_DAY=40`) ensure live testing never runs up unexpected charges.
+- **Default TinyResearch Deep Trace:** ~$2.000 flat per run (defaults ON when keyed, capped at 3 runs/day in `usage.json`; can be toggled OFF in Extension Settings or via `ALLOW_RESEARCH=0`).
+- **Credit Safety:** Daily hard caps in `server/.tfcache/usage.json` (`MAX_FETCH_URLS_PER_DAY=150`, `MAX_SEARCHES_PER_DAY=40`, `MAX_RESEARCH_RUNS_PER_DAY=3`) ensure live testing never runs up unexpected charges.
 
 ---
 

@@ -45,8 +45,8 @@ const DRIFT_LEVEL = {
 const hasSyncStorage = typeof chrome !== 'undefined' && !!chrome.storage?.sync;
 const hasSessionStorage = typeof chrome !== 'undefined' && !!chrome.storage?.session;
 
-let cfg = { serverUrl: 'http://localhost:8787', appToken: '', theme: 'auto' };
-let healthInfo = { ok: false, allowAgent: false, allowResearch: false, mode: 'unknown', hasKey: false };
+let cfg = { serverUrl: 'http://localhost:8787', appToken: '', theme: 'auto', deepTrace: true };
+let healthInfo = { ok: false, allowAgent: false, allowResearch: true, mode: 'unknown', hasKey: false };
 let ctl = null;
 let current = null; // { payload, key, final }
 let timerId = null;
@@ -88,8 +88,11 @@ async function refreshHealth() {
     const r = await (await fetch(cfg.serverUrl + '/health')).json();
     healthInfo = { ...healthInfo, ...r, ok: true };
     const modeLabel = (r.mode || 'replay').toUpperCase();
-    $('modeBadge').textContent = r.hasKey ? modeLabel : `${modeLabel} · No key`;
-    $('health').textContent = r.hasKey ? `Connected (${modeLabel} mode)` : 'Connected (TINYFISH_API_KEY unset)';
+    const runsToday = r.today?.researchRuns || 0;
+    const maxRuns = r.caps?.researchRuns || 3;
+    const researchLabel = r.allowResearch ? ` · Deep ${runsToday}/${maxRuns}` : '';
+    $('modeBadge').textContent = r.hasKey ? `${modeLabel}${researchLabel}` : `${modeLabel} · No key`;
+    $('health').textContent = r.hasKey ? `Connected (${modeLabel} mode, research ${runsToday}/${maxRuns} today)` : 'Connected (TINYFISH_API_KEY unset)';
     $('offlineBanner').hidden = true;
     return true;
   } catch {
@@ -103,11 +106,12 @@ async function refreshHealth() {
 
 async function loadCfg() {
   if (hasSyncStorage) {
-    const s = await chrome.storage.sync.get(['serverUrl', 'appToken', 'theme']);
+    const s = await chrome.storage.sync.get(['serverUrl', 'appToken', 'theme', 'deepTrace']);
     cfg = { ...cfg, ...s };
   }
   $('serverUrl').value = cfg.serverUrl;
   $('appToken').value = cfg.appToken || '';
+  if ($('deepTraceToggle')) $('deepTraceToggle').checked = cfg.deepTrace !== false;
   applyTheme();
   await refreshHealth();
 }
@@ -127,7 +131,8 @@ $('gear').onclick = () => {
 $('save').onclick = async () => {
   cfg.serverUrl = $('serverUrl').value.trim().replace(/\/$/, '') || 'http://localhost:8787';
   cfg.appToken = $('appToken').value.trim();
-  if (hasSyncStorage) await chrome.storage.sync.set({ serverUrl: cfg.serverUrl, appToken: cfg.appToken });
+  if ($('deepTraceToggle')) cfg.deepTrace = $('deepTraceToggle').checked;
+  if (hasSyncStorage) await chrome.storage.sync.set({ serverUrl: cfg.serverUrl, appToken: cfg.appToken, deepTrace: cfg.deepTrace });
   await refreshHealth();
 };
 
@@ -661,46 +666,115 @@ function renderFinal(f) {
   renderDeep(f);
 }
 
-function renderDeep(f, run) {
+let deepElapsedTimer = null;
+let currentDeepInfo = null;
+
+function formatDuration(ms) {
+  const totalSec = Math.floor(Math.max(0, ms) / 1000);
+  const m = Math.floor(totalSec / 60);
+  const s = totalSec % 60;
+  return `${m}m ${s < 10 ? '0' : ''}${s}s`;
+}
+
+function stopDeepTimer() {
+  if (deepElapsedTimer) {
+    clearInterval(deepElapsedTimer);
+    deepElapsedTimer = null;
+  }
+}
+
+function renderDeep(f, run, meta = {}) {
+  if ($('deepAutoWarn')) $('deepAutoWarn').hidden = true;
   const box = $('deep');
   box.hidden = false;
-  if (run?.status && !run.done) {
-    box.replaceChildren(h('p', {}, `TinyResearch is working (${run.status.toLowerCase()}). Deep runs take 5 to 20 minutes; reopen this panel anytime to check.`));
-    return;
-  }
-  if (run?.error) {
-    box.replaceChildren(h('p', { class: 'err' }, 'Deep trace did not finish: ' + run.error));
-    return;
-  }
+
+  // 1. Completed research result
   if (f?.research) {
-    box.replaceChildren(...[
-      h('p', {}, `TinyResearch proposed ${f.research.citationsProposed} sources. ${f.research.confirmed} confirmed verbatim via Fetch; unconfirmed links were discarded.`),
-      run?.report ? h('details', {}, h('summary', {}, 'TinyResearch report (unverified leads)'), h('div', { class: 'report' }, run.report)) : null,
-    ].filter(Boolean));
-    return;
-  }
-  const showConfirm = () => {
+    stopDeepTimer();
+    const rep = run?.report || f.researchReport || '';
     box.replaceChildren(
-      h('p', {}, 'Confirm deep trace? Uses 1 TinyResearch run (credit-gated, takes 5–20 minutes). Every proposed link is re-checked verbatim with Fetch.'),
-      h('div', { class: 'deep-actions' },
-        h('button', { type: 'button', class: 'btn', onclick: startDeep }, 'Confirm deep trace'),
-        h('button', { type: 'button', class: 'btn-secondary', onclick: () => renderDeep(f) }, 'Cancel')
+      h('div', { class: 'deep-complete-box' },
+        h('p', { class: 'deep-lead-summary' },
+          `TinyResearch proposed ${f.research.citationsProposed || 0} sources. ${f.research.confirmed || 0} confirmed verbatim via Fetch; unconfirmed links were discarded.`
+        ),
+        rep
+          ? h('details', { class: 'deep-report-details', open: false },
+              h('summary', {}, 'TinyResearch report (not verified text)'),
+              h('div', { class: 'report' }, rep)
+            )
+          : null
       )
     );
-  };
-  const deepBtn = h('button', {
-    type: 'button',
-    class: 'btn',
-    disabled: !healthInfo.allowResearch,
-    title: healthInfo.allowResearch ? 'Launch TinyResearch deep run' : 'Disabled: set ALLOW_RESEARCH=1 in server/.env',
-    onclick: showConfirm,
-  }, 'Run deep trace');
-  const deepNote = !healthInfo.allowResearch
-    ? h('span', { class: 'btn-note' }, 'Disabled: set ALLOW_RESEARCH=1 in server/.env to protect credits.')
-    : null;
+    return;
+  }
+
+  // 2. Terminal error / failure from run
+  if (run?.error || run?.status === 'FAILED' || run?.status === 'TIMED_OUT' || run?.status === 'CANCELLED') {
+    stopDeepTimer();
+    const errMsg = run.status === 'TIMED_OUT'
+      ? 'TinyResearch deep trace timed out (runs over 20 minutes are stopped).'
+      : `TinyResearch deep trace failed: ${run.error || run.status}`;
+    box.replaceChildren(
+      h('div', { class: 'deep-error-box' },
+        h('p', { class: 'err' }, errMsg)
+      )
+    );
+    return;
+  }
+
+  // 3. Actively running
+  if (currentDeepInfo?.id || (run?.status && !run.done)) {
+    const startAt = currentDeepInfo?.startAt || Date.now();
+    const statusLabel = (run?.status || 'RUNNING').toUpperCase();
+    const elapsedEl = h('span', { class: 'deep-elapsed' }, `Elapsed: ${formatDuration(Date.now() - startAt)}`);
+    const statusEl = h('span', { class: 'deep-status' }, `Status: ${statusLabel}`);
+
+    box.replaceChildren(
+      h('div', { class: 'deep-running-box' },
+        h('div', { class: 'deep-running-head' },
+          h('span', { class: 'spin', 'aria-hidden': 'true' }),
+          h('strong', {}, 'TinyResearch deep trace running (typically 5 to 20 minutes)')
+        ),
+        h('div', { class: 'deep-running-meta' }, statusEl, elapsedEl),
+        h('p', { class: 'deep-running-note' },
+          'Quick trace results stay visible above. Reopen this panel anytime to check progress.'
+        )
+      )
+    );
+
+    stopDeepTimer();
+    deepElapsedTimer = setInterval(() => {
+      elapsedEl.textContent = `Elapsed: ${formatDuration(Date.now() - startAt)}`;
+    }, 1000);
+    return;
+  }
+
+  // 4. Cap reached or message from server
+  if (meta?.capReached || meta?.message) {
+    stopDeepTimer();
+    box.replaceChildren(
+      h('div', { class: 'deep-cap-box' },
+        h('p', { class: 'hint' }, meta.message)
+      )
+    );
+    return;
+  }
+
+  // 5. Deep trace disabled in settings
+  if (cfg.deepTrace === false) {
+    stopDeepTimer();
+    box.replaceChildren(
+      h('div', { class: 'deep-off-box' },
+        h('p', { class: 'hint' }, 'Deep trace disabled in Settings.')
+      )
+    );
+    return;
+  }
+
+  // Default: if nothing running and no research
+  stopDeepTimer();
   box.replaceChildren(
-    h('p', {}, 'Quick trace searches and follows links now. Deep trace hands this claim to TinyResearch and verifies every returned source verbatim.'),
-    h('div', { class: 'action-item' }, h('div', {}, deepBtn), deepNote)
+    h('p', { class: 'hint' }, 'TinyResearch deep trace will run automatically on new claims.')
   );
 }
 
@@ -710,7 +784,7 @@ async function startDeep() {
     const r = await fetch(cfg.serverUrl + '/api/research', {
       method: 'POST',
       headers: headers(),
-      body: JSON.stringify({ claim: current.payload.claim, url: current.payload.url, confirm: true }),
+      body: JSON.stringify({ claim: current.payload.claim, url: current.payload.url }),
     });
     const j = await r.json();
     if (!r.ok) throw new Error(j.error || `Error ${r.status}`);
@@ -720,20 +794,55 @@ async function startDeep() {
   }
 }
 
-async function pollDeep(id) {
+async function pollDeep(id, startTime) {
   const me = current;
+  const startAt = startTime || Date.now();
+  currentDeepInfo = { id, startAt, key: me?.key };
+
+  const persistObj = {
+    id,
+    startAt,
+    key: me?.key || null,
+    payload: me?.payload || null,
+  };
+  if (hasSessionStorage) chrome.storage.session.set({ activeResearch: persistObj }).catch(() => {});
+  if (typeof chrome !== 'undefined' && chrome.storage?.local) {
+    chrome.storage.local.set({ activeResearch: persistObj }).catch(() => {});
+  }
+
+  renderDeep(current?.final, { status: 'RUNNING', done: false });
+
   while (me === current) {
     try {
-      const j = await (await fetch(`${cfg.serverUrl}/api/research/${id}`, { headers: headers() })).json();
-      if (j.error && !j.status) throw new Error(j.error);
-      if (j.done && j.final) { renderFinal(j.final); renderDeep(j.final, j); return; }
+      const res = await fetch(`${cfg.serverUrl}/api/research/${id}`, { headers: headers() });
+      const j = await res.json();
+      if (!res.ok && !j.status) throw new Error(j.error || `Server error ${res.status}`);
+
+      if (j.done) {
+        currentDeepInfo = null;
+        stopDeepTimer();
+        if (hasSessionStorage) chrome.storage.session.remove('activeResearch').catch(() => {});
+        if (typeof chrome !== 'undefined' && chrome.storage?.local) {
+          chrome.storage.local.remove('activeResearch').catch(() => {});
+        }
+
+        if (j.final) {
+          if (j.report) j.final.researchReport = j.report;
+          renderFinal(j.final);
+          renderDeep(j.final, j);
+          return;
+        }
+
+        renderDeep(current.final, j);
+        return;
+      }
+
       renderDeep(current.final, j);
-      if (j.done) return;
     } catch (e) {
-      $('deep').replaceChildren(h('p', { class: 'err' }, e.message));
-      return;
+      if (me !== current) return;
+      console.warn('Research polling transient error:', e.message);
     }
-    await new Promise((r) => setTimeout(r, 12000));
+    await new Promise((r) => setTimeout(r, 6000));
   }
 }
 
@@ -852,6 +961,15 @@ async function start(payload) {
   $('empty').hidden = true;
   $('view').hidden = false;
   renderClaimHeader(payload, null);
+  const willDeepTrace = cfg.deepTrace !== false;
+  if ($('deepAutoWarn')) {
+    if (willDeepTrace) {
+      $('deepAutoWarn').textContent = '⚠️ Deep trace is ON: this will start a deep trace, about $2 (capped at 3/day; toggle in Settings)';
+      $('deepAutoWarn').hidden = false;
+    } else {
+      $('deepAutoWarn').hidden = true;
+    }
+  }
   $('verdict').hidden = true;
   $('chain').replaceChildren();
   ['rejectedBox', 'alsoBox', 'deep'].forEach((i) => ($(i).hidden = true));
@@ -863,7 +981,8 @@ async function start(payload) {
 
   const live = [];
   try {
-    const res = await fetch(cfg.serverUrl + '/api/trace', { method: 'POST', headers: headers(), body: JSON.stringify(payload), signal: ctl.signal });
+    const payloadWithSettings = { ...payload, deepTrace: cfg.deepTrace !== false };
+    const res = await fetch(cfg.serverUrl + '/api/trace', { method: 'POST', headers: headers(), body: JSON.stringify(payloadWithSettings), signal: ctl.signal });
     if (!res.ok) {
       const errBody = await res.json().catch(() => ({}));
       const err = new Error(errBody.error || `Server error ${res.status}`);
@@ -895,7 +1014,13 @@ async function start(payload) {
           current.key = data.key;
           renderClaimHeader(current?.payload, data.final);
           renderFinal(data.final);
-          if (data.researchId) pollDeep(data.researchId);
+          if (data.researchId) {
+            pollDeep(data.researchId);
+          } else if (data.researchMessage || data.researchCapReached) {
+            renderDeep(data.final, null, { message: data.researchMessage, capReached: data.researchCapReached });
+          } else if (cfg.deepTrace === false) {
+            renderDeep(data.final, null, { message: 'Deep trace disabled in Settings.' });
+          }
         }
       }
     }
@@ -916,9 +1041,21 @@ if (hasSessionStorage) {
   }
   if (hasSessionStorage) {
     const { pending } = await chrome.storage.session.get('pending');
-    if (pending) start(pending);
-    return;
+    if (pending) {
+      start(pending);
+      return;
+    }
   }
+  // Persist run ID: check if closing and reopening the panel can resume active research run
+  try {
+    const sess = (hasSessionStorage && (await chrome.storage.session.get('activeResearch'))?.activeResearch)
+      || (typeof chrome !== 'undefined' && chrome.storage?.local && (await chrome.storage.local.get('activeResearch'))?.activeResearch);
+    if (sess && sess.id && (!current || current.key === sess.key)) {
+      current = current || { payload: sess.payload, key: sess.key, final: null };
+      if (sess.payload && !current.payload) renderClaimHeader(sess.payload, null);
+      pollDeep(sess.id, sess.startAt);
+    }
+  } catch {}
   // Safe offline preview hook (used only when opened outside Chrome extension runtime, e.g. screenshot capture)
   if (window.__SH_PREVIEW__) {
     const p = window.__SH_PREVIEW__;

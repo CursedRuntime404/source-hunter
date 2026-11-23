@@ -182,7 +182,7 @@
               "code": "MATCH",
               "flags": []
             },
-            "quote": "Compared to one year ago, the index in June hit 9.1%, rising from the 8.6% year-on-year increase the month before \u2014 staying at the fastest pace in 40 years.",
+            "quote": "Compared to one year ago, the index in June hit 9.1%, rising from the 8.6% year-on-year increase the month before — staying at the fastest pace in 40 years.",
             "via": "search",
             "relation": "Found by search; not cited by the pages above"
           }
@@ -222,11 +222,11 @@
     },
     {
       "id": "plastic",
-      "topic": "Environment \u00b7 Deep Trace",
+      "topic": "Environment · Deep Trace",
       "recordedAt": "2026-11-11",
       "final": {
         "claim": {
-          "raw": "Each year, approximately 8 million metric tons of plastic waste make their way into our world\u2019s oceans.",
+          "raw": "Each year, approximately 8 million metric tons of plastic waste make their way into our world’s oceans.",
           "kind": "stat"
         },
         "code": "MATCH",
@@ -260,7 +260,7 @@
             "verifiedBy": "selection",
             "sourceKind": "secondary",
             "sourceKindLabel": "secondary source",
-            "quote": "Each year, approximately 8 million metric tons of plastic waste make their way into our world\u2019s oceans.",
+            "quote": "Each year, approximately 8 million metric tons of plastic waste make their way into our world’s oceans.",
             "quoteDiff": [
               {
                 "w": "Each",
@@ -323,7 +323,7 @@
                 "changed": true
               },
               {
-                "w": "world\u2019s",
+                "w": "world’s",
                 "changed": true
               },
               {
@@ -364,7 +364,7 @@
             "verifiedBy": "fetch",
             "sourceKind": "press-release",
             "sourceKindLabel": "institutional press release about the study",
-            "quote": "\u201cUsing the average density of uncompacted plastic waste, 8 million metric tons \u2014 the midpoint of our estimate \u2014 would cover an area 34 times the size of Manhattan ankle-deep in plastic waste,\u201d said co-author Roland Geyer, an associate professor at the Bren School of Environmental Science & Management.",
+            "quote": "“Using the average density of uncompacted plastic waste, 8 million metric tons — the midpoint of our estimate — would cover an area 34 times the size of Manhattan ankle-deep in plastic waste,” said co-author Roland Geyer, an associate professor at the Bren School of Environmental Science & Management.",
             "quoteDiff": null,
             "dispute": null,
             "vsOrigin": {
@@ -684,7 +684,7 @@
             "verifiedBy": "fetch",
             "sourceKind": "primary-likely",
             "sourceKindLabel": "likely primary source",
-            "quote": "The Company\u2019s total net sales were $383.3 billion and net income was $97.0 billion during 2023.",
+            "quote": "The Company’s total net sales were $383.3 billion and net income was $97.0 billion during 2023.",
             "quoteDiff": null,
             "dispute": null,
             "vsOrigin": {
@@ -1417,7 +1417,7 @@
             "verifiedBy": "fetch",
             "sourceKind": "secondary",
             "sourceKindLabel": "secondary source",
-            "quote": "One of the most recognizable and symbolic phrases ever attributed to royalty could be Queen Marie Antoinette\u2019s infamous quote, \u201cLet them eat cake.\u201d",
+            "quote": "One of the most recognizable and symbolic phrases ever attributed to royalty could be Queen Marie Antoinette’s infamous quote, “Let them eat cake.”",
             "quoteDiff": null,
             "dispute": {
               "cues": [
@@ -1503,11 +1503,11 @@
     },
     {
       "id": "coyotiv",
-      "topic": "Software \u00b7 Uncited Blog",
+      "topic": "Software · Uncited Blog",
       "recordedAt": "2026-11-11",
       "final": {
         "claim": {
-          "raw": "They spent 80% of their time laying bricks \u2014 writing boilerplate code, debugging syntax, configuring environments \u2014 and only 20% designing the skyscraper.",
+          "raw": "They spent 80% of their time laying bricks — writing boilerplate code, debugging syntax, configuring environments — and only 20% designing the skyscraper.",
           "kind": "stat"
         },
         "code": "NO_SOURCE",
@@ -1536,7 +1536,7 @@
             "verifiedBy": "selection",
             "sourceKind": "secondary",
             "sourceKindLabel": "secondary source",
-            "quote": "They spent 80% of their time laying bricks \u2014 writing boilerplate code, debugging syntax, configuring environments \u2014 and only 20% designing the skyscraper.",
+            "quote": "They spent 80% of their time laying bricks — writing boilerplate code, debugging syntax, configuring environments — and only 20% designing the skyscraper.",
             "quoteDiff": null,
             "dispute": null,
             "vsOrigin": null,
@@ -1621,7 +1621,7 @@
     },
     {
       "id": "who",
-      "topic": "Global Health \u00b7 Primary Publisher",
+      "topic": "Global Health · Primary Publisher",
       "recordedAt": "2026-11-14",
       "final": {
         "claim": {
@@ -1854,7 +1854,7 @@
             "host": "pmc.ncbi.nlm.nih.gov",
             "date": null,
             "dateSource": null,
-            "closestPassage": "Two other countries where women experienced higher death rates than men were Haiti (475.3 [352.3\u2013635.4] versus 419.8 [320.1\u2013562.4] per 100,000 people) and Tokelau (388.7 [308.9\u2013484.8] versus 312.2 [261.6\u2013380.4] per 100,000 people).",
+            "closestPassage": "Two other countries where women experienced higher death rates than men were Haiti (475.3 [352.3–635.4] versus 419.8 [320.1–562.4] per 100,000 people) and Tokelau (388.7 [308.9–484.8] versus 312.2 [261.6–380.4] per 100,000 people).",
             "note": "closest passage, not verified as the same claim",
             "isBotBlocked": false,
             "reason": "page does not state this claim",
@@ -1958,16 +1958,455 @@
         "disputeDate": null,
         "disputeDateUncertain": false
       }
+    },
+    {
+      "id": "data90",
+      "topic": "Technology · Deep Trace",
+      "recordedAt": "2026-11-23",
+      "final": {
+        "claim": {
+          "raw": "A full 90% of all the data in the world has been generated over the last two years.",
+          "kind": "stat"
+        },
+        "stats": {
+          "fetches": 19,
+          "searches": 1,
+          "agentCalls": 0,
+          "linksChecked": 0
+        },
+        "timings": {
+          "totalMs": 160,
+          "softLimitHit": false,
+          "hardLimitHit": false,
+          "stages": [
+            {
+              "stage": "start-page-citations",
+              "ms": 47,
+              "linksFound": 0
+            },
+            {
+              "stage": "search",
+              "ms": 100,
+              "hits": 2
+            }
+          ]
+        },
+        "rejected": [
+          {
+            "url": "https://public.dhe.ibm.com/software/data/sw-library/data/IBM_Smarter_Computing_BIG_DATA.pdf",
+            "reason": "page discusses a different statistic (subject mismatch)",
+            "host": "public.dhe.ibm.com",
+            "citedBy": "search"
+          },
+          {
+            "url": "https://docs.microsoft.com/en-us/archive/blogs/hans_vb/big-data-every-day-2-5-quintillion-bytes-of-data-are-created",
+            "reason": "page discusses a different statistic (subject mismatch)",
+            "host": "docs.microsoft.com",
+            "citedBy": "search"
+          },
+          {
+            "url": "https://rdworldonline.com/big-data-for-better-or-worse",
+            "finalUrl": "https://rdworldonline.com/big-data-for-better-or-worse",
+            "host": "rdworldonline.com",
+            "reason": "page timed out",
+            "isBotBlocked": false,
+            "citedBy": "search"
+          },
+          {
+            "url": "http://skeptics.stackexchange.com/questions/10418/has-90-of-the-worlds-data-been-created-in-the-last-two-years",
+            "finalUrl": "http://skeptics.stackexchange.com/questions/10418/has-90-of-the-worlds-data-been-created-in-the-last-two-years",
+            "host": "skeptics.stackexchange.com",
+            "reason": "blocked by bot check",
+            "isBotBlocked": true,
+            "citedBy": "search"
+          },
+          {
+            "url": "https://web.archive.org/web/20130824213031/http:/www.ibm.com/big-data/us/en",
+            "reason": "page discusses a different statistic (subject mismatch)",
+            "host": "web.archive.org",
+            "citedBy": "TinyResearch"
+          },
+          {
+            "url": "https://businessinsider.com/consumer-feedback-what-marketers-can-do-about-this-data-2011-12",
+            "reason": "page discusses a different statistic (subject mismatch)",
+            "host": "businessinsider.com",
+            "citedBy": "TinyResearch"
+          },
+          {
+            "url": "https://public.dhe.ibm.com/software/data/sw-library/big-data/ibm-big-data-success.pdf",
+            "reason": "page discusses a different statistic (subject mismatch)",
+            "host": "public.dhe.ibm.com",
+            "citedBy": "TinyResearch"
+          },
+          {
+            "url": "https://web.archive.org/web/20130824213031/http://www.ibm.com/big-data/us/en",
+            "reason": "page discusses a different statistic (subject mismatch)",
+            "host": "web.archive.org",
+            "citedBy": "TinyResearch"
+          },
+          {
+            "url": "https://datacenterknowledge.com/data-storage/best-of-industry-perspectives-2012-storage",
+            "reason": "page discusses a different statistic (subject mismatch)",
+            "host": "datacenterknowledge.com",
+            "citedBy": "TinyResearch"
+          },
+          {
+            "url": "https://dl.icdst.org/pdfs/files/2729e83081d9861736d25895ee9c7238.pdf",
+            "reason": "page discusses a different statistic (subject mismatch)",
+            "host": "dl.icdst.org",
+            "citedBy": "TinyResearch"
+          },
+          {
+            "url": "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
+            "finalUrl": "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
+            "host": "sintef.no",
+            "reason": "blocked by bot check",
+            "isBotBlocked": true,
+            "citedBy": "TinyResearch"
+          },
+          {
+            "url": "https://web.archive.org/web/20121215132444/http:/blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data",
+            "reason": "page discusses a different statistic (subject mismatch)",
+            "host": "web.archive.org",
+            "citedBy": "TinyResearch"
+          }
+        ],
+        "status": "traced_primary",
+        "tone": "bad",
+        "code": "CONTRADICTED",
+        "severity": 5,
+        "headline": "Source wording contradicts this claim",
+        "firstDriftHopId": "h0",
+        "reasons": [
+          "Polarity differs: source includes \"not\"",
+          "The earliest page found looks like a primary source (judged from its domain and content; confirm before relying on it)."
+        ],
+        "chain": [
+          {
+            "id": "h0",
+            "role": "start",
+            "via": "selection",
+            "verifiedBy": "selection",
+            "url": "https://www.sciencedaily.com/releases/2013/05/130522085217.htm",
+            "host": "sciencedaily.com",
+            "title": "Big Data, for better or worse: 90% of world&apos;s data generated over last two years",
+            "date": "2013-05-22",
+            "dateSource": "page-text",
+            "quote": "A full 90% of all the data in the world has been generated over the last two years.",
+            "sourceKind": "secondary",
+            "sourceKindLabel": "secondary source",
+            "relation": "The claim as you highlighted it",
+            "dateUncertain": false,
+            "dateReason": null,
+            "hasPassageCitations": false,
+            "vsOrigin": {
+              "code": "CONTRADICTED",
+              "flags": [
+                {
+                  "code": "CONTRADICTED",
+                  "text": "Polarity differs: source includes \"not\""
+                }
+              ]
+            },
+            "quoteDiff": [
+              {
+                "w": "A",
+                "changed": true
+              },
+              {
+                "w": "full",
+                "changed": true
+              },
+              {
+                "w": "90%",
+                "changed": false
+              },
+              {
+                "w": "of",
+                "changed": false
+              },
+              {
+                "w": "all",
+                "changed": true
+              },
+              {
+                "w": "the",
+                "changed": false
+              },
+              {
+                "w": "data",
+                "changed": false
+              },
+              {
+                "w": "in",
+                "changed": true
+              },
+              {
+                "w": "the",
+                "changed": true
+              },
+              {
+                "w": "world",
+                "changed": true
+              },
+              {
+                "w": "has",
+                "changed": true
+              },
+              {
+                "w": "been",
+                "changed": true
+              },
+              {
+                "w": "generated",
+                "changed": false
+              },
+              {
+                "w": "over",
+                "changed": true
+              },
+              {
+                "w": "the",
+                "changed": false
+              },
+              {
+                "w": "last",
+                "changed": true
+              },
+              {
+                "w": "two",
+                "changed": true
+              },
+              {
+                "w": "years.",
+                "changed": true
+              }
+            ],
+            "vsCited": {
+              "code": "CONTRADICTED",
+              "flags": [
+                {
+                  "code": "CONTRADICTED",
+                  "text": "Polarity differs: source includes \"not\""
+                }
+              ]
+            },
+            "changedHere": true
+          },
+          {
+            "id": "x0",
+            "role": "origin",
+            "via": "search",
+            "verifiedBy": "fetch",
+            "url": "https://www.oracle.com/webfolder/s/delivery_production/docs/FY14h1/doc2/265223-Oracle-TheNewAgeofArchive.pdf",
+            "host": "oracle.com",
+            "title": "Microsoft Word - Oracle - The New Age of Archive",
+            "date": null,
+            "dateSource": null,
+            "hasPassageCitations": false,
+            "quote": "Just ten years ago, large business es generated roughly 90% of the world’s digital dat a. Today it is estimated that 75-80% of all digital data is generated by individuals - not by large businesses – however the majority of this data will eventually w ind up back in a large business or service provider .",
+            "dispute": null,
+            "sourceKind": "primary-likely",
+            "sourceKindLabel": "likely primary source",
+            "relation": "Found by search; not cited by the pages above",
+            "vsOrigin": {
+              "code": "MATCH",
+              "flags": [],
+              "diff": null
+            }
+          }
+        ],
+        "alsoFound": [
+          {
+            "id": "x1",
+            "role": "source",
+            "via": "search",
+            "verifiedBy": "fetch",
+            "url": "https://datafloq.com/big-data-history/",
+            "host": "datafloq.com",
+            "title": "A Short History Of Big Data",
+            "date": "2013-01-07",
+            "dateSource": "page-metadata",
+            "hasPassageCitations": false,
+            "quote": "90% of the available data has been created in the last two years and the term Big Data has been around 2005, when it was launched by OReilly Media in 2005. However, the usage of Big Data and the need to understand all available data has been around much longer.",
+            "dispute": null,
+            "sourceKind": "secondary",
+            "sourceKindLabel": "secondary source",
+            "relation": "Found by search; not cited by the pages above",
+            "vsClaim": {
+              "code": "HEDGE_DROPPED",
+              "flags": [
+                {
+                  "code": "HEDGE_DROPPED",
+                  "text": "Hedge dropped: the original says \"around\""
+                }
+              ]
+            }
+          },
+          {
+            "id": "r4",
+            "role": "source",
+            "via": "research",
+            "verifiedBy": "fetch",
+            "url": "https://www.sintef.no/en/latest-news/2013/big-data-for-better-or-worse/",
+            "host": "sintef.no",
+            "title": "Big Data – for better or worse - SINTEF",
+            "date": "2013-05-22",
+            "dateSource": "page-metadata",
+            "hasPassageCitations": false,
+            "quote": "A full 90% of all the data in the world has been generated over the last two years.",
+            "dispute": null,
+            "sourceKind": "secondary",
+            "sourceKindLabel": "secondary source",
+            "relation": "Proposed by TinyResearch, confirmed by fetching the page",
+            "vsClaim": {
+              "code": "MATCH",
+              "flags": []
+            }
+          },
+          {
+            "id": "r2",
+            "role": "source",
+            "via": "research",
+            "verifiedBy": "fetch",
+            "url": "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
+            "host": "siri.sipa.columbia.edu",
+            "title": "Data In Full Bloom (Pun Intended) | Sustainable Investing Research Initiative (SIRI)",
+            "date": "2026-11-17",
+            "dateSource": "page-metadata",
+            "hasPassageCitations": false,
+            "quote": "It is widely believed that 90% of all data we encounter today was generated in the last two years",
+            "dispute": null,
+            "sourceKind": "press-release",
+            "sourceKindLabel": "institutional press release about the study",
+            "relation": "Proposed by TinyResearch, confirmed by fetching the page",
+            "vsClaim": {
+              "code": "MATCH",
+              "flags": []
+            }
+          },
+          {
+            "id": "r3",
+            "role": "source",
+            "via": "research",
+            "verifiedBy": "fetch",
+            "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
+            "host": "assets.publishing.service.gov.uk",
+            "title": "National Data Strategy: Review of commonly quoted statistics",
+            "date": null,
+            "dateSource": null,
+            "hasPassageCitations": false,
+            "quote": "‘A full 90% of all the data in the world has been generated over the last two years.’",
+            "dispute": null,
+            "sourceKind": "primary-likely",
+            "sourceKindLabel": "likely primary source",
+            "relation": "Proposed by TinyResearch, confirmed by fetching the page",
+            "vsClaim": {
+              "code": "MATCH",
+              "flags": []
+            }
+          },
+          {
+            "id": "r5",
+            "role": "source",
+            "via": "research",
+            "verifiedBy": "fetch",
+            "url": "https://cdn.threerivers.gov.uk/files/2024/09/f0ae5ad0-798e-11ef-ba8e-ed267910e33d-I48%20-%20National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
+            "host": "cdn.threerivers.gov.uk",
+            "title": "National Data Strategy: Review of commonly quoted statistics",
+            "date": null,
+            "dateSource": null,
+            "hasPassageCitations": false,
+            "quote": "‘A full 90% of all the data in the world has been generated over the last two years.’",
+            "dispute": null,
+            "sourceKind": "primary-likely",
+            "sourceKindLabel": "likely primary source",
+            "relation": "Proposed by TinyResearch, confirmed by fetching the page",
+            "vsClaim": {
+              "code": "MATCH",
+              "flags": []
+            }
+          }
+        ],
+        "origin": {
+          "url": "https://www.oracle.com/webfolder/s/delivery_production/docs/FY14h1/doc2/265223-Oracle-TheNewAgeofArchive.pdf",
+          "date": null,
+          "host": "oracle.com",
+          "sourceKind": "primary-likely",
+          "sourceKindLabel": "likely primary source"
+        },
+        "deepTraceAvailable": true,
+        "research": {
+          "totalCitationsFound": 19,
+          "citationsProposed": 12,
+          "confirmed": 4,
+          "proposedUrls": [
+            "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
+            "https://web.archive.org/web/20130824213031/http:/www.ibm.com/big-data/us/en",
+            "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
+            "https://businessinsider.com/consumer-feedback-what-marketers-can-do-about-this-data-2011-12",
+            "https://public.dhe.ibm.com/software/data/sw-library/big-data/ibm-big-data-success.pdf",
+            "https://web.archive.org/web/20130824213031/http://www.ibm.com/big-data/us/en",
+            "https://datacenterknowledge.com/data-storage/best-of-industry-perspectives-2012-storage",
+            "https://dl.icdst.org/pdfs/files/2729e83081d9861736d25895ee9c7238.pdf",
+            "https://sintef.no/en/latest-news/2013/big-data-for-better-or-worse",
+            "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
+            "https://cdn.threerivers.gov.uk/files/2024/09/f0ae5ad0-798e-11ef-ba8e-ed267910e33d-I48%20-%20National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
+            "https://web.archive.org/web/20121215132444/http:/blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data"
+          ],
+          "confirmedUrls": [
+            "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
+            "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
+            "https://www.sintef.no/en/latest-news/2013/big-data-for-better-or-worse/",
+            "https://cdn.threerivers.gov.uk/files/2024/09/f0ae5ad0-798e-11ef-ba8e-ed267910e33d-I48%20-%20National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf"
+          ],
+          "discardedUrls": [
+            {
+              "url": "https://web.archive.org/web/20130824213031/http:/www.ibm.com/big-data/us/en",
+              "reason": "page discusses a different statistic (subject mismatch)"
+            },
+            {
+              "url": "https://businessinsider.com/consumer-feedback-what-marketers-can-do-about-this-data-2011-12",
+              "reason": "page discusses a different statistic (subject mismatch)"
+            },
+            {
+              "url": "https://public.dhe.ibm.com/software/data/sw-library/big-data/ibm-big-data-success.pdf",
+              "reason": "page discusses a different statistic (subject mismatch)"
+            },
+            {
+              "url": "https://web.archive.org/web/20130824213031/http://www.ibm.com/big-data/us/en",
+              "reason": "page discusses a different statistic (subject mismatch)"
+            },
+            {
+              "url": "https://datacenterknowledge.com/data-storage/best-of-industry-perspectives-2012-storage",
+              "reason": "page discusses a different statistic (subject mismatch)"
+            },
+            {
+              "url": "https://dl.icdst.org/pdfs/files/2729e83081d9861736d25895ee9c7238.pdf",
+              "reason": "page discusses a different statistic (subject mismatch)"
+            },
+            {
+              "url": "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
+              "reason": "blocked by bot check"
+            },
+            {
+              "url": "https://web.archive.org/web/20121215132444/http:/blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data",
+              "reason": "page discusses a different statistic (subject mismatch)"
+            }
+          ],
+          "terminationReason": "planner_done"
+        }
+      }
     }
   ],
   "research": {
-    "claim": "Each year, approximately 8 million metric tons of plastic waste make their way into our world\u2019s oceans.",
+    "claim": "Each year, approximately 8 million metric tons of plastic waste make their way into our world’s oceans.",
     "runId": "01a1cbfe-a061-7f77-8ba7-2c215837a708",
     "recordedAt": "2026-11-11",
-    "report": "# Tracing the \"8 Million Metric Tons of Plastic Enter the Ocean Each Year\" Claim\n\n## Executive Summary\n\nThe claim originates from **Jambeck et al. (2015)**, a peer-reviewed paper published in *Science* on February 13, 2015. Critically, the paper itself **never states \"8 million metric tons\" as its headline figure**. The study's actual finding is a range of **4.8 to 12.7 million metric tons** entering the ocean **in 2010** (a specific base year, not a timeless annual rate). The figure \"8 million\" is the arithmetic midpoint of that range, introduced as a communications device in the official press releases and in quotes from the lead author. From there, the number traveled through media with two important distortions: (1) the specific year \"2010\" was dropped, making the figure sound like a current, ongoing annual rate; and (2) \"metric tons\" was sometimes shortened to \"tons.\" By the time the claim appeared in evergreen explainer articles\u2014including at National Geographic\u2014it had been fully simplified to a timeless, unqualified assertion. More recent science suggests the figure is likely an overestimate.\n\n---\n\n## 1. The National Geographic Article in Question\n\nThe specific National Geographic article at the URL provided in the query (`/environment/article/ocean-plastic-pollution-science-study`) is their major evergreen explainer, **\"The world's plastic pollution crisis, explained.\"** That article states [8]:\n\n> *\"Every year, about eight million tons of plastic waste escapes into the oceans from coastal nations. That's the equivalent of setting five garbage bags full of trash on every foot of coastline around the world.\"*\n\nSeveral features of this wording are significant:\n\n- It uses **\"tons\"** rather than **\"metric tons\"** \u2014 a unit change that makes the figure slightly smaller in real terms but is easy to miss.\n- It says **\"every year\"** as a timeless present-tense statement \u2014 the year \"2010\" (the actual base year of the underlying study) has been dropped entirely.\n- It says **\"about eight million\"** \u2014 the range (4.8 to 12.7 million) is not mentioned.\n- **No source is cited** in the fetched text of that article for this specific figure [8].\n\nThe article does not give a single visible publication date in the evidence retrieved, but it is an evergreen piece that has been continuously updated.\n\n---\n\n## 2. The Original Source: Jambeck et al. (2015)\n\n**Full citation:** J. R. Jambeck, R. Geyer, C. Wilcox, T. R. Siegler, M. Perryman, A. Andrady, R. Narayan, K. L. Law. \"Plastic waste inputs from land into the ocean.\" *Science*, 347(6223): 768\u2013771, February 13, 2015. DOI: 10.1126/science.1260352.\n\n**What the paper actually says:**\n\nThe paper's abstract and body state [12] [13]:\n\n> *\"We calculate that 275 million metric tons (MT) of plastic waste was generated in 192 coastal countries in 2010, with 4.8 to 12.7 million MT entering the ocean.\"*\n\nThe paper explicitly describes its methodology as designed to produce **\"an order-of-magnitude estimate\"** [12] [13], not a precise measurement. The phrase \"8 million metric tons\" does **not appear** in the paper's abstract or main findings as a headline number. The closest the paper comes to that figure is in Table 1, where China's coastal mismanaged plastic waste is listed at approximately 8.8 million MT per year [13] \u2014 a country-level figure, not the global total.\n\nThe paper also acknowledges substantial uncertainty: data are limited outside urban centers, methodologies are inconsistent across countries, and activities such as illegal dumping and informal recycling are unaccounted for [12] [13]. Importantly, the 4.8\u201312.7 million MT estimate applies specifically to **the year 2010**, based on that year's population, waste generation, and waste management data [12].\n\nThe paper is also candid about a critical knowledge gap: **\"To our knowledge no direct estimates of this conversion rate exist\"** \u2014 referring to the rate at which mismanaged plastic waste actually reaches the ocean [16]. The 8 million midpoint therefore rests on an assumed conversion factor with no empirical grounding.\n\n---\n\n## 3. The Press Releases: Where \"8 Million\" Was Born as a Round Number\n\nThe figure \"8 million\" as a standalone, communicable number was introduced to the public not by the paper itself but by **two coordinated official press releases** published on February 12, 2015 \u2014 the day before the paper appeared in *Science*, timed to accompany a press briefing at the AAAS Annual Meeting.\n\n### Press Release A: University of Georgia (UGA Today) / EurekAlert (UGA version)\n**URL:** `https://news.uga.edu/new-science-paper-magnitude-plastic-waste-going-into-ocean-0215/` and mirrored at EurekAlert [11]  \n**Date:** February 12, 2015  \n**Exact wording:**\n\n> *\"[The study] found between 4.8 and 12.7 million metric tons of plastic entered the ocean in 2010 from people living within 50 kilometers of the coastline.\"*\n\nThe press release then introduces the \"8 million\" number as a communication tool, quoting lead author Jambeck directly [11]:\n\n> *\"explains the amount of plastic moving from land to ocean each year using 8 million metric tons as the midpoint.\"*\n\nAnd Jambeck's quoted analogy: *\"Eight million metric tons is the equivalent to finding five grocery bags full of plastic on every foot of coastline in the 192 countries we examined.\"* [1] [11]\n\nCrucially, this press release **retains the year \"2010\"** and frames 8 million explicitly as \"the midpoint\" \u2014 not the finding itself.\n\n### Press Release B: UC Santa Barbara (UCSB News) \u2014 \"An Ocean of Plastic\"\n**URL:** `https://news.ucsb.edu/2015/014985/ocean-plastic`  \n**Date:** February 12, 2015  \n**Exact wording** [7]:\n\n> *\"The study found that more than 4.8 million metric tons of plastic waste enter the oceans from land each year, and that figure may be as high as 12.7 million metric tons.\"*\n\nCo-author Roland Geyer is quoted providing the \"8 million\" midpoint as a visual comparison [7]:\n\n> *\"8 million metric tons \u2014 the midpoint of our estimate \u2014 would cover",
+    "report": "# Tracing the \"8 Million Metric Tons of Plastic Enter the Ocean Each Year\" Claim\n\n## Executive Summary\n\nThe claim originates from **Jambeck et al. (2015)**, a peer-reviewed paper published in *Science* on February 13, 2015. Critically, the paper itself **never states \"8 million metric tons\" as its headline figure**. The study's actual finding is a range of **4.8 to 12.7 million metric tons** entering the ocean **in 2010** (a specific base year, not a timeless annual rate). The figure \"8 million\" is the arithmetic midpoint of that range, introduced as a communications device in the official press releases and in quotes from the lead author. From there, the number traveled through media with two important distortions: (1) the specific year \"2010\" was dropped, making the figure sound like a current, ongoing annual rate; and (2) \"metric tons\" was sometimes shortened to \"tons.\" By the time the claim appeared in evergreen explainer articles—including at National Geographic—it had been fully simplified to a timeless, unqualified assertion. More recent science suggests the figure is likely an overestimate.\n\n---\n\n## 1. The National Geographic Article in Question\n\nThe specific National Geographic article at the URL provided in the query (`/environment/article/ocean-plastic-pollution-science-study`) is their major evergreen explainer, **\"The world's plastic pollution crisis, explained.\"** That article states [8]:\n\n> *\"Every year, about eight million tons of plastic waste escapes into the oceans from coastal nations. That's the equivalent of setting five garbage bags full of trash on every foot of coastline around the world.\"*\n\nSeveral features of this wording are significant:\n\n- It uses **\"tons\"** rather than **\"metric tons\"** — a unit change that makes the figure slightly smaller in real terms but is easy to miss.\n- It says **\"every year\"** as a timeless present-tense statement — the year \"2010\" (the actual base year of the underlying study) has been dropped entirely.\n- It says **\"about eight million\"** — the range (4.8 to 12.7 million) is not mentioned.\n- **No source is cited** in the fetched text of that article for this specific figure [8].\n\nThe article does not give a single visible publication date in the evidence retrieved, but it is an evergreen piece that has been continuously updated.\n\n---\n\n## 2. The Original Source: Jambeck et al. (2015)\n\n**Full citation:** J. R. Jambeck, R. Geyer, C. Wilcox, T. R. Siegler, M. Perryman, A. Andrady, R. Narayan, K. L. Law. \"Plastic waste inputs from land into the ocean.\" *Science*, 347(6223): 768–771, February 13, 2015. DOI: 10.1126/science.1260352.\n\n**What the paper actually says:**\n\nThe paper's abstract and body state [12] [13]:\n\n> *\"We calculate that 275 million metric tons (MT) of plastic waste was generated in 192 coastal countries in 2010, with 4.8 to 12.7 million MT entering the ocean.\"*\n\nThe paper explicitly describes its methodology as designed to produce **\"an order-of-magnitude estimate\"** [12] [13], not a precise measurement. The phrase \"8 million metric tons\" does **not appear** in the paper's abstract or main findings as a headline number. The closest the paper comes to that figure is in Table 1, where China's coastal mismanaged plastic waste is listed at approximately 8.8 million MT per year [13] — a country-level figure, not the global total.\n\nThe paper also acknowledges substantial uncertainty: data are limited outside urban centers, methodologies are inconsistent across countries, and activities such as illegal dumping and informal recycling are unaccounted for [12] [13]. Importantly, the 4.8–12.7 million MT estimate applies specifically to **the year 2010**, based on that year's population, waste generation, and waste management data [12].\n\nThe paper is also candid about a critical knowledge gap: **\"To our knowledge no direct estimates of this conversion rate exist\"** — referring to the rate at which mismanaged plastic waste actually reaches the ocean [16]. The 8 million midpoint therefore rests on an assumed conversion factor with no empirical grounding.\n\n---\n\n## 3. The Press Releases: Where \"8 Million\" Was Born as a Round Number\n\nThe figure \"8 million\" as a standalone, communicable number was introduced to the public not by the paper itself but by **two coordinated official press releases** published on February 12, 2015 — the day before the paper appeared in *Science*, timed to accompany a press briefing at the AAAS Annual Meeting.\n\n### Press Release A: University of Georgia (UGA Today) / EurekAlert (UGA version)\n**URL:** `https://news.uga.edu/new-science-paper-magnitude-plastic-waste-going-into-ocean-0215/` and mirrored at EurekAlert [11]  \n**Date:** February 12, 2015  \n**Exact wording:**\n\n> *\"[The study] found between 4.8 and 12.7 million metric tons of plastic entered the ocean in 2010 from people living within 50 kilometers of the coastline.\"*\n\nThe press release then introduces the \"8 million\" number as a communication tool, quoting lead author Jambeck directly [11]:\n\n> *\"explains the amount of plastic moving from land to ocean each year using 8 million metric tons as the midpoint.\"*\n\nAnd Jambeck's quoted analogy: *\"Eight million metric tons is the equivalent to finding five grocery bags full of plastic on every foot of coastline in the 192 countries we examined.\"* [1] [11]\n\nCrucially, this press release **retains the year \"2010\"** and frames 8 million explicitly as \"the midpoint\" — not the finding itself.\n\n### Press Release B: UC Santa Barbara (UCSB News) — \"An Ocean of Plastic\"\n**URL:** `https://news.ucsb.edu/2015/014985/ocean-plastic`  \n**Date:** February 12, 2015  \n**Exact wording** [7]:\n\n> *\"The study found that more than 4.8 million metric tons of plastic waste enter the oceans from land each year, and that figure may be as high as 12.7 million metric tons.\"*\n\nCo-author Roland Geyer is quoted providing the \"8 million\" midpoint as a visual comparison [7]:\n\n> *\"8 million metric tons — the midpoint of our estimate — would cover",
     "final": {
       "claim": {
-        "raw": "Each year, approximately 8 million metric tons of plastic waste make their way into our world\u2019s oceans.",
+        "raw": "Each year, approximately 8 million metric tons of plastic waste make their way into our world’s oceans.",
         "kind": "stat"
       },
       "stats": {
@@ -2088,7 +2527,7 @@
           "title": "8 million tons of plastic pollution each year",
           "date": "2021-06-17",
           "dateSource": "page-metadata",
-          "quote": "Each year, approximately 8 million metric tons of plastic waste make their way into our world\u2019s oceans.",
+          "quote": "Each year, approximately 8 million metric tons of plastic waste make their way into our world’s oceans.",
           "sourceKind": "secondary",
           "sourceKindLabel": "secondary source",
           "relation": "The claim as you highlighted it",
@@ -2166,7 +2605,7 @@
               "changed": true
             },
             {
-              "w": "world\u2019s",
+              "w": "world’s",
               "changed": true
             },
             {
@@ -2196,7 +2635,7 @@
           "date": "2015-02-12",
           "dateSource": "page-metadata",
           "hasPassageCitations": false,
-          "quote": "\u201cUsing the average density of uncompacted plastic waste, 8 million metric tons \u2014 the midpoint of our estimate \u2014 would cover an area 34 times the size of Manhattan ankle-deep in plastic waste,\u201d said co-author Roland Geyer, an associate professor at the Bren School of Environmental Science & Management.",
+          "quote": "“Using the average density of uncompacted plastic waste, 8 million metric tons — the midpoint of our estimate — would cover an area 34 times the size of Manhattan ankle-deep in plastic waste,” said co-author Roland Geyer, an associate professor at the Bren School of Environmental Science & Management.",
           "dispute": null,
           "sourceKind": "press-release",
           "sourceKindLabel": "institutional press release about the study",

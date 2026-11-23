@@ -94,13 +94,15 @@ http
       const url = new URL(req.url, 'http://x');
       if (req.method === 'OPTIONS') return res.writeHead(204, cors).end();
       if (url.pathname === '/health') {
+        const uToday = tf ? tf.getUsage() : null;
         return json(res, 200, {
           ok: true,
           hasKey,
           mode: tf?.mode || TF_MODE,
           caps: tf?.caps || null,
+          today: uToday,
           allowAgent: process.env.ALLOW_AGENT === '1',
-          allowResearch: process.env.ALLOW_RESEARCH === '1',
+          allowResearch: tf?.allowResearch ?? (process.env.ALLOW_RESEARCH !== '0'),
           tokenRequired: !!APP_TOKEN,
         });
       }
@@ -132,11 +134,49 @@ http
         if (cached?.final) {
           sse(res, 'status', { msg: `Loaded from cache (mode=${tf.mode})` });
           for (const h of cached.final.chain) sse(res, 'hop', { hop: h });
-          sse(res, 'result', { final: cached.final, key: k, cached: true, researchId: cached.researchId || null });
+          let researchId = cached.researchId || null;
+          let researchMessage = null;
+          let researchCapReached = false;
+          if (!researchId && !cached.final.research && !cached.merged) {
+            if (body.deepTrace === false) {
+              researchMessage = 'Deep trace disabled in Settings.';
+            } else if (process.env.ALLOW_RESEARCH === '0' || (tf && !tf.allowResearch)) {
+              researchMessage = 'TinyResearch disabled (ALLOW_RESEARCH=0).';
+            } else if (tf && tf.mode !== 'replay') {
+              const u = tf.getUsage();
+              if (u.researchRuns >= tf.caps.researchRuns) {
+                researchCapReached = true;
+                researchMessage = `Daily research cap reached (${u.researchRuns}/${tf.caps.researchRuns} used today).`;
+              } else {
+                try {
+                  researchId = await startResearch(cached.state.input, tf);
+                  writeCache(k, { ...cached, researchId });
+                  fs.writeFileSync(file(`job-${researchId}`), JSON.stringify({ key: k }));
+                  logUsage('research-auto-start');
+                } catch (err) {
+                  if (err.code === 'BUDGET_CAP') {
+                    researchCapReached = true;
+                    researchMessage = err.message;
+                  } else {
+                    researchMessage = err.message;
+                  }
+                }
+              }
+            }
+          }
+          sse(res, 'result', {
+            final: cached.final,
+            key: k,
+            cached: true,
+            researchId,
+            researchMessage,
+            researchCapReached,
+          });
           logUsage('cache-hit');
           return res.end();
         }
         let lastTimings = null;
+        let lastResult = null;
         try {
           for await (const ev of runTrace(body, tf)) {
             if (ev.type === 'state') {
@@ -146,14 +186,58 @@ http
             if (ev.type === 'result') {
               ev.key = k;
               lastTimings = ev.final?.timings || null;
+              lastResult = ev;
+            } else {
+              sse(res, ev.type, ev);
             }
-            sse(res, ev.type, ev);
           }
           if (lastTimings) {
             const parts = (lastTimings.stages || []).map((s) => `${s.stage}=${s.ms}ms`).join(' ');
             console.log(`[Timings] total=${lastTimings.totalMs}ms soft=${lastTimings.softLimitHit} hard=${lastTimings.hardLimitHit}${parts ? ' | ' + parts : ''}`);
           }
           logUsage('trace-complete');
+
+          if (lastResult) {
+            const c = readCache(k);
+            let researchId = c?.researchId || null;
+            let researchMessage = null;
+            let researchCapReached = false;
+
+            if (!researchId && !c?.final?.research && !c?.merged) {
+              if (body.deepTrace === false) {
+                researchMessage = 'Deep trace disabled in Settings.';
+              } else if (process.env.ALLOW_RESEARCH === '0' || (tf && !tf.allowResearch)) {
+                researchMessage = 'TinyResearch disabled (ALLOW_RESEARCH=0).';
+              } else if (tf) {
+                const u = tf.getUsage();
+                if (u.researchRuns >= tf.caps.researchRuns) {
+                  researchCapReached = true;
+                  researchMessage = `Daily research cap reached (${u.researchRuns}/${tf.caps.researchRuns} used today).`;
+                } else {
+                  try {
+                    researchId = await startResearch(c.state.input, tf);
+                    writeCache(k, { ...c, researchId });
+                    fs.writeFileSync(file(`job-${researchId}`), JSON.stringify({ key: k }));
+                    logUsage('research-auto-start');
+                  } catch (err) {
+                    if (err.code === 'BUDGET_CAP') {
+                      researchCapReached = true;
+                      researchMessage = err.message;
+                    } else if (err.code === 'NOT_RECORDED') {
+                      researchMessage = 'Research run not recorded in replay cache.';
+                    } else {
+                      researchMessage = err.message;
+                    }
+                  }
+                }
+              }
+            }
+
+            lastResult.researchId = researchId;
+            lastResult.researchMessage = researchMessage;
+            lastResult.researchCapReached = researchCapReached;
+            sse(res, 'result', lastResult);
+          }
         } catch (e) {
           sse(res, 'error', { message: friendly(e), code: e.code || null });
           logUsage('trace-error');
@@ -163,21 +247,31 @@ http
 
       if (req.method === 'POST' && url.pathname === '/api/research') {
         const body = await readBody(req);
-        if (body.confirm !== true) {
-          return json(res, 400, { error: 'Research run requires confirm: true in the request body.' });
-        }
-        if (process.env.ALLOW_RESEARCH !== '1') {
+        if (process.env.ALLOW_RESEARCH === '0' || (tf && !tf.allowResearch)) {
           return json(res, 403, { error: 'Research endpoint disabled (set ALLOW_RESEARCH=1 to enable).' });
         }
         const k = key(body.claim, body.url || '');
         const c = readCache(k);
         if (!c?.state) return json(res, 400, { error: 'Run a quick trace first.' });
-        if (c.researchId) return json(res, 200, { id: c.researchId });
-        const id = await startResearch(c.state.input, tf);
-        writeCache(k, { ...c, researchId: id });
-        fs.writeFileSync(file(`job-${id}`), JSON.stringify({ key: k }));
-        logUsage('research-start');
-        return json(res, 200, { id });
+        if (c.researchId) return json(res, 200, { id: c.researchId, cached: true });
+        const u = tf ? tf.getUsage() : null;
+        if (u && tf && u.researchRuns >= tf.caps.researchRuns) {
+          return json(res, 429, {
+            error: `Daily research cap reached (${u.researchRuns}/${tf.caps.researchRuns} used today).`,
+            code: 'BUDGET_CAP',
+            capReached: true,
+          });
+        }
+        try {
+          const id = await startResearch(c.state.input, tf);
+          writeCache(k, { ...c, researchId: id });
+          fs.writeFileSync(file(`job-${id}`), JSON.stringify({ key: k }));
+          logUsage('research-start');
+          return json(res, 200, { id });
+        } catch (e) {
+          const status = e.code === 'BUDGET_CAP' ? 429 : e.code === 'RESEARCH_DISABLED' ? 403 : 500;
+          return json(res, status, { error: friendly(e), code: e.code || null });
+        }
       }
 
       const m = url.pathname.match(/^\/api\/research\/([\w-]+)$/);

@@ -8,12 +8,12 @@
 | 2 | Follows citations across live pages to earliest source | PASS | Citation extraction, date filtering (`before_date`), and chronological sorting in [`server/src/trace.js`](../server/src/trace.js) |
 | 3 | Each hop shows URL, date, exact quoted wording, and relation | PASS | Verbatim substring extractor in `trace.js`; Drift meter, per-hop diff, `dateUncertain` indicator, and hop cards in [`extension/sidepanel.js`](../extension/sidepanel.js) and [`demo/build-gallery.js`](../demo/build-gallery.js) |
 | 4 | Flags `CHANGED`, `ROUNDED`, `MISQUOTED`, `SCOPE`, `DISPUTED`, `UNCITED`, `NO_SOURCE` + honest `"No original source found"` | PASS | Deterministic verdict comparator in [`server/src/compare.js`](../server/src/compare.js) (including `DIFFERENT_CONTEXT` subject-mismatch suppression), context dispute detector [`detectDispute`](../server/src/text.js) in [`server/src/text.js`](../server/src/text.js), `press-release` / `UNCITED` / `no_source` statuses in [`server/src/trace.js`](../server/src/trace.js); secondary origins and press releases are never called `"likely primary source"` |
-| 5 | Meaningful use of TinyFish endpoints (`Fetch`, `Search`, `Research`, plus `Agent` retry wiring) | PASS (`Fetch`, `Search`, `Research`); REAL-TRACE TIMEOUT (`Agent`) | Fetch (`POST api.fetch.tinyfish.ai`), Search (`GET api.search.tinyfish.ai`), and TinyResearch (`POST /v1/automation/run-research-async` via [`server/src/research.js`](../server/src/research.js)) PASS; Browser Agent (`POST agent.tinyfish.ai/v1/automation/run` via [`server/src/agent-retry.js`](../server/src/agent-retry.js)) passed the `example.com` structured test, but the real blocked-page attempt (`psychology.stackexchange.com`) timed out (`$0.160 USD`) and is **NOT** marked PASS on a real trace |
-| 6 | 5+ real claims across topics (>=1 wrong/disputed & >=1 `NO_SOURCE`) | PASS | **9 recorded traces** in [`demo/index.html`](../demo/index.html) (`cpi91`, `plastic`, `apple`, `clean38`, `moore`, `brain10`, `marie`, `coyotiv`, `who`), including 2 `DISPUTED` myths (`brain10`, `marie`), 1 `ROUNDED` SEC 10-K filing (`apple`), 1 `HEDGE_DROPPED` primary paper (`moore`), 1 `UNCITED` secondary (`clean38`), 1 recognized primary publisher (`who`), and 1 real uncited blog ending in `NO_SOURCE` (`coyotiv`) |
+| 5 | Meaningful use of TinyFish endpoints (`Fetch`, `Search`, `Research`, plus `Agent` retry wiring) | PASS (`Fetch`, `Search`, `Research`); REAL-TRACE TIMEOUT (`Agent`) | Fetch (`POST api.fetch.tinyfish.ai`), Search (`GET api.search.tinyfish.ai`), and TinyResearch (default deep trace, `POST /v1/automation/run-research-async` via [`server/src/research.js`](../server/src/research.js), ~$2/run, default cap 3/day) PASS; Browser Agent (`POST agent.tinyfish.ai/v1/automation/run` via [`server/src/agent-retry.js`](../server/src/agent-retry.js)) passed the `example.com` structured test, but the real blocked-page attempt (`psychology.stackexchange.com`) timed out (`$0.160 USD`) and is **NOT** marked PASS on a real trace |
+| 6 | 5+ real claims across topics (>=1 wrong/disputed & >=1 `NO_SOURCE`) | PASS | **10 recorded traces** in [`demo/index.html`](../demo/index.html) (`cpi91`, `plastic`, `apple`, `clean38`, `moore`, `brain10`, `marie`, `coyotiv`, `who`, `data90`), including 2 `DISPUTED` myths (`brain10`, `marie`), 1 `ROUNDED` SEC 10-K filing (`apple`), 1 `HEDGE_DROPPED` primary paper (`moore`), 1 `UNCITED` secondary (`clean38`), 1 recognized primary publisher (`who`), 1 `CONTRADICTED` claim on data creation (`data90`), and 1 real uncited blog ending in `NO_SOURCE` (`coyotiv`) |
 
 ---
 
-## 2. Recorded 9-Claim Gallery Summary (`TF_MODE=record` Final Logic)
+## 2. Recorded 10-Claim Gallery Summary (`TF_MODE=record` Final Logic)
 
 | ID | Topic | Verdict | Status | Earliest Found Host (Date) | Source Label | Hops |
 |---|---|---|---|---|---|---|
@@ -26,6 +26,7 @@
 | `marie` | History Myth | `DISPUTED` | `traced_secondary` | `britannica.com` (`date uncertain`) | `secondary source` | 2 |
 | `coyotiv` | Software · Uncited Blog | `NO_SOURCE` | `no_source` | — (`No original source found`) | — | 1 |
 | `who` | Global Health | `PRIMARY_PUBLISHER` | `publisher_is_source` | `who.int` (`2025-07-31`) | `likely primary source` | 1 |
+| `data90` | Technology · Deep Trace | `CONTRADICTED` | `traced_primary` | `oracle.com` (`date uncertain`) | `likely primary source` | 2 |
 
 ---
 
@@ -68,7 +69,7 @@
 ## 5. Automated Checks & Manual Browser Checklist
 
 ### Automated Checks Executed (Author's Machine Verification)
-- **Offline Unit Tests**: `npm test --prefix server` -> 43/43 passing (zero network calls).
+- **Offline Unit Tests**: `npm test --prefix server` -> 49/49 passing (zero network calls).
 - **Real-Browser & Server E2E**: [`demo/e2e-chrome.mjs`](../demo/e2e-chrome.mjs) verifies `/health`, real SSE `/api/trace` streams (`cpi91`, `moore`, `coyotiv`), fail-closed guards (`/api/research` `400`, `/api/agent-retry` `403`), and headless Chrome rendering all gallery cards in [`demo/index.html`](../demo/index.html).
 - **Honest Chrome CLI Limitation**: Branded Google Chrome and Microsoft Edge (`Chromium 137+`) block automated CLI `--load-extension` sideloading for security reasons, so loading the unpacked MV3 extension into an interactive Chrome window requires the manual Developer Mode steps below.
 

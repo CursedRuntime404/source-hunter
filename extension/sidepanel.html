@@ -22,6 +22,11 @@
 <section id="settings" hidden>
   <label>Server URL <input id="serverUrl" type="url" placeholder="http://localhost:8787"></label>
   <label>App token (optional) <input id="appToken" type="password" placeholder="only if your server sets APP_TOKEN"></label>
+  <label class="toggle-row">
+    <input id="deepTraceToggle" type="checkbox" checked>
+    <span>Deep trace (TinyResearch)</span>
+  </label>
+  <p class="settings-hint">Automatically runs a deep citation trace on each claim (~$2/run; default cap 3/day).</p>
   <div class="settings-row">
     <button id="save" type="button">Save &amp; check</button>
     <span id="health" role="status" aria-live="polite"></span>
@@ -53,6 +58,7 @@
 
   <div id="view" hidden>
     <blockquote id="claim"></blockquote>
+    <div id="deepAutoWarn" class="deep-auto-warn" hidden>⚠️ Deep trace is ON: this will start a deep trace, about $2 (capped at 3/day; toggle in Settings)</div>
     <div id="progress" class="progress" role="status" aria-live="polite">
       <span class="spin" aria-hidden="true"></span>
       <span id="status">Starting</span>

@@ -174,6 +174,30 @@ button:disabled {
   color: var(--muted);
   font-size: 12px;
 }
+#settings label.toggle-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 12.5px;
+  color: var(--ink);
+  font-weight: 600;
+  margin-top: 4px;
+}
+#settings label.toggle-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--ok, #107c41);
+}
+.settings-hint {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.4;
+  margin: -2px 0 4px;
+}
 #settings input {
   padding: 7px 9px;
   border: 1px solid var(--line);
@@ -678,6 +702,64 @@ details li { margin: 5px 0; }
   color: var(--ink);
   margin-top: 8px;
 }
+#deep .deep-running-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#deep .deep-running-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink);
+}
+#deep .deep-running-meta {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--muted);
+  font-family: var(--mono);
+}
+#deep .deep-running-note {
+  margin: 4px 0 0;
+  font-size: 11.5px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+#deep .deep-complete-box {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#deep .deep-lead-summary {
+  margin: 0 0 6px;
+  font-size: 12.5px;
+  color: var(--ink);
+  line-height: 1.45;
+}
+#deep .deep-report-details {
+  margin-top: 6px;
+}
+#deep .deep-report-details summary {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--link);
+  cursor: pointer;
+}
+#deep .deep-report-details .report {
+  margin-top: 6px;
+  padding: 8px 10px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  white-space: pre-wrap;
+  max-height: 240px;
+  overflow: auto;
+  font-size: 11.5px;
+  line-height: 1.45;
+  color: var(--ink);
+}
 .panel-footer {
   margin-top: 14px;
   padding: 10px 0 20px;
@@ -736,4 +818,15 @@ details li { margin: 5px 0; }
   margin-top: 4px;
   font-size: 11.5px;
   color: var(--warn);
+}
+.deep-auto-warn {
+  margin: 6px 0 10px 0;
+  padding: 6px 10px;
+  background: var(--warn-bg, rgba(234, 179, 8, 0.12));
+  border: 1px solid var(--warn-border, rgba(234, 179, 8, 0.4));
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--warn-fg, #b45309);
 }

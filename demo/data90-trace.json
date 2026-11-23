@@ -1,0 +1,434 @@
+{
+  "claim": {
+    "raw": "A full 90% of all the data in the world has been generated over the last two years.",
+    "kind": "stat"
+  },
+  "stats": {
+    "fetches": 19,
+    "searches": 1,
+    "agentCalls": 0,
+    "linksChecked": 0
+  },
+  "timings": {
+    "totalMs": 160,
+    "softLimitHit": false,
+    "hardLimitHit": false,
+    "stages": [
+      {
+        "stage": "start-page-citations",
+        "ms": 47,
+        "linksFound": 0
+      },
+      {
+        "stage": "search",
+        "ms": 100,
+        "hits": 2
+      }
+    ]
+  },
+  "rejected": [
+    {
+      "url": "https://public.dhe.ibm.com/software/data/sw-library/data/IBM_Smarter_Computing_BIG_DATA.pdf",
+      "reason": "page discusses a different statistic (subject mismatch)",
+      "host": "public.dhe.ibm.com",
+      "citedBy": "search"
+    },
+    {
+      "url": "https://docs.microsoft.com/en-us/archive/blogs/hans_vb/big-data-every-day-2-5-quintillion-bytes-of-data-are-created",
+      "reason": "page discusses a different statistic (subject mismatch)",
+      "host": "docs.microsoft.com",
+      "citedBy": "search"
+    },
+    {
+      "url": "https://rdworldonline.com/big-data-for-better-or-worse",
+      "finalUrl": "https://rdworldonline.com/big-data-for-better-or-worse",
+      "host": "rdworldonline.com",
+      "reason": "page timed out",
+      "isBotBlocked": false,
+      "citedBy": "search"
+    },
+    {
+      "url": "http://skeptics.stackexchange.com/questions/10418/has-90-of-the-worlds-data-been-created-in-the-last-two-years",
+      "finalUrl": "http://skeptics.stackexchange.com/questions/10418/has-90-of-the-worlds-data-been-created-in-the-last-two-years",
+      "host": "skeptics.stackexchange.com",
+      "reason": "blocked by bot check",
+      "isBotBlocked": true,
+      "citedBy": "search"
+    },
+    {
+      "url": "https://web.archive.org/web/20130824213031/http:/www.ibm.com/big-data/us/en",
+      "reason": "page discusses a different statistic (subject mismatch)",
+      "host": "web.archive.org",
+      "citedBy": "TinyResearch"
+    },
+    {
+      "url": "https://businessinsider.com/consumer-feedback-what-marketers-can-do-about-this-data-2011-12",
+      "reason": "page discusses a different statistic (subject mismatch)",
+      "host": "businessinsider.com",
+      "citedBy": "TinyResearch"
+    },
+    {
+      "url": "https://public.dhe.ibm.com/software/data/sw-library/big-data/ibm-big-data-success.pdf",
+      "reason": "page discusses a different statistic (subject mismatch)",
+      "host": "public.dhe.ibm.com",
+      "citedBy": "TinyResearch"
+    },
+    {
+      "url": "https://web.archive.org/web/20130824213031/http://www.ibm.com/big-data/us/en",
+      "reason": "page discusses a different statistic (subject mismatch)",
+      "host": "web.archive.org",
+      "citedBy": "TinyResearch"
+    },
+    {
+      "url": "https://datacenterknowledge.com/data-storage/best-of-industry-perspectives-2012-storage",
+      "reason": "page discusses a different statistic (subject mismatch)",
+      "host": "datacenterknowledge.com",
+      "citedBy": "TinyResearch"
+    },
+    {
+      "url": "https://dl.icdst.org/pdfs/files/2729e83081d9861736d25895ee9c7238.pdf",
+      "reason": "page discusses a different statistic (subject mismatch)",
+      "host": "dl.icdst.org",
+      "citedBy": "TinyResearch"
+    },
+    {
+      "url": "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
+      "finalUrl": "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
+      "host": "sintef.no",
+      "reason": "blocked by bot check",
+      "isBotBlocked": true,
+      "citedBy": "TinyResearch"
+    },
+    {
+      "url": "https://web.archive.org/web/20121215132444/http:/blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data",
+      "reason": "page discusses a different statistic (subject mismatch)",
+      "host": "web.archive.org",
+      "citedBy": "TinyResearch"
+    }
+  ],
+  "status": "traced_primary",
+  "tone": "bad",
+  "code": "CONTRADICTED",
+  "severity": 5,
+  "headline": "Source wording contradicts this claim",
+  "firstDriftHopId": "h0",
+  "reasons": [
+    "Polarity differs: source includes \"not\"",
+    "The earliest page found looks like a primary source (judged from its domain and content; confirm before relying on it)."
+  ],
+  "chain": [
+    {
+      "id": "h0",
+      "role": "start",
+      "via": "selection",
+      "verifiedBy": "selection",
+      "url": "https://www.sciencedaily.com/releases/2013/05/130522085217.htm",
+      "host": "sciencedaily.com",
+      "title": "Big Data, for better or worse: 90% of world&apos;s data generated over last two years",
+      "date": "2013-05-22",
+      "dateSource": "page-text",
+      "quote": "A full 90% of all the data in the world has been generated over the last two years.",
+      "sourceKind": "secondary",
+      "sourceKindLabel": "secondary source",
+      "relation": "The claim as you highlighted it",
+      "dateUncertain": false,
+      "dateReason": null,
+      "hasPassageCitations": false,
+      "vsOrigin": {
+        "code": "CONTRADICTED",
+        "flags": [
+          {
+            "code": "CONTRADICTED",
+            "text": "Polarity differs: source includes \"not\""
+          }
+        ]
+      },
+      "quoteDiff": [
+        {
+          "w": "A",
+          "changed": true
+        },
+        {
+          "w": "full",
+          "changed": true
+        },
+        {
+          "w": "90%",
+          "changed": false
+        },
+        {
+          "w": "of",
+          "changed": false
+        },
+        {
+          "w": "all",
+          "changed": true
+        },
+        {
+          "w": "the",
+          "changed": false
+        },
+        {
+          "w": "data",
+          "changed": false
+        },
+        {
+          "w": "in",
+          "changed": true
+        },
+        {
+          "w": "the",
+          "changed": true
+        },
+        {
+          "w": "world",
+          "changed": true
+        },
+        {
+          "w": "has",
+          "changed": true
+        },
+        {
+          "w": "been",
+          "changed": true
+        },
+        {
+          "w": "generated",
+          "changed": false
+        },
+        {
+          "w": "over",
+          "changed": true
+        },
+        {
+          "w": "the",
+          "changed": false
+        },
+        {
+          "w": "last",
+          "changed": true
+        },
+        {
+          "w": "two",
+          "changed": true
+        },
+        {
+          "w": "years.",
+          "changed": true
+        }
+      ],
+      "vsCited": {
+        "code": "CONTRADICTED",
+        "flags": [
+          {
+            "code": "CONTRADICTED",
+            "text": "Polarity differs: source includes \"not\""
+          }
+        ]
+      },
+      "changedHere": true
+    },
+    {
+      "id": "x0",
+      "role": "origin",
+      "via": "search",
+      "verifiedBy": "fetch",
+      "url": "https://www.oracle.com/webfolder/s/delivery_production/docs/FY14h1/doc2/265223-Oracle-TheNewAgeofArchive.pdf",
+      "host": "oracle.com",
+      "title": "Microsoft Word - Oracle - The New Age of Archive",
+      "date": null,
+      "dateSource": null,
+      "hasPassageCitations": false,
+      "quote": "Just ten years ago, large business es generated roughly 90% of the world’s digital dat a. Today it is estimated that 75-80% of all digital data is generated by individuals - not by large businesses – however the majority of this data will eventually w ind up back in a large business or service provider .",
+      "dispute": null,
+      "sourceKind": "primary-likely",
+      "sourceKindLabel": "likely primary source",
+      "relation": "Found by search; not cited by the pages above",
+      "vsOrigin": {
+        "code": "MATCH",
+        "flags": [],
+        "diff": null
+      }
+    }
+  ],
+  "alsoFound": [
+    {
+      "id": "x1",
+      "role": "source",
+      "via": "search",
+      "verifiedBy": "fetch",
+      "url": "https://datafloq.com/big-data-history/",
+      "host": "datafloq.com",
+      "title": "A Short History Of Big Data",
+      "date": "2013-01-07",
+      "dateSource": "page-metadata",
+      "hasPassageCitations": false,
+      "quote": "90% of the available data has been created in the last two years and the term Big Data has been around 2005, when it was launched by OReilly Media in 2005. However, the usage of Big Data and the need to understand all available data has been around much longer.",
+      "dispute": null,
+      "sourceKind": "secondary",
+      "sourceKindLabel": "secondary source",
+      "relation": "Found by search; not cited by the pages above",
+      "vsClaim": {
+        "code": "HEDGE_DROPPED",
+        "flags": [
+          {
+            "code": "HEDGE_DROPPED",
+            "text": "Hedge dropped: the original says \"around\""
+          }
+        ]
+      }
+    },
+    {
+      "id": "r4",
+      "role": "source",
+      "via": "research",
+      "verifiedBy": "fetch",
+      "url": "https://www.sintef.no/en/latest-news/2013/big-data-for-better-or-worse/",
+      "host": "sintef.no",
+      "title": "Big Data – for better or worse - SINTEF",
+      "date": "2013-05-22",
+      "dateSource": "page-metadata",
+      "hasPassageCitations": false,
+      "quote": "A full 90% of all the data in the world has been generated over the last two years.",
+      "dispute": null,
+      "sourceKind": "secondary",
+      "sourceKindLabel": "secondary source",
+      "relation": "Proposed by TinyResearch, confirmed by fetching the page",
+      "vsClaim": {
+        "code": "MATCH",
+        "flags": []
+      }
+    },
+    {
+      "id": "r2",
+      "role": "source",
+      "via": "research",
+      "verifiedBy": "fetch",
+      "url": "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
+      "host": "siri.sipa.columbia.edu",
+      "title": "Data In Full Bloom (Pun Intended) | Sustainable Investing Research Initiative (SIRI)",
+      "date": "2026-11-17",
+      "dateSource": "page-metadata",
+      "hasPassageCitations": false,
+      "quote": "It is widely believed that 90% of all data we encounter today was generated in the last two years",
+      "dispute": null,
+      "sourceKind": "press-release",
+      "sourceKindLabel": "institutional press release about the study",
+      "relation": "Proposed by TinyResearch, confirmed by fetching the page",
+      "vsClaim": {
+        "code": "MATCH",
+        "flags": []
+      }
+    },
+    {
+      "id": "r3",
+      "role": "source",
+      "via": "research",
+      "verifiedBy": "fetch",
+      "url": "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
+      "host": "assets.publishing.service.gov.uk",
+      "title": "National Data Strategy: Review of commonly quoted statistics",
+      "date": null,
+      "dateSource": null,
+      "hasPassageCitations": false,
+      "quote": "‘A full 90% of all the data in the world has been generated over the last two years.’",
+      "dispute": null,
+      "sourceKind": "primary-likely",
+      "sourceKindLabel": "likely primary source",
+      "relation": "Proposed by TinyResearch, confirmed by fetching the page",
+      "vsClaim": {
+        "code": "MATCH",
+        "flags": []
+      }
+    },
+    {
+      "id": "r5",
+      "role": "source",
+      "via": "research",
+      "verifiedBy": "fetch",
+      "url": "https://cdn.threerivers.gov.uk/files/2024/09/f0ae5ad0-798e-11ef-ba8e-ed267910e33d-I48%20-%20National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
+      "host": "cdn.threerivers.gov.uk",
+      "title": "National Data Strategy: Review of commonly quoted statistics",
+      "date": null,
+      "dateSource": null,
+      "hasPassageCitations": false,
+      "quote": "‘A full 90% of all the data in the world has been generated over the last two years.’",
+      "dispute": null,
+      "sourceKind": "primary-likely",
+      "sourceKindLabel": "likely primary source",
+      "relation": "Proposed by TinyResearch, confirmed by fetching the page",
+      "vsClaim": {
+        "code": "MATCH",
+        "flags": []
+      }
+    }
+  ],
+  "origin": {
+    "url": "https://www.oracle.com/webfolder/s/delivery_production/docs/FY14h1/doc2/265223-Oracle-TheNewAgeofArchive.pdf",
+    "date": null,
+    "host": "oracle.com",
+    "sourceKind": "primary-likely",
+    "sourceKindLabel": "likely primary source"
+  },
+  "deepTraceAvailable": true,
+  "research": {
+    "totalCitationsFound": 19,
+    "citationsProposed": 12,
+    "confirmed": 4,
+    "proposedUrls": [
+      "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
+      "https://web.archive.org/web/20130824213031/http:/www.ibm.com/big-data/us/en",
+      "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
+      "https://businessinsider.com/consumer-feedback-what-marketers-can-do-about-this-data-2011-12",
+      "https://public.dhe.ibm.com/software/data/sw-library/big-data/ibm-big-data-success.pdf",
+      "https://web.archive.org/web/20130824213031/http://www.ibm.com/big-data/us/en",
+      "https://datacenterknowledge.com/data-storage/best-of-industry-perspectives-2012-storage",
+      "https://dl.icdst.org/pdfs/files/2729e83081d9861736d25895ee9c7238.pdf",
+      "https://sintef.no/en/latest-news/2013/big-data-for-better-or-worse",
+      "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
+      "https://cdn.threerivers.gov.uk/files/2024/09/f0ae5ad0-798e-11ef-ba8e-ed267910e33d-I48%20-%20National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
+      "https://web.archive.org/web/20121215132444/http:/blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data"
+    ],
+    "confirmedUrls": [
+      "https://siri.sipa.columbia.edu/news/data-full-bloom-pun-intended",
+      "https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/807517/National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf",
+      "https://www.sintef.no/en/latest-news/2013/big-data-for-better-or-worse/",
+      "https://cdn.threerivers.gov.uk/files/2024/09/f0ae5ad0-798e-11ef-ba8e-ed267910e33d-I48%20-%20National_Data_Strategy__Review_of_commonly_quoted_statistics.pdf"
+    ],
+    "discardedUrls": [
+      {
+        "url": "https://web.archive.org/web/20130824213031/http:/www.ibm.com/big-data/us/en",
+        "reason": "page discusses a different statistic (subject mismatch)"
+      },
+      {
+        "url": "https://businessinsider.com/consumer-feedback-what-marketers-can-do-about-this-data-2011-12",
+        "reason": "page discusses a different statistic (subject mismatch)"
+      },
+      {
+        "url": "https://public.dhe.ibm.com/software/data/sw-library/big-data/ibm-big-data-success.pdf",
+        "reason": "page discusses a different statistic (subject mismatch)"
+      },
+      {
+        "url": "https://web.archive.org/web/20130824213031/http://www.ibm.com/big-data/us/en",
+        "reason": "page discusses a different statistic (subject mismatch)"
+      },
+      {
+        "url": "https://datacenterknowledge.com/data-storage/best-of-industry-perspectives-2012-storage",
+        "reason": "page discusses a different statistic (subject mismatch)"
+      },
+      {
+        "url": "https://dl.icdst.org/pdfs/files/2729e83081d9861736d25895ee9c7238.pdf",
+        "reason": "page discusses a different statistic (subject mismatch)"
+      },
+      {
+        "url": "https://sintef.no/en/publications/publication/0198cc533002-4e65dd1f-c7f2-49ba-bac6-7a2b50f24a13",
+        "reason": "blocked by bot check"
+      },
+      {
+        "url": "https://web.archive.org/web/20121215132444/http:/blogs.worldbank.org/ic4d/four-ways-to-talk-about-big-data",
+        "reason": "page discusses a different statistic (subject mismatch)"
+      }
+    ],
+    "terminationReason": "planner_done"
+  }
+}
